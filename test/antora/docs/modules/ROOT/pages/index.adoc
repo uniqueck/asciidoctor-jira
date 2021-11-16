@@ -1,0 +1,16 @@
+= {page-component-title}
+
+== Ways of using link:https://github.com/doctoolchain/asciidoctor-jira[asciidoctor-jira]
+
+For this example, you must install `asciidoctor-jira` so it is accessible to your Antora installation.
+If you have installed Antora globally, you can run:
+
+[source]
+----
+npm run install -g asciidoctor-jira
+----
+
+See the `package.json` for an alternate more self-contained installation method.
+
+The HTML pages in a browser will look rather repetitive.
+It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.
