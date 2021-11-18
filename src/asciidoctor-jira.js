@@ -1,13 +1,18 @@
+
+function jiraIssuesBlockMacro (name, context) {
+  return function () {
+    const self = this
+    self.named(name)
+  }
+}
+
 module.exports = function (registry, context = {}) {
-  registry.blockMacro(function () {
-    var self = this
-    self.named('jiraIssues')
-    self.onContext('paragraph')
-    self.process(function (parent, target, attrs) {
-        var jiraHost = parseString(attrs.jira-host)
-        var jql = parseString(attrs.jql)
-        var lines = []
-        return self.createBlock(parent, 'paragraph', lines)
+  if (typeof registry.register === 'function') {
+    registry.register(function () {
+      this.blockMacro(jiraIssuesBlockMacro('jiraIssues', context))
     })
-  })
+  } else if (typeof registry.block === 'function') {
+    this.blockMacro(jiraIssuesBlockMacro('jiraIssues', context))
+  }
+  return registry
 }
