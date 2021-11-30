@@ -16,7 +16,7 @@ asciidoc:
   extensions:
     - ../../src/asciidoctor-jira.js
   attributes:
-    jira-host: hallo
+    jira-host: https://uniqueck.atlassian.net
 
 ui:
   bundle:

@@ -5,6 +5,10 @@
   "bugs": {
     "url": "https://github.com/doctoolchain/asciidoctor-jira/issues"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "keywords": [
     "asciidoctor",
     "jira",
@@ -14,17 +18,19 @@
   "main": "src/asciidoctor-jira.js",
   "devDependencies": {
     "@antora/site-generator-default": "^2.3.3",
-    "@asciidoctor/core": "^2.0.3",
+    "@asciidoctor/core": "^2.2.0",
     "chai": "^4.3.4",
     "cheerio": "0.22.0",
+    "dotenv": "^10.0.0",
     "jest": "27.2",
     "mocha": "^9.0.0",
     "rimraf": "^3.0.2",
     "shx": "^0.3.3",
-    "standard": "^16.0.2"
+    "standard": "^16.0.2",
+    "sync-request": "^6.1.0"
   },
   "peerDependencies": {
-    "@asciidoctor/core": "^2.0.0"
+    "@asciidoctor/core": "^2.2.0"
   },
   "scripts": {
     "test": "npm run test:antora",
@@ -32,5 +38,8 @@
     "lint": "standard src/**.js",
     "lint-fix": "npm run lint -- --fix",
     "clean": "shx rm -rf dist/*"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }

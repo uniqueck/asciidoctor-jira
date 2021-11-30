@@ -1,3 +1,4 @@
+:jira-host: uniqueck.atlassian.net
 = {page-component-title}
 
 == Ways of using link:https://github.com/doctoolchain/asciidoctor-jira[asciidoctor-jira]
@@ -14,3 +15,7 @@ See the `package.json` for an alternate more self-contained installation method.
 
 The HTML pages in a browser will look rather repetitive.
 It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.
+
+jiraIssues::DOC["bb"]
+
+jira:DOC-1[]
