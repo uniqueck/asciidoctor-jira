@@ -1,7 +1,10 @@
+/* global
+  Opal
+*/
+
 // @ts-check
 const Jira = require('./Jira.js')
 require('dotenv').config()
-
 
 function jiraIssuesBlockMacro (context) {
   return function () {
@@ -10,13 +13,12 @@ function jiraIssuesBlockMacro (context) {
     self.positionalAttributes(['jql'])
     self.process((parent, target, attrs) => {
       const doc = parent.getDocument()
-      const projectKey = target
       const jql = attrs.jql || "resolution='Unresolved' ORDER BY priority DESC, key ASC, duedate ASC"
       const jiraClient = new Jira(doc)
       const issues = jiraClient.searchIssues(jql)
 
-      var content = []
-      content.push('[options=\"header\",cols=\"2,1,1,2,6\"]')
+      const content = []
+      content.push('[options="header",cols="2,1,1,2,6"]')
       content.push('|====')
       content.push('|ID | Priority | Created | Assignee | Summary')
 
@@ -25,7 +27,7 @@ function jiraIssuesBlockMacro (context) {
         content.push('a|jira:' + issue.key + '[]')
         content.push('|' + issue.fields.priority.name)
         content.push('|' + issue.fields.created)
-        var assignee = issue.fields.assignee ? issue.fields.assignee.displayName : 'not assigned'
+        const assignee = issue.fields.assignee ? issue.fields.assignee.displayName : 'not assigned'
         content.push('|' + assignee)
         content.push('|' + issue.fields.summary)
       }
@@ -50,7 +52,7 @@ function jiraIssueInlineMacro (context) {
       const jiraClient = new Jira(doc)
       const issue = jiraClient.searchIssue(issueKey)
       let title = issueKey
-      if (displayFormat == 'long') {
+      if (displayFormat === 'long') {
         title += issue.fields.summary
       }
       const jiraBaseUrl = doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL
