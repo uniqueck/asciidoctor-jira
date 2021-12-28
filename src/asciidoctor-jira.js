@@ -2,15 +2,16 @@
 const Jira = require('./Jira.js')
 require('dotenv').config()
 
+
 function jiraIssuesBlockMacro (context) {
   return function () {
     const self = this
-    self.named('jiraIssues')
-    self.positionalAttributes(['target', 'jql'])
+    self.named('jira')
+    self.positionalAttributes(['jql'])
     self.process((parent, target, attrs) => {
       const doc = parent.getDocument()
       const projectKey = target
-      const jql = attrs.jql || "resolution='Unresolved' ORDER BY priority DESC, duedate ASC"
+      const jql = attrs.jql || "resolution='Unresolved' ORDER BY priority DESC, key ASC, duedate ASC"
       const jiraClient = new Jira(doc)
       const issues = jiraClient.searchIssues(jql)
 
@@ -19,20 +20,20 @@ function jiraIssuesBlockMacro (context) {
       content.push('|====')
       content.push('|ID | Priority | Created | Assignee | Summary')
 
-      for (var i=0; i< issues.length; i++) {
-        var issue = issues[i]
-        content.push('|' + issue.key );
-        content.push('|' + issue.fields.priority.name);
-        content.push('|' + issue.fields.created);
-        content.push('|' + (issue.fields.assignee && issue.fields.assignee.displayName) || 'not assigned');
-        content.push('|' + issue.fields.summary);
+      for (let i = 0; i < issues.length; i++) {
+        const issue = issues[i]
+        content.push('a|jira:' + issue.key + '[]')
+        content.push('|' + issue.fields.priority.name)
+        content.push('|' + issue.fields.created)
+        var assignee = issue.fields.assignee ? issue.fields.assignee.displayName : 'not assigned'
+        content.push('|' + assignee)
+        content.push('|' + issue.fields.summary)
       }
       content.push('|====')
-      console.log(content.join('\n'))
 
+      self.parseContent(parent, content.join('\n'), Opal.hash(attrs))
 
-      return self.parseContent(parent, content.join('\n'), Opal.hash(attrs))
-
+      return undefined
     })
   }
 }
@@ -48,15 +49,14 @@ function jiraIssueInlineMacro (context) {
       const issueKey = target
       const jiraClient = new Jira(doc)
       const issue = jiraClient.searchIssue(issueKey)
-      var title = issueKey
+      let title = issueKey
       if (displayFormat == 'long') {
         title += issue.fields.summary
       }
-      const jiraBaseUrl = doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL;
-      var issueLink = jiraBaseUrl + "/browse/" + issueKey
-      return self.createInline(parent, 'anchor', title, { type: "link", target: issueLink }).convert()
+      const jiraBaseUrl = doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL
+      const issueLink = jiraBaseUrl + '/browse/' + issueKey
+      return self.createInline(parent, 'anchor', title, { type: 'link', target: issueLink }).convert()
     })
-
   }
 }
 

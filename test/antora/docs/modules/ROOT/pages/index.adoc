@@ -16,6 +16,11 @@ See the `package.json` for an alternate more self-contained installation method.
 The HTML pages in a browser will look rather repetitive.
 It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.
 
-jiraIssues::DOC["bb"]
+[source, asciidoc]
+----
+jira::DOC[]
+----
 
-jira:DOC-1[]
+jira::DOC[]
+
+jira::DOC["resolution='Unresolved' ORDER BY key ASC"]
