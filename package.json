@@ -34,7 +34,7 @@
   },
   "scripts": {
     "test": "npm run test:antora",
-    "test:antora": "mocha test/antora/**.spec.js",
+    "test:antora": "mocha --reporter json --reporter-option output=test-results.json test/antora/**.spec.js",
     "lint": "standard src/**.js",
     "lint-fix": "npm run lint -- --fix",
     "clean": "shx rm -rf dist/*"
