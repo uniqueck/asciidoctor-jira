@@ -2,12 +2,12 @@
   "name": "asciidoctor-jira",
   "author": "Constantin Krüger (https://github.com/uniqueck)",
   "license": "MIT",
+  "version": "0.0.1",
   "bugs": {
     "url": "https://github.com/doctoolchain/asciidoctor-jira/issues"
   },
   "files": [
-    "src",
-    "dist"
+    "src"
   ],
   "keywords": [
     "asciidoctor",
