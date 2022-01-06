@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Antora x JIRA :: Antora x JIRA</title>
-    <link rel="canonical" href="http://example.com/antora-jira/index.html">
+    <link rel="canonical" href="https://uniqueck.github.io/asciidoctor-jira/antora-jira/index.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -13,38 +13,12 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="http://example.com">Antora x JIRA</a>
+      <a class="navbar-item" href="https://uniqueck.github.io/asciidoctor-jira">Antora x JIRA</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="#">Home</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Products</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-            <a class="button is-primary" href="#">Download</a>
-          </span>
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -89,7 +63,7 @@
 <h2 id="_ways_of_using_asciidoctor_jira"><a class="anchor" href="#_ways_of_using_asciidoctor_jira"></a>Ways of using <a href="https://github.com/doctoolchain/asciidoctor-jira">asciidoctor-jira</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For this example, you must install <code>asciidoctor-jira</code> so it is accessible to your Antora installation.
+<p>For this example, you must install <code>asciidoctor-jira</code>, so it is accessible to your Antora installation.
 If you have installed Antora globally, you can run:</p>
 </div>
 <div class="listingblock">
@@ -104,141 +78,13 @@ If you have installed Antora globally, you can run:</p>
 <p>The HTML pages in a browser will look rather repetitive.
 It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">jira::DOC[]</code></pre>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="blockmacro.html" class="page">Choices for block macro</a></p>
+</li>
+</ul>
 </div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 8.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">Created</th>
-<th class="tableblock halign-left valign-top">Assignee</th>
-<th class="tableblock halign-left valign-top">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-08T12:13:19.203+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constantin Krüger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Test123</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T09:59:31.902+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bug123</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-3">DOC-3</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T10:01:35.706+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Task123</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-4">DOC-4</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T10:02:04.629+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AnotherBug</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-5">DOC-5</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T13:20:40.690+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constantin Krüger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Future Task</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 8.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">Created</th>
-<th class="tableblock halign-left valign-top">Assignee</th>
-<th class="tableblock halign-left valign-top">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-08T12:13:19.203+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constantin Krüger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Test123</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T09:59:31.902+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bug123</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-3">DOC-3</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T10:01:35.706+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Task123</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-4">DOC-4</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T10:02:04.629+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AnotherBug</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://uniqueck.atlassian.net/browse/DOC-5">DOC-5</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T13:20:40.690+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constantin Krüger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Future Task</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </article>

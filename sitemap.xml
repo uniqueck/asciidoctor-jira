@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://example.com/antora-jira/index.html</loc>
-<lastmod>2021-12-29T21:27:18.601Z</lastmod>
+<loc>https://uniqueck.github.io/asciidoctor-jira/antora-jira/blockmacro.html</loc>
+<lastmod>2022-01-06T22:37:11.811Z</lastmod>
+</url>
+<url>
+<loc>https://uniqueck.github.io/asciidoctor-jira/antora-jira/index.html</loc>
+<lastmod>2022-01-06T22:37:11.811Z</lastmod>
 </url>
 </urlset>
