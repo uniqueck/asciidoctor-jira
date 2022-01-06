@@ -1,0 +1,24 @@
+= {page-component-title}
+
+== Choices for the block macro `jira`
+
+
+=== Defaults
+
+[source, asciidoc]
+----
+jira::DOC[]
+----
+
+jira::DOC[]
+
+=== Custom JQL
+
+:custom-jql: "status = 'In Progress' order by created DESC"
+[source, asciidoc, subs="+attributes"]
+----
+jira::DOC[{custom-jql}]
+----
+
+.custom
+jira::DOC[{custom-jql}]
