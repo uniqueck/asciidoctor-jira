@@ -66,12 +66,6 @@ jobs:
           name: documentation
           path: test/antora/public
 
-      - uses: actions/upload-artifact@v2
-        if: success() || failure()
-        with:
-          name: test-results-${{ runner.os }}-${{ matrix.node-version }}
-          path: test-results.json
-
 
   deploy-documentation:
     runs-on: ubuntu-latest

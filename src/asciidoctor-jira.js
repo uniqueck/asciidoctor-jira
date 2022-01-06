@@ -24,7 +24,11 @@ function jiraIssuesBlockMacro (context) {
 
       for (let i = 0; i < issues.length; i++) {
         const issue = issues[i]
-        content.push('a|jira:' + issue.key + '[]')
+        const issueTypeName = issue.fields.issuetype.name
+        const issueTypeIconUrl = issue.fields.issuetype.iconUrl
+        const imageName = `jira-issuetype-${issueTypeName.toLowerCase()}.svg`
+        jiraClient.download(imageName, issueTypeIconUrl, context.vfs)
+        content.push('a|image:' + imageName + '[] jira:' + issue.key + '[]')
         content.push('|' + issue.fields.priority.name)
         content.push('|' + issue.fields.created)
         const assignee = issue.fields.assignee ? issue.fields.assignee.displayName : 'not assigned'
@@ -63,6 +67,10 @@ function jiraIssueInlineMacro (context) {
 }
 
 module.exports.register = function register (registry, context = {}) {
+  // patch context in case of Antora
+  if (typeof context.contentCatalog !== 'undefined' && typeof context.contentCatalog.addFile === 'function' && typeof context.file !== 'undefined') {
+    context.vfs = require('./antora-adapter.js')(context.file, context.contentCatalog, context.vfs)
+  }
   if (typeof registry.register === 'function') {
     registry.register(function () {
       this.blockMacro(jiraIssuesBlockMacro(context))

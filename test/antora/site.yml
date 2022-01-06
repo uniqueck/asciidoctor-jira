@@ -3,7 +3,7 @@ runtime:
 
 site:
   title: Antora x JIRA
-  url: http://example.com
+  url: https://uniqueck.github.io/asciidoctor-jira
   start_page: antora-jira::index.adoc
 
 content:
@@ -22,6 +22,8 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+  supplemental_files: ./supplemental-ui
+
 
 output:
   dir: ./public
