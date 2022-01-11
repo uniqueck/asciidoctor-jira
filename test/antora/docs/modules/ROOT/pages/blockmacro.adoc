@@ -7,9 +7,19 @@
 
 [source, asciidoc]
 ----
+:jira-table-header-id-label: ID
+:jira-table-header-priority-label: Priority
+:jira-table-header-summary-label: Summary
+:jira-table-header-created-label: Created
+:jira-table-header-assignee-label: Assignee
 jira::DOC[]
 ----
 
+:jira-table-header-id-label: ID
+:jira-table-header-priority-label: Priority
+:jira-table-header-summary-label: Summary
+:jira-table-header-created-label: Created
+:jira-table-header-assignee-label: Assignee
 jira::DOC[]
 
 === Custom JQL
@@ -22,3 +32,12 @@ jira::DOC[{custom-jql}]
 
 .custom
 jira::DOC[{custom-jql}]
+
+=== Custom fields
+
+[source, asciidoc, subs="+attributes"]
+----
+jira::DOC[customFieldIds="status"]
+----
+
+jira::DOC[customFieldIds="status"]
