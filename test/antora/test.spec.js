@@ -122,4 +122,19 @@ describe('Antora integration', () => {
     expect($(tdElement).text()).to.equal('Test123')
 
   })
+  it('define custom fields', async () => {
+    const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
+    const tableElement = $('h3[id="_custom_fields"]').parent().find('table')
+    expect(tableElement).to.not.be.null
+
+    const thElements = $(tableElement).find('thead tr th')
+    expect(thElements).to.not.be.null
+    expect(thElements.length).to.equal(2)
+
+    let thElement = thElements.get(1)
+    expect(thElement).to.not.be.null
+    expect($(thElement).text()).to.equal('status')
+
+
+  })
 })

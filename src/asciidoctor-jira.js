@@ -14,26 +14,35 @@ function jiraIssuesBlockMacro (context) {
     self.process((parent, target, attrs) => {
       const doc = parent.getDocument()
       const jql = attrs.jql || "resolution='Unresolved' ORDER BY priority DESC, key ASC, duedate ASC"
+      const customFields = attrs.customFieldIds || "priority,created,assignee,issuetype,summary"
       const jiraClient = new Jira(doc)
-      const issues = jiraClient.searchIssues(jql)
+      const issues = jiraClient.searchIssues(jql, customFields)
+
+      let headers = createHeaders(doc, customFields)
+      let customFieldsArray = customFields.split(',').filter(item => item != 'issuetype')
 
       const content = []
-      content.push('[options="header",cols="2,1,1,2,6"]')
+      content.push('[options="header"]')
       content.push('|====')
-      content.push('|ID | Priority | Created | Assignee | Summary')
+      content.push('|' + headers.join('|'))
 
       for (let i = 0; i < issues.length; i++) {
         const issue = issues[i]
-        const issueTypeName = issue.fields.issuetype.name
-        const issueTypeIconUrl = issue.fields.issuetype.iconUrl
-        const imageName = `jira-issuetype-${issueTypeName.toLowerCase()}.svg`
-        jiraClient.download(imageName, issueTypeIconUrl, context.vfs)
-        content.push('a|image:' + imageName + '[] jira:' + issue.key + '[]')
-        content.push('|' + issue.fields.priority.name)
-        content.push('|' + issue.fields.created)
-        const assignee = issue.fields.assignee ? issue.fields.assignee.displayName : 'not assigned'
-        content.push('|' + assignee)
-        content.push('|' + issue.fields.summary)
+        let idColumn = "a|"
+        if (issue.fields.issuetype) {
+          const issueTypeName = issue.fields.issuetype.name
+          const issueTypeIconUrl = issue.fields.issuetype.iconUrl
+          const imageName = `jira-issuetype-${issueTypeName.toLowerCase()}.svg`
+          jiraClient.download(imageName, issueTypeIconUrl, context.vfs)
+          idColumn += "image:" + imageName + "[] "
+        }
+        idColumn += 'jira:' + issue.key + '[]'
+        content.push(idColumn)
+
+        for (let j = 0; j < customFieldsArray.length; j++) {
+          let value = issue.fields.get(customFieldsArray[j]).name
+          content.push('|' + value)
+        }
       }
       content.push('|====')
 
@@ -42,6 +51,16 @@ function jiraIssuesBlockMacro (context) {
       return undefined
     })
   }
+}
+
+function createHeaders (doc, customFieldIds) {
+  let headers = []
+  const customFieldsArray = customFieldIds.split(',').filter(item => item != 'issuetype')
+  headers.push(doc.getAttribute('jira-table-header-id-label', 'ID'))
+  for (let i = 0; i < customFieldsArray.length; i++) {
+    headers.push(doc.getAttribute('jira-table-header-' + customFieldsArray[i] + '-label', customFieldsArray[i]))
+  }
+  return headers
 }
 
 function jiraIssueInlineMacro (context) {

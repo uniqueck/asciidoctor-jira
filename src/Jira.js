@@ -52,7 +52,7 @@ class Jira {
     })
   }
 
-  searchIssues (jql) {
+  searchIssues (jql, fields) {
     const data = { jql: jql, fields: 'created,resolutiondate,priority,summary,timeoriginalestimate,assignee,issuetype' }
     let issues
     try {
@@ -70,8 +70,8 @@ class Jira {
     return issues
   }
 
-  searchIssue (issueKey) {
-    const data = { jql: 'issueKey=' + issueKey, fields: 'created,resolutiondate,priority,summary,timeoriginalestimate,assignee,issuetype' }
+  searchIssue (issueKey, fields) {
+    const data = { jql: 'issueKey=' + issueKey, fields: fields }
     let result
     try {
       const jiraBaseUrl = this.doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL
