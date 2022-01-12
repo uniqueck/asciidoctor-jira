@@ -3,7 +3,7 @@
 [![Build status](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/build-js.yml/badge.svg?branch=main)](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/build-js.yml)
 [![npm version](http://img.shields.io/npm/v/asciidoctor-jira.svg)](https://www.npmjs.com/package/asciidoctor-jira)
 
-A set of macros for https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js] to integrate Jira!
+A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to integrate Jira!
 
 ## Install
 
@@ -11,15 +11,13 @@ A set of macros for https://github.com/asciidoctor/asciidoctor.js[Asciidoctor.js
 
 Install the dependencies:
 
-[source, shell]
-----
+```shell
 npm i asciidoctor asciidoctor-kroki
-----
+```
 
 Create a file named jira.js with following content and run it:
 
-[source, javascript]
-----
+```javascript
 const asciidoctor = require('@asciidoctor/core')()
 const jira = require('asciidoctor-jira')
 
@@ -31,8 +29,9 @@ console.log(asciidoctor.convert(input, { safe: 'safe' }))
 const registry = asciidoctor.Extensions.create()
 jira.register(registry) // <2>
 console.log(asciidoctor.convert(input, { safe: 'safe', extension_registry: registry }))
-----
+```
 **<1>** Register the extension in the global registry
+
 **<2>** Register the extension in a dedicated registry
 
 ### Antora Integration
