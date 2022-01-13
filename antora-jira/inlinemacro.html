@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Antora x JIRA :: Antora x JIRA</title>
-    <link rel="canonical" href="https://uniqueck.github.io/asciidoctor-jira/antora-jira/index.html">
+    <link rel="canonical" href="https://uniqueck.github.io/asciidoctor-jira/antora-jira/inlinemacro.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -35,7 +35,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="blockmacro.html">block macro</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="inlinemacro.html">inline macro</a>
   </li>
 </ul>
@@ -65,13 +65,14 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Antora x JIRA</a></li>
+    <li><a href="inlinemacro.html">inline macro</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uniqueck/asciidoctor-jira/edit/main/test/antora/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uniqueck/asciidoctor-jira/edit/main/test/antora/docs/modules/ROOT/pages/inlinemacro.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -80,33 +81,19 @@
 <article class="doc">
 <h1 class="page">Antora x JIRA</h1>
 <div class="sect1">
-<h2 id="_ways_of_using_asciidoctor_jira"><a class="anchor" href="#_ways_of_using_asciidoctor_jira"></a>Ways of using <a href="https://github.com/doctoolchain/asciidoctor-jira">asciidoctor-jira</a></h2>
+<h2 id="_choices_for_the_inline_macro_jira"><a class="anchor" href="#_choices_for_the_inline_macro_jira"></a>Choices for the inline macro <code>jira</code></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>For this example, you must install <code>asciidoctor-jira</code>, so it is accessible to your Antora installation.
-If you have installed Antora globally, you can run:</p>
-</div>
+<div class="sect2">
+<h3 id="_defaults"><a class="anchor" href="#_defaults"></a>Defaults</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>npm run install -g asciidoctor-jira</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:jira-baseurl: https://jira.instance.org
+jira:DOC-1[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>See the <code>package.json</code> for an alternate more self-contained installation method.</p>
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
 </div>
-<div class="paragraph">
-<p>The HTML pages in a browser will look rather repetitive.
-It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="blockmacro.html" class="page">Choices for block macro</a></p>
-</li>
-<li>
-<p><a href="inlinemacro.html" class="page">Choices for inline macro</a></p>
-</li>
-</ul>
 </div>
 </div>
 </div>

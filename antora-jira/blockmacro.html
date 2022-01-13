@@ -26,7 +26,24 @@
 <div class="nav-container" data-component="antora-jira" data-version="master">
   <aside class="nav">
     <div class="panels">
-<div class="nav-panel-explore is-active" data-panel="explore">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Antora x JIRA</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="blockmacro.html">block macro</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="inlinemacro.html">inline macro</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Antora x JIRA</span>
     <span class="version">master</span>
@@ -50,6 +67,10 @@
 <button class="nav-toggle"></button>
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Antora x JIRA</a></li>
+    <li><a href="blockmacro.html">block macro</a></li>
+  </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/uniqueck/asciidoctor-jira/edit/main/test/antora/docs/modules/ROOT/pages/blockmacro.adoc">Edit this Page</a></div>
   </div>
@@ -66,16 +87,21 @@
 <h3 id="_defaults"><a class="anchor" href="#_defaults"></a>Defaults</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">jira::DOC[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:jira-table-header-id-label: ID
+:jira-table-header-priority-label: Priority
+:jira-table-header-summary-label: Summary
+:jira-table-header-created-label: Created
+:jira-table-header-assignee-label: Assignee
+jira::DOC[]</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 8.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
@@ -89,7 +115,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="_images/jira-issuetype-story.svg" alt="jira issuetype story"></span> <a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
+<p><span class="image"><img src="_images/jira-issuetype-story.svg" alt="jira issuetype story"></span><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-08T12:13:19.203+0200</p></td>
@@ -98,34 +124,34 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="_images/jira-issuetype-bug.svg" alt="jira issuetype bug"></span> <a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
+<p><span class="image"><img src="_images/jira-issuetype-bug.svg" alt="jira issuetype bug"></span><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T09:59:31.902+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bug123</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="_images/jira-issuetype-task.svg" alt="jira issuetype task"></span> <a href="https://uniqueck.atlassian.net/browse/DOC-3">DOC-3</a></p>
+<p><span class="image"><img src="_images/jira-issuetype-task.svg" alt="jira issuetype task"></span><a href="https://uniqueck.atlassian.net/browse/DOC-3">DOC-3</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T10:01:35.706+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Task123</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="_images/jira-issuetype-bug.svg" alt="jira issuetype bug"></span> <a href="https://uniqueck.atlassian.net/browse/DOC-4">DOC-4</a></p>
+<p><span class="image"><img src="_images/jira-issuetype-bug.svg" alt="jira issuetype bug"></span><a href="https://uniqueck.atlassian.net/browse/DOC-4">DOC-4</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T10:02:04.629+0200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not assigned</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AnotherBug</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="_images/jira-issuetype-story.svg" alt="jira issuetype story"></span> <a href="https://uniqueck.atlassian.net/browse/DOC-5">DOC-5</a></p>
+<p><span class="image"><img src="_images/jira-issuetype-story.svg" alt="jira issuetype story"></span><a href="https://uniqueck.atlassian.net/browse/DOC-5">DOC-5</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-10-09T13:20:40.690+0200</p></td>
@@ -145,11 +171,11 @@
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. custom</caption>
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 8.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
@@ -163,12 +189,64 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="_images/jira-issuetype-story.svg" alt="jira issuetype story"></span> <a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
+<p><span class="image"><img src="_images/jira-issuetype-story.svg" alt="jira issuetype story"></span><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-08T12:13:19.203+0200</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Constantin Krüger</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Test123</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_custom_fields"><a class="anchor" href="#_custom_fields"></a>Custom fields</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">jira::DOC[customFieldIds="status"]</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In Progress</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To Do</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-3">DOC-3</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To Do</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-4">DOC-4</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To Do</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-5">DOC-5</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To Do</p></td>
 </tr>
 </tbody>
 </table>
