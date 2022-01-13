@@ -52,7 +52,7 @@ function jiraIssuesBlockMacro (context) {
               value = field
             }
           }
-          content.push('|' + value)
+          content.push('|' + value.replace(/\|/g, '\\|'))
         }
       }
       content.push('|====')

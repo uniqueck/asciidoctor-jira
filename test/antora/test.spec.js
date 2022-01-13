@@ -50,7 +50,25 @@ describe('Antora integration', () => {
     // select table rows with content
     const trElements = $(tableElement).find('tbody tr')
     expect(trElements).to.not.be.null
-    expect(trElements.length).to.equal(5)
+    expect(trElements.length).to.equal(6)
+
+    let trElement = trElements.get(5)
+
+    expect(trElement).to.not.be.null
+    let tdElements = $(trElement).find('td')
+    expect(tdElements).to.not.be.null
+    expect(tdElements.length).to.equal(5)
+
+    let tdElement = tdElements.get(0)
+    let imageElement = $(tdElement).find('div div p span img')
+    expect(imageElement).to.not.be.null
+    expect($(imageElement).attr('src')).to.equal('_images/jira-issuetype-epic.svg')
+    expect(existsFile(`${__dirname}/public/antora-jira/_images/jira-issuetype-epic.svg`))
+    expect($($(tdElement).find('div div p a')).attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-6')
+
+    // column summary
+    tdElement = tdElements.get(4)
+    expect($(tdElement).text()).to.equal('Summary containing a | pipe')
 
   })
   it('blockmacro: define a custom jql', async () => {
