@@ -1,0 +1,2 @@
+* xref:blockmacro.adoc[block macro]
+* xref:inlinemacro.adoc[inline macro]

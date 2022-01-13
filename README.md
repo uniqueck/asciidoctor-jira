@@ -54,13 +54,37 @@ asciidoc:
 
 ## Usage
 
+### common
+
+For this extension in general you have to provide the following minimal attributes and/or environment variables.
+
+| Attribute / Env variable      | Description                                                                                 |
+|-------------------------------|---------------------------------------------------------------------------------------------|
+| jira-baseurl / JIRA_BASEURL   | Schema and domain of jira instance to use                                                   |
+| jira-username / JIRA_USERNAME | Usernane to authenticate against given jira instance  (currently only used for block macro) |
+| jira-apitoken / JIRA_APITOKEN | API token to authenticate against given jira instance (currently only used for block macro) |
+
 ### block macro
 
+```adoc
+jira::DOC[]
+```
+
+To control the header of the generated table, you can define Asciidoctor attribute e.g. `:jira-table-header-status-label: Status`.
+If no asciidoctor attribute for a given field is provided, the field name is used as table header.
+To control the default value for an empty field value, you can define an Asciidoctor attribute e.g. `:jira-table-status-default: No Status`, if no attribute is present, the sign `-` is used in general.
+For more examples and configuration settings see [documentation](https://uniqueck.github.io/asciidoctor-jira/antora-jira/blockmacro.html)
+
 ### inline macro
+
+```adoc
+jira:DOC-123[]
+```
 
 ## Configuration
 
 
-| Macro type | Attribute name | Description | Default value |
-| ---------- | -------------- | ----------- | ------------- |
-| block      | `jql`          | Define the query to obtain issues from jira instance. |`resolution='Unresolved' ORDER BY priority DESC, key ASC, duedate ASC` |
+| Macro type | Attribute name   | Description                                           | Default value                                                          |
+|------------|------------------|-------------------------------------------------------|------------------------------------------------------------------------|
+| block      | `jql`            | Define the query to obtain issues from jira instance. | `resolution='Unresolved' ORDER BY priority DESC, key ASC, duedate ASC` |
+| block      | `customFieldIds` | Create only for these custom fields a table           | `priority,created,assignee,issuetype,summary`                          |

@@ -6,8 +6,8 @@ class Jira {
   constructor (doc) {
     this.doc = doc
 
-    const jiraUserName = this.doc.getAttribute('jira-username') || process.env.AJE_USERNAME
-    const jiraApiToken = this.doc.getAttribute('jira-apitoken') || process.env.AJE_APITOKEN || process.env.AJE_PASSWORD
+    const jiraUserName = this.doc.getAttribute('jira-username') || process.env.JIRA_USERNAME
+    const jiraApiToken = this.doc.getAttribute('jira-apitoken') || process.env.JIRA_APITOKEN
     const auth = 'Basic ' + Buffer.from(jiraUserName + ':' + jiraApiToken).toString('base64')
     this.headers = {
       authorization: auth
@@ -53,10 +53,10 @@ class Jira {
   }
 
   searchIssues (jql, fields) {
-    const data = { jql: jql, fields: 'created,resolutiondate,priority,summary,timeoriginalestimate,assignee,issuetype' }
+    const data = { jql: jql, fields: fields }
     let issues
     try {
-      const jiraBaseUrl = this.doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL
+      const jiraBaseUrl = this.doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
       const jiraRestApiSearchEndpoint = jiraBaseUrl + '/rest/api/2/search'
       const res = request('GET', jiraRestApiSearchEndpoint, {
         headers: this.headers,
@@ -74,7 +74,7 @@ class Jira {
     const data = { jql: 'issueKey=' + issueKey, fields: fields }
     let result
     try {
-      const jiraBaseUrl = this.doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL
+      const jiraBaseUrl = this.doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
       const jiraRestApiSearchEndpoint = jiraBaseUrl + '/rest/api/2/search'
       const res = request('GET', jiraRestApiSearchEndpoint, {
         headers: this.headers,
