@@ -6,7 +6,6 @@
 const Jira = require('./Jira.js')
 require('dotenv').config()
 
-
 function jiraIssuesBlockMacro (context) {
   return function () {
     const self = this
@@ -14,13 +13,13 @@ function jiraIssuesBlockMacro (context) {
     self.positionalAttributes(['jql'])
     self.process((parent, target, attrs) => {
       const doc = parent.getDocument()
-      const jql = attrs.jql || "resolution='Unresolved' ORDER BY priority DESC, key ASC, duedate ASC"
-      const customFields = attrs.customFieldIds || "priority,created,assignee,issuetype,summary"
+      const jql = attrs.jql || 'resolution="Unresolved" ORDER BY priority DESC, key ASC, duedate ASC'
+      const customFields = attrs.customFieldIds || 'priority,created,assignee,issuetype,summary'
       const jiraClient = new Jira(doc)
       const issues = jiraClient.searchIssues(jql, customFields)
 
-      let headers = createHeaders(doc, customFields)
-      let customFieldsArray = customFields.split(',').filter(item => item != 'issuetype')
+      const headers = createHeaders(doc, customFields)
+      const customFieldsArray = customFields.split(',').filter(item => item !== 'issuetype')
 
       const content = []
       content.push('[options="header"]')
@@ -29,29 +28,29 @@ function jiraIssuesBlockMacro (context) {
 
       for (let i = 0; i < issues.length; i++) {
         const issue = issues[i]
-        let idColumn = "a|"
+        let idColumn = 'a|'
         if (issue.fields.issuetype) {
           const issueTypeName = issue.fields.issuetype.name
           const issueTypeIconUrl = issue.fields.issuetype.iconUrl
           const imageName = `jira-issuetype-${issueTypeName.toLowerCase()}.svg`
           jiraClient.download(imageName, issueTypeIconUrl, context.vfs)
-          idColumn += "image:" + imageName + "[] "
+          idColumn += `image:${imageName}[]`
         }
         idColumn += `${createLinkToIssue(doc, issue.key)}[${issue.key}]`
         content.push(idColumn)
 
         for (let j = 0; j < customFieldsArray.length; j++) {
           let value
-          if (! issue.fields[customFieldsArray[j]]) {
+          if (!issue.fields[customFieldsArray[j]]) {
             console.warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
             value = '-'
           } else {
-              const field = issue.fields[customFieldsArray[j]]
-              if ((typeof field === 'object') && field != null) {
-                value = field.name || field.displayName || doc.getAttribute(`jira-table-${customFieldsArray[j]}-default`, '-')
-              } else {
-                value = field
-              }
+            const field = issue.fields[customFieldsArray[j]]
+            if ((typeof field === 'object') && field != null) {
+              value = field.name || field.displayName || doc.getAttribute(`jira-table-${customFieldsArray[j]}-default`, '-')
+            } else {
+              value = field
+            }
           }
           content.push('|' + value)
         }
@@ -66,8 +65,8 @@ function jiraIssuesBlockMacro (context) {
 }
 
 function createHeaders (doc, customFieldIds) {
-  let headers = []
-  const customFieldsArray = customFieldIds.split(',').filter(item => item != 'issuetype')
+  const headers = []
+  const customFieldsArray = customFieldIds.split(',').filter(item => item !== 'issuetype')
   headers.push(doc.getAttribute('jira-table-header-id-label', 'ID'))
   for (let i = 0; i < customFieldsArray.length; i++) {
     headers.push(doc.getAttribute('jira-table-header-' + customFieldsArray[i] + '-label', customFieldsArray[i]))
