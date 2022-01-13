@@ -6,6 +6,7 @@
 const Jira = require('./Jira.js')
 require('dotenv').config()
 
+
 function jiraIssuesBlockMacro (context) {
   return function () {
     const self = this
@@ -36,11 +37,22 @@ function jiraIssuesBlockMacro (context) {
           jiraClient.download(imageName, issueTypeIconUrl, context.vfs)
           idColumn += "image:" + imageName + "[] "
         }
-        idColumn += 'jira:' + issue.key + '[]'
+        idColumn += `${createLinkToIssue(doc, issue.key)}[${issue.key}]`
         content.push(idColumn)
 
         for (let j = 0; j < customFieldsArray.length; j++) {
-          let value = issue.fields.get(customFieldsArray[j]).name
+          let value
+          if (! issue.fields[customFieldsArray[j]]) {
+            console.warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
+            value = '-'
+          } else {
+              const field = issue.fields[customFieldsArray[j]]
+              if ((typeof field === 'object') && field != null) {
+                value = field.name || field.displayName || doc.getAttribute(`jira-table-${customFieldsArray[j]}-default`, '-')
+              } else {
+                value = field
+              }
+          }
           content.push('|' + value)
         }
       }
@@ -78,11 +90,15 @@ function jiraIssueInlineMacro (context) {
       if (displayFormat === 'long') {
         title += issue.fields.summary
       }
-      const jiraBaseUrl = doc.getAttribute('jira-host') || process.env.AJE_JIRABASEURL
-      const issueLink = jiraBaseUrl + '/browse/' + issueKey
+      const issueLink = createLinkToIssue(doc, issueKey)
       return self.createInline(parent, 'anchor', title, { type: 'link', target: issueLink }).convert()
     })
   }
+}
+
+function createLinkToIssue (doc, issueKey) {
+  const jiraBaseUrl = doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
+  return `${jiraBaseUrl}/browse/${issueKey}`
 }
 
 module.exports.register = function register (registry, context = {}) {

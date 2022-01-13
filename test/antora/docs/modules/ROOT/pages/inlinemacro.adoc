@@ -1,0 +1,14 @@
+= {page-component-title}
+
+== Choices for the inline macro `jira`
+
+
+=== Defaults
+
+[source, asciidoc]
+----
+:jira-baseurl: https://jira.instance.org
+jira:DOC-1[]
+----
+
+jira:DOC-1[]

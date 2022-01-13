@@ -46,7 +46,10 @@ jobs:
           cat << EOF > .env
           AJE_USERNAME=${{ secrets.AJE_USERNAME }}
           AJE_APITOKEN=${{ secrets.AJE_APITOKEN }}
-          AJE_JIRABASEURL=${{ secrets.AJE_JIRABASEURL }}
+          AJE_BASEURL=${{ secrets.AJE_JIRABASEURL }}
+          JIRA_USERNAME=${{ secrets.AJE_USERNAME }}
+          JIRA_APITOKEN=${{ secrets.AJE_APITOKEN }}
+          JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}
           EOF
 
       - name: create .env
@@ -54,7 +57,10 @@ jobs:
         run: |
           "AJE_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
           "AJE_APITOKEN=${{ secrets.AJE_APITOKEN }}"  | ac .env
-          "AJE_JIRABASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
+          "AJE_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
+          "JIRA_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
+          "JIRA_APITOKEN=${{ secrets.AJE_APITOKEN }}"  | ac .env
+          "JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
 
       - name: test
         run: npm test

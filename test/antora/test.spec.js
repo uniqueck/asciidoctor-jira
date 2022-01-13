@@ -14,7 +14,7 @@ describe('Antora integration', () => {
     rimrafSync(`${__dirname}/public`, function (error) {})
     await generateSite([`--playbook=${__dirname}/site.yml`])
   })
-  it('default jql', async () => {
+  it('blockmacro: default jql', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
     const tableElement = $('h3[id="_defaults"]').parent().find('table')
     expect(tableElement).to.not.be.null
@@ -53,7 +53,7 @@ describe('Antora integration', () => {
     expect(trElements.length).to.equal(5)
 
   })
-  it('define a custom jql', async () => {
+  it('blockmacro: define a custom jql', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
     const tableElement = $('h3[id="_custom_jql"]').parent().find('table')
     expect(tableElement).to.not.be.null
@@ -122,7 +122,7 @@ describe('Antora integration', () => {
     expect($(tdElement).text()).to.equal('Test123')
 
   })
-  it('define custom fields', async () => {
+  it('blockmacro: define custom fields', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
     const tableElement = $('h3[id="_custom_fields"]').parent().find('table')
     expect(tableElement).to.not.be.null
@@ -135,6 +135,14 @@ describe('Antora integration', () => {
     expect(thElement).to.not.be.null
     expect($(thElement).text()).to.equal('status')
 
-
   })
+  it('inlinemacro: standard', async () => {
+      const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/inlinemacro.html`))
+      const anchorElement = $('h3[id="_defaults"]').parent().find('p a')
+      expect(anchorElement).to.not.be.null
+      expect($(anchorElement).attr('href')).to.not.be.null
+      expect($(anchorElement).attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-1')
+      expect($(anchorElement).text()).to.equal('DOC-1')
+  })
+
 })

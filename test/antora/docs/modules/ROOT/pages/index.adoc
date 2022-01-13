@@ -1,4 +1,4 @@
-:jira-host: uniqueck.atlassian.net
+:jira-baseurl: https://uniqueck.atlassian.net
 = {page-component-title}
 
 == Ways of using link:https://github.com/doctoolchain/asciidoctor-jira[asciidoctor-jira]
@@ -17,4 +17,5 @@ The HTML pages in a browser will look rather repetitive.
 It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.
 
 * xref::blockmacro.adoc[Choices for block macro]
+* xref::inlinemacro.adoc[Choices for inline macro]
 
