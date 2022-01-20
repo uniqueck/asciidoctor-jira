@@ -40,7 +40,8 @@
     "test:antora": "mocha test/antora/**.spec.js",
     "lint": "standard src/**.js",
     "lint-fix": "npm run lint -- --fix",
-    "clean": "shx rm -rf dist/*"
+    "clean": "shx rm -rf dist/*",
+    "version": "echo $npm_package_version"
   },
   "engines": {
     "node": ">=10"
