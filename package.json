@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@antora/site-generator-default": "^2.3.3",
-    "@asciidoctor/core": "^2.2.0",
+    "@asciidoctor/core": "^2.2.6",
     "chai": "^4.3.4",
     "cheerio": "0.22.0",
     "jest": "27.2",
@@ -33,7 +33,7 @@
     "standard": "^16.0.2"
   },
   "peerDependencies": {
-    "@asciidoctor/core": "^2.2.0"
+    "@asciidoctor/core": "^2.2.6"
   },
   "scripts": {
     "test": "npm run test:antora",
