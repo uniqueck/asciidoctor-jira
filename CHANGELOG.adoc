@@ -13,6 +13,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 === icon:archive[] Dependency updates
 
 * Bump https://github.com/shelljs/shx[shx] from 0.3.3 to 0.3.4 (https://github.com/uniqueck/asciidoctor-jira/pull/6[#6]) @dependabot
+* Bump https://github.com/asciidoctor/asciidoctor.js[asciidoctor.js] from 2.2.5 to 2.2.6 (https://github.com/uniqueck/asciidoctor-jira/pull/16[#16]) @dependabot
 
 === icon:rocket[] Added
 
