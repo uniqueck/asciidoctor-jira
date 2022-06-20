@@ -22,7 +22,7 @@
     "sync-request": "^6.1.0"
   },
   "devDependencies": {
-    "@antora/site-generator-default": "^2.3.3",
+    "@antora/site-generator-default": "^3.0.1",
     "@asciidoctor/core": "^2.2.6",
     "chai": "^4.3.4",
     "cheerio": "0.22.0",
