@@ -52,15 +52,15 @@ describe('Antora integration', () => {
     expect(trElements).to.not.be.null
     expect(trElements.length).to.equal(6)
 
-    let trElement = trElements.get(5)
+    const trElement = trElements.get(5)
 
     expect(trElement).to.not.be.null
-    let tdElements = $(trElement).find('td')
+    const tdElements = $(trElement).find('td')
     expect(tdElements).to.not.be.null
     expect(tdElements.length).to.equal(5)
 
     let tdElement = tdElements.get(0)
-    let imageElement = $(tdElement).find('div div p span img')
+    const imageElement = $(tdElement).find('div div p span img')
     expect(imageElement).to.not.be.null
     expect($(imageElement).attr('src')).to.equal('_images/jira-issuetype-epic.svg')
     expect(existsFile(`${__dirname}/public/antora-jira/_images/jira-issuetype-epic.svg`))
@@ -69,7 +69,6 @@ describe('Antora integration', () => {
     // column summary
     tdElement = tdElements.get(4)
     expect($(tdElement).text()).to.equal('Summary containing a | pipe')
-
   })
   it('blockmacro: define a custom jql', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
@@ -109,15 +108,15 @@ describe('Antora integration', () => {
     expect(trElements).to.not.be.null
     expect(trElements.length).to.equal(1)
 
-    let trElement = trElements.get(0)
+    const trElement = trElements.get(0)
     expect(trElement).to.not.be.null
-    let tdElements = $(trElement).find('td')
+    const tdElements = $(trElement).find('td')
     expect(tdElements).to.not.be.null
     expect(tdElements.length).to.equal(5)
 
     // column id
     let tdElement = tdElements.get(0)
-    let imageElement = $(tdElement).find('div div p span img')
+    const imageElement = $(tdElement).find('div div p span img')
     expect(imageElement).to.not.be.null
     expect($(imageElement).attr('src')).to.equal('_images/jira-issuetype-story.svg')
     expect(existsFile(`${__dirname}/public/antora-jira/_images/jira-issuetype-story.svg`))
@@ -138,7 +137,6 @@ describe('Antora integration', () => {
     // column summary
     tdElement = tdElements.get(4)
     expect($(tdElement).text()).to.equal('Test123')
-
   })
   it('blockmacro: define custom fields', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
@@ -149,18 +147,29 @@ describe('Antora integration', () => {
     expect(thElements).to.not.be.null
     expect(thElements.length).to.equal(2)
 
-    let thElement = thElements.get(1)
+    const thElement = thElements.get(1)
     expect(thElement).to.not.be.null
     expect($(thElement).text()).to.equal('status')
+  })
+  it('blockmacro: define nested custom fields', async () => {
+    const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
+    const tableElement = $('h3[id="_nested_custom_fields"]').parent().find('table')
+    expect(tableElement).to.not.be.null
 
+    const thElements = $(tableElement).find('thead tr th')
+    expect(thElements).to.not.be.null
+    expect(thElements.length).to.equal(2)
+
+    const thElement = thElements.get(1)
+    expect(thElement).to.not.be.null
+    expect($(thElement).text()).to.equal('Reporter')
   })
   it('inlinemacro: standard', async () => {
-      const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/inlinemacro.html`))
-      const anchorElement = $('h3[id="_defaults"]').parent().find('p a')
-      expect(anchorElement).to.not.be.null
-      expect($(anchorElement).attr('href')).to.not.be.null
-      expect($(anchorElement).attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-1')
-      expect($(anchorElement).text()).to.equal('DOC-1')
+    const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/inlinemacro.html`))
+    const anchorElement = $('h3[id="_defaults"]').parent().find('p a')
+    expect(anchorElement).to.not.be.null
+    expect($(anchorElement).attr('href')).to.not.be.null
+    expect($(anchorElement).attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-1')
+    expect($(anchorElement).text()).to.equal('DOC-1')
   })
-
 })

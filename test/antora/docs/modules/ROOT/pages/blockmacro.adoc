@@ -41,3 +41,16 @@ jira::DOC[customFieldIds="status"]
 ----
 
 jira::DOC[customFieldIds="status"]
+
+=== Nested custom fields
+
+.Nested custom field ids
+[source, asciidoc, subs="+attributes"]
+----
+:jira-table-header-reporter-displayName-label: Reporter
+jira::DOC[customFieldIds="reporter.displayName"]
+----
+
+:jira-table-header-reporter-displayname-label: Reporter
+
+jira::DOC[customFieldIds="reporter.displayName"]
