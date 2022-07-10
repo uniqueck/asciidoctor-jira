@@ -15,6 +15,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Bump https://github.com/shelljs/shx[shx] from 0.3.3 to 0.3.4 (https://github.com/uniqueck/asciidoctor-jira/pull/6[#6]) @dependabot
 * Bump https://github.com/asciidoctor/asciidoctor.js[asciidoctor.js] from 2.2.5 to 2.2.6 (https://github.com/uniqueck/asciidoctor-jira/pull/16[#16]) @dependabot
 * Bump https://github.com/motdotla/dotenv[dotenv] from 10.0.0 to 16.0.1 (https://github.com/uniqueck/asciidoctor-jira/pull/35[#35]) @dependabot
+* Bump https://github.com/chaijs/chai[chai] from 4.3.4 to 4.3.6 (https://github.com/uniqueck/asciidoctor-jira/pull/21[#21]) @dependabot
 
 === icon:rocket[] Added
 
