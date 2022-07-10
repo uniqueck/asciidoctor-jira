@@ -18,3 +18,4 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 === icon:rocket[] Added
 
 * Introduce a changelog (https://github.com/uniqueck/asciidoctor-jira/issues/37[#37])
+* Allow to use nested custom field ids (https://github.com/uniqueck/asciidoctor-jira/issues/41[#41])

@@ -5,6 +5,7 @@
 // @ts-check
 const Jira = require('./Jira.js')
 require('dotenv').config()
+const _ = require('lodash')
 
 function jiraIssuesBlockMacro (context) {
   return function () {
@@ -15,8 +16,9 @@ function jiraIssuesBlockMacro (context) {
       const doc = parent.getDocument()
       const jql = attrs.jql || 'resolution="Unresolved" ORDER BY priority DESC, key ASC, duedate ASC'
       const customFields = attrs.customFieldIds || 'priority,created,assignee,issuetype,summary'
+      const customFieldIds = customFields.split(',').map(customField => customField.split('.')[0])
       const jiraClient = new Jira(doc)
-      const issues = jiraClient.searchIssues(jql, customFields)
+      const issues = jiraClient.searchIssues(jql, customFieldIds)
 
       const headers = createHeaders(doc, customFields)
       const customFieldsArray = customFields.split(',').filter(item => item !== 'issuetype')
@@ -41,15 +43,15 @@ function jiraIssuesBlockMacro (context) {
 
         for (let j = 0; j < customFieldsArray.length; j++) {
           let value
-          if (!issue.fields[customFieldsArray[j]]) {
+          if (!_.has(issue.fields, customFieldsArray[j])) {
             console.warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
             value = '-'
           } else {
-            const field = issue.fields[customFieldsArray[j]]
-            if ((typeof field === 'object') && field != null) {
-              value = field.name || field.displayName || doc.getAttribute(`jira-table-${customFieldsArray[j]}-default`, '-')
+            value = _.get(issue.fields, customFieldsArray[j])
+            if ((typeof value === 'object') && value != null) {
+              value = value.name || value.displayName || doc.getAttribute(`jira-table-${customFieldsArray[j].replace(/\./g, '-')}-default`, '-')
             } else {
-              value = field
+              value = value || doc.getAttribute(`jira-table-${customFieldsArray[j].replace(/\./g, '-')}-default`, '-')
             }
           }
           content.push('|' + value.replace(/\|/g, '\\|'))
@@ -69,7 +71,9 @@ function createHeaders (doc, customFieldIds) {
   const customFieldsArray = customFieldIds.split(',').filter(item => item !== 'issuetype')
   headers.push(doc.getAttribute('jira-table-header-id-label', 'ID'))
   for (let i = 0; i < customFieldsArray.length; i++) {
-    headers.push(doc.getAttribute('jira-table-header-' + customFieldsArray[i] + '-label', customFieldsArray[i]))
+    let field = customFieldsArray[i]
+    field = `jira-table-header-${field.replace(/\./g, '-').toLowerCase()}-label`
+    headers.push(doc.getAttribute(field, customFieldsArray[i]))
   }
   return headers
 }
