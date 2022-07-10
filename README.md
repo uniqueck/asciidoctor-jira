@@ -36,7 +36,7 @@ console.log(asciidoctor.convert(input, { safe: 'safe', extension_registry: regis
 
 ### Antora Integration
 
-If you are using https://antora.org/[Antora], you can integrate Jira in your documentation site.
+If you are using [Antora](https://antora.org/), you can integrate Jira in your documentation site.
 
 Install the extension in your playbook project:
 
