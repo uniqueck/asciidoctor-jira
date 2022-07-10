@@ -17,6 +17,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Bump https://github.com/motdotla/dotenv[dotenv] from 10.0.0 to 16.0.1 (https://github.com/uniqueck/asciidoctor-jira/pull/35[#35]) @dependabot
 * Bump https://github.com/chaijs/chai[chai] from 4.3.4 to 4.3.6 (https://github.com/uniqueck/asciidoctor-jira/pull/21[#21]) @dependabot
 * Bump https://github.com/standard/standard[standard] from 16.0.4 to 17.0.0 (https://github.com/uniqueck/asciidoctor-jira/pull/28[#28]) @dependabot
+* Bump https://github.com/facebook/jest/tree/HEAD/packages/jest[jest] from 27.2.5 to 28.1.2 (https://github.com/uniqueck/asciidoctor-jira/pull/39[#39]) @dependabot
 
 === icon:rocket[] Added
 
