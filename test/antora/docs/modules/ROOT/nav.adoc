@@ -1,2 +1,3 @@
 * xref:blockmacro.adoc[block macro]
+** xref:blockmacro/issue_47.adoc[Issue #47]
 * xref:inlinemacro.adoc[inline macro]

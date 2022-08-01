@@ -1,0 +1,12 @@
+= {page-component-title}
+
+== Issue https://github.com/uniqueck/asciidoctor-jira/issues/47[#47]
+
+
+[source, asciidoc, subs="+attributes"]
+----
+:jira-table-header-customfield_10016-label: Storypoints
+jira::DOC[customFieldIds="customfield_10016"]
+----
+:jira-table-header-customfield_10016-label: Storypoints
+jira::DOC[customFieldIds="customfield_10016"]
