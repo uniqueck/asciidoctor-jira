@@ -54,7 +54,11 @@ function jiraIssuesBlockMacro (context) {
               value = value || doc.getAttribute(`jira-table-${customFieldsArray[j].replace(/\./g, '-')}-default`, '-')
             }
           }
-          content.push('|' + value.replace(/\|/g, '\\|'))
+          if (typeof value === 'number') {
+            content.push('|' + value)
+          } else {
+            content.push('|' + value.replace(/\|/g, '\\|'))
+          }
         }
       }
       content.push('|====')
