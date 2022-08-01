@@ -150,6 +150,26 @@ describe('Antora integration', () => {
     const thElement = thElements.get(1)
     expect(thElement).to.not.be.null
     expect($(thElement).text()).to.equal('status')
+
+    // table data
+
+    // select table rows with content
+    const trElements = $(tableElement).find('tbody tr')
+    expect(trElements).to.not.be.null
+    expect(trElements.length).to.equal(6)
+
+    const trElement = trElements.get(0)
+    expect(trElement).to.not.be.null
+    const tdElements = $(trElement).find('td')
+    expect(tdElements).to.not.be.null
+    expect(tdElements.length).to.equal(2)
+
+    // column id
+    let tdElement = tdElements.get(0)
+    expect($(tdElement).find('div > div > p')).to.not.be.null
+    expect($(tdElement).find('div > div > p').children.length).to.equal(1)
+    expect($(tdElement).find('div > div > p > a')).to.not.be.null
+    expect($(tdElement).find('div > div > p > a').attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-1')
   })
   it('blockmacro: define nested custom fields', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))

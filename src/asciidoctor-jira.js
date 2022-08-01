@@ -31,7 +31,7 @@ function jiraIssuesBlockMacro (context) {
       for (let i = 0; i < issues.length; i++) {
         const issue = issues[i]
         let idColumn = 'a|'
-        if (issue.fields.issuetype) {
+        if (issue.fields.issuetype && customFieldIds.includes("issuetype")) {
           const issueTypeName = issue.fields.issuetype.name
           const issueTypeIconUrl = issue.fields.issuetype.iconUrl
           const imageName = `jira-issuetype-${issueTypeName.toLowerCase()}.svg`
