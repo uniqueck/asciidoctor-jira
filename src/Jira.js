@@ -47,13 +47,13 @@ class Jira {
     add({
       relative: dirPath,
       basename: imageName,
-      mediaType: mediaType,
+      mediaType,
       contents: Buffer.from(contents, encoding)
     })
   }
 
   searchIssues (jql, fields) {
-    const data = { jql: jql, fields: fields }
+    const data = { jql, fields }
     let issues
     try {
       const jiraBaseUrl = this.doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
@@ -71,7 +71,7 @@ class Jira {
   }
 
   searchIssue (issueKey, fields) {
-    const data = { jql: 'issueKey=' + issueKey, fields: fields }
+    const data = { jql: 'issueKey=' + issueKey, fields }
     let result
     try {
       const jiraBaseUrl = this.doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
