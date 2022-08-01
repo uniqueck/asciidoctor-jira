@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://uniqueck.github.io/asciidoctor-jira/antora-jira/blockmacro.html</loc>
-<lastmod>2022-08-01T20:47:27.782Z</lastmod>
+<lastmod>2022-08-01T21:44:40.061Z</lastmod>
+</url>
+<url>
+<loc>https://uniqueck.github.io/asciidoctor-jira/antora-jira/blockmacro/issue_47.html</loc>
+<lastmod>2022-08-01T21:44:40.061Z</lastmod>
 </url>
 <url>
 <loc>https://uniqueck.github.io/asciidoctor-jira/antora-jira/index.html</loc>
-<lastmod>2022-08-01T20:47:27.782Z</lastmod>
+<lastmod>2022-08-01T21:44:40.061Z</lastmod>
 </url>
 <url>
 <loc>https://uniqueck.github.io/asciidoctor-jira/antora-jira/inlinemacro.html</loc>
-<lastmod>2022-08-01T20:47:27.782Z</lastmod>
+<lastmod>2022-08-01T21:44:40.061Z</lastmod>
 </url>
 </urlset>
