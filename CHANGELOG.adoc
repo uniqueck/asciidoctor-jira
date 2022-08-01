@@ -10,13 +10,19 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 
 == Unreleased
 
+== 0.2.2 - 2022-08-01
+
+=== icon:bug[] Fixes
+
+* Handle value of custom field of type number correct https://github.com/uniqueck/asciidoctor-jira/issues/46[(#47)]
+
 == 0.2.1 - 2022-08-01
 
 === icon:bug[] Fixes
 
 * Only show issue type icon, if `issuetye` as `customFieldId` defined https://github.com/uniqueck/asciidoctor-jira/issues/46[(#46)]
 
-== 0.2.0 - 2022
+== 0.2.0 - 2022-07-20
 
 === icon:archive[] Dependency updates
 
