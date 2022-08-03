@@ -8,13 +8,22 @@ For an even more detailed look at what has changed, refer to the {uri-repo}/comm
 The format is based on https://keepachangelog.com/en/1.0.0/[Keep a Changelog],
 and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Versioning].
 
-== Unreleased
+== 1.0.0 - 2022-08-31
+
+=== icon:rocket[] Added
+
+* Visualize a closed issue as strikethrough https://github.com/uniqueck/asciidoctor-jira/issues/50[(#50)]
+
+=== icon:archive[] Dependency updates
+
+* Bump https://gitlab.com/antora/antora[@antora/site-generator-default] from 2.3.4 to 3.0.3 (https://github.com/uniqueck/asciidoctor-jira/pull/44[#44]) @dependabot
+
 
 == 0.2.2 - 2022-08-01
 
 === icon:bug[] Fixes
 
-* Handle value of custom field of type number correct https://github.com/uniqueck/asciidoctor-jira/issues/46[(#47)]
+* Handle value of custom field of type number correct https://github.com/uniqueck/asciidoctor-jira/issues/47[(#47)]
 
 == 0.2.1 - 2022-08-01
 

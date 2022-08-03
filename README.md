@@ -1,9 +1,9 @@
-# Asciidoctor Jira Extension
+# Asciidoctor JiraClient Extension
 
 [![Build status](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/build-js.yml/badge.svg?branch=main)](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/build-js.yml)
 [![npm version](http://img.shields.io/npm/v/asciidoctor-jira.svg)](https://www.npmjs.com/package/asciidoctor-jira)
 
-A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to integrate Jira!
+A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to integrate JiraClient!
 
 ## Install
 
@@ -36,7 +36,7 @@ console.log(asciidoctor.convert(input, { safe: 'safe', extension_registry: regis
 
 ### Antora Integration
 
-If you are using [Antora](https://antora.org/), you can integrate Jira in your documentation site.
+If you are using [Antora](https://antora.org/), you can integrate JiraClient in your documentation site.
 
 Install the extension in your playbook project:
 
