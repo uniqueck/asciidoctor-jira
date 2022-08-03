@@ -1,16 +1,17 @@
-
 const request = require('sync-request')
 const path = require('path')
 
-class Jira {
+class JiraClient {
   constructor (doc) {
     this.doc = doc
-
+    this.jiraBaseUrl = doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
     const jiraUserName = this.doc.getAttribute('jira-username') || process.env.JIRA_USERNAME
     const jiraApiToken = this.doc.getAttribute('jira-apitoken') || process.env.JIRA_APITOKEN
-    const auth = 'Basic ' + Buffer.from(jiraUserName + ':' + jiraApiToken).toString('base64')
-    this.headers = {
-      authorization: auth
+    if (jiraUserName !== undefined && jiraApiToken !== undefined) {
+      const auth = 'Basic ' + Buffer.from(jiraUserName + ':' + jiraApiToken).toString('base64')
+      this.headers = { authorization: auth }
+    } else {
+      this.headers = {}
     }
   }
 
@@ -56,37 +57,42 @@ class Jira {
     const data = { jql, fields }
     let issues
     try {
-      const jiraBaseUrl = this.doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
-      const jiraRestApiSearchEndpoint = jiraBaseUrl + '/rest/api/2/search'
-      const res = request('GET', jiraRestApiSearchEndpoint, {
+      const res = request('GET', `${this.jiraBaseUrl}/rest/api/2/search`, {
         headers: this.headers,
         qs: data
       })
       issues = JSON.parse(res.getBody('utf-8')).issues
     } catch (err) {
-      console.log(err)
+      this.logError(err)
       issues = null
     }
     return issues
   }
 
   searchIssue (issueKey, fields) {
-    const data = { jql: 'issueKey=' + issueKey, fields }
-    let result
+    const data = { jql: `issueKey=${issueKey}`, fields }
+    let result = {}
     try {
-      const jiraBaseUrl = this.doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
-      const jiraRestApiSearchEndpoint = jiraBaseUrl + '/rest/api/2/search'
-      const res = request('GET', jiraRestApiSearchEndpoint, {
+      const res = request('GET', `${this.jiraBaseUrl}/rest/api/2/search`, {
         headers: this.headers,
         qs: data
       })
       result = JSON.parse(res.getBody('utf-8')).issues[0]
     } catch (err) {
-      console.log(err)
-      result = null
+      this.logError(err)
     }
     return result
   }
+
+  createLinkToIssue (issue) {
+    return `${this.jiraBaseUrl}/browse/${issue}`
+  }
+
+  logError (err) {
+    // noinspection JSUnresolvedVariable
+    const errorMessages = JSON.parse(err.body).errorMessages.join(',')
+    this.doc.getLogger().error(`Request for '${err.url}' response with status code '${err.statusCode}' and detail message '${errorMessages}'`)
+  }
 }
 
-module.exports = Jira
+module.exports = JiraClient

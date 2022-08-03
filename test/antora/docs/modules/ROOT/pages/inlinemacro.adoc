@@ -12,3 +12,7 @@ jira:DOC-1[]
 ----
 
 jira:DOC-1[]
+
+=== Closed issue
+
+jira:DOC-7[]

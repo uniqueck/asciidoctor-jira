@@ -3,8 +3,8 @@
 */
 
 // @ts-check
-const Jira = require('./Jira.js')
 require('dotenv').config()
+const Jira = require('./jira-client.js')
 const _ = require('lodash')
 
 function jiraIssuesBlockMacro (context) {
@@ -85,20 +85,31 @@ function createHeaders (doc, customFieldIds) {
 function jiraIssueInlineMacro (context) {
   return function () {
     const self = this
-    self.named('jira')
-    self.positionalAttributes(['format'])
     self.process((parent, target, attrs) => {
       const doc = parent.getDocument()
-      const displayFormat = attrs.format || doc.getAttribute('jira-inline-format') || 'short'
       const issueKey = target
-      const jiraClient = new Jira(doc)
-      const issue = jiraClient.searchIssue(issueKey)
-      let title = issueKey
-      if (displayFormat === 'long') {
-        title += issue.fields.summary
+
+      const jiraBaseUrl = getJiraBaseUrl(doc)
+
+      if (jiraBaseUrl !== undefined) {
+        const jiraClient = new Jira(doc)
+
+        const issue = jiraClient.searchIssue(issueKey, 'status')
+        const issueStatus = issue.fields?.status.name
+
+        const content = []
+        const issueLink = jiraClient.createLinkToIssue(issueKey)
+        if (issueStatus === 'Done') {
+          content.push('[.line-through]', '#')
+        }
+        content.push(`${issueLink}[${issueKey}]`)
+        if (issueStatus === 'Done') {
+          content.push('#')
+        }
+        return this.createInline(parent, 'quoted', content.join(''), { attributes: { subs: 'quotes' } })
+      } else {
+        doc.getLogger().error('Attribute \'jira-baseurl\' isn\'t defined')
       }
-      const issueLink = createLinkToIssue(doc, issueKey)
-      return self.createInline(parent, 'anchor', title, { type: 'link', target: issueLink }).convert()
     })
   }
 }
@@ -106,6 +117,10 @@ function jiraIssueInlineMacro (context) {
 function createLinkToIssue (doc, issueKey) {
   const jiraBaseUrl = doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
   return `${jiraBaseUrl}/browse/${issueKey}`
+}
+
+function getJiraBaseUrl (doc) {
+  return doc.getAttribute('jira-baseurl') || process.env.JIRA_BASEURL
 }
 
 module.exports.register = function register (registry, context = {}) {
@@ -116,11 +131,11 @@ module.exports.register = function register (registry, context = {}) {
   if (typeof registry.register === 'function') {
     registry.register(function () {
       this.blockMacro(jiraIssuesBlockMacro(context))
-      this.inlineMacro(jiraIssueInlineMacro(context))
+      this.inlineMacro('jira', jiraIssueInlineMacro(context))
     })
-  } else if (typeof registry.block === 'function') {
+  } else if (typeof registry.block === 'function' || typeof registry.inline === 'function') {
     registry.blockMacro(jiraIssuesBlockMacro(context))
-    registry.inlineMacro(jiraIssueInlineMacro(context))
+    registry.inlineMacro('jira', jiraIssueInlineMacro(context))
   }
   return registry
 }
