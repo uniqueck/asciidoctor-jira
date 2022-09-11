@@ -13,6 +13,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 === icon:rocket[] Added
 
 * Visualize a closed issue as strikethrough https://github.com/uniqueck/asciidoctor-jira/issues/50[(#50)]
+* Use Asciidoctor Logger instead of logging to console https://github.com/uniqueck/asciidoctor-jira/issues/51[(#51)]
 
 === icon:archive[] Dependency updates
 

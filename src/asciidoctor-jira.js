@@ -44,7 +44,7 @@ function jiraIssuesBlockMacro (context) {
         for (let j = 0; j < customFieldsArray.length; j++) {
           let value
           if (!_.has(issue.fields, customFieldsArray[j])) {
-            console.warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
+            doc.getLogger().warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
             value = '-'
           } else {
             value = _.get(issue.fields, customFieldsArray[j])
