@@ -18,7 +18,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 === icon:archive[] Dependency updates
 
 * Bump https://gitlab.com/antora/antora[@antora/site-generator-default] from 2.3.4 to 3.0.3 (https://github.com/uniqueck/asciidoctor-jira/pull/44[#44]) @dependabot
-
+* Bump https://github.com/facebook/jest/tree/HEAD/packages/jest[@jest] from 28.1.2 to 29.1.2 (https://github.com/uniqueck/asciidoctor-jira/pull/64[#64]) @dependabot
 
 == 0.2.2 - 2022-08-01
 
