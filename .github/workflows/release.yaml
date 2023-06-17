@@ -1,0 +1,32 @@
+# This workflow release a new semantic version of npm package
+# For more information see: https://github.com/semantic-release/semantic-release/blob/2b94bb4e0967c705ab92deace342f9fecb02909d/docs/recipes/ci-configurations/github-actions.md
+
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Install Dependencies 🚧
+        run: npm ci
+      - name: Build Package 🛠
+        run: npm pack
+      - name: Release 🚀
+        run: npm run release --debug
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
