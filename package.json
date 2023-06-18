@@ -31,7 +31,7 @@
     "conventional-changelog-eslint": "^4.0.0",
     "jest": "28.1",
     "mocha": "^10.2.0",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.1",
     "semantic-release": "^21.0.5",
     "shx": "^0.3.4",
     "standard": "^17.0.0"
