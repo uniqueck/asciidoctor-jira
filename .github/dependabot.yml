@@ -6,6 +6,9 @@ updates:
       interval: daily
       time: "04:00"
     open-pull-requests-limit: 10
+    commit-message:
+      prefix: Upgrade
+      prefix-development: Build
     ignore:
       - dependency-name: mocha
         versions:
@@ -13,3 +16,4 @@ updates:
       - dependency-name: chai
         versions:
           - 4.3.1
+
