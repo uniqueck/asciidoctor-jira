@@ -1,6 +1,6 @@
 # Asciidoctor Jira Extension
 
-[![Build status](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/build-js.yml/badge.svg?branch=main)](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/build-js.yml)
+[![Build status](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/ci.yaml)
 [![npm version](http://img.shields.io/npm/v/asciidoctor-jira.svg)](https://www.npmjs.com/package/asciidoctor-jira)
 
 A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to integrate Jira!
@@ -12,7 +12,7 @@ A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.
 Install the dependencies:
 
 ```shell
-npm i asciidoctor asciidoctor-kroki
+npm i asciidoctor asciidoctor-jira
 ```
 
 Create a file named jira.js with following content and run it:
