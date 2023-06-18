@@ -34,7 +34,7 @@
     "rimraf": "^5.0.1",
     "semantic-release": "^21.0.5",
     "shx": "^0.3.4",
-    "standard": "^17.0.0"
+    "standard": "^17.1.0"
   },
   "peerDependencies": {
     "@asciidoctor/core": "^2.2.6"
