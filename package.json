@@ -30,7 +30,7 @@
     "cheerio": "0.22.0",
     "conventional-changelog-eslint": "^4.0.0",
     "jest": "28.1",
-    "mocha": "^9.1.3",
+    "mocha": "^10.2.0",
     "rimraf": "^3.0.2",
     "semantic-release": "^21.0.5",
     "shx": "^0.3.4",
