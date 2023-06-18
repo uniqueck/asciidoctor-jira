@@ -12,8 +12,7 @@
   "keywords": [
     "asciidoctor",
     "jira",
-    "javascript",
-    "extension"
+    "antora"
   ],
   "main": "src/asciidoctor-jira.js",
   "dependencies": {
