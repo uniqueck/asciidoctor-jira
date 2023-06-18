@@ -19,6 +19,7 @@ function jiraIssuesBlockMacro (context) {
       const customFieldIds = customFields.split(',').map(customField => customField.split('.')[0])
       const jiraClient = new Jira(doc)
       const issues = jiraClient.searchIssues(jql, customFieldIds)
+      const logger = context.logger
 
       const headers = createHeaders(doc, customFields)
       const customFieldsArray = customFields.split(',').filter(item => item !== 'issuetype')
@@ -44,7 +45,7 @@ function jiraIssuesBlockMacro (context) {
         for (let j = 0; j < customFieldsArray.length; j++) {
           let value
           if (!_.has(issue.fields, customFieldsArray[j])) {
-            console.warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
+            logger.warn(`Examining issue '${JSON.stringify(issue, null, 2)}' for custom field '${customFieldsArray[j]}', but was not found.`)
             value = '-'
           } else {
             value = _.get(issue.fields, customFieldsArray[j])
@@ -113,6 +114,7 @@ module.exports.register = function register (registry, context = {}) {
   if (typeof context.contentCatalog !== 'undefined' && typeof context.contentCatalog.addFile === 'function' && typeof context.file !== 'undefined') {
     context.vfs = require('./antora-adapter.js')(context.file, context.contentCatalog, context.vfs)
   }
+  context.logger = Opal.Asciidoctor.LoggerManager.getLogger()
   if (typeof registry.register === 'function') {
     registry.register(function () {
       this.blockMacro(jiraIssuesBlockMacro(context))

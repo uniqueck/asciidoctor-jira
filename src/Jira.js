@@ -64,7 +64,7 @@ class Jira {
       })
       issues = JSON.parse(res.getBody('utf-8')).issues
     } catch (err) {
-      console.log(err)
+      this.doc.getLogger().error(`Unexpected error occurs on requesting jira instance for issues. ${JSON.stringify(err)}`)
       issues = null
     }
     return issues
@@ -82,7 +82,7 @@ class Jira {
       })
       result = JSON.parse(res.getBody('utf-8')).issues[0]
     } catch (err) {
-      console.log(err)
+      this.doc.getLogger().error(`Unexpected error occurs on requesting jira instance for issue ${issueKey}. ${JSON.stringify(err)}`)
       result = null
     }
     return result
