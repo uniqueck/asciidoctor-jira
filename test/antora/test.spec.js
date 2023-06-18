@@ -1,5 +1,5 @@
 
-const rimrafSync = require('rimraf')
+const { rimrafSync } = require('rimraf')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const existsFile = fs.existsSync
@@ -11,7 +11,7 @@ const generateSite = require('@antora/site-generator-default')
 describe('Antora integration', () => {
   before(async function () {
     this.timeout(50000)
-    rimrafSync(`${__dirname}/public`, function (error) {})
+    rimrafSync(`${__dirname}/public`, {})
     await generateSite([`--playbook=${__dirname}/antora-playbook.yml`])
   })
   it('blockmacro: default jql', async () => {
