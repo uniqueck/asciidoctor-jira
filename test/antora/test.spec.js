@@ -12,7 +12,7 @@ describe('Antora integration', () => {
   before(async function () {
     this.timeout(50000)
     rimrafSync(`${__dirname}/public`, function (error) {})
-    await generateSite([`--playbook=${__dirname}/site.yml`])
+    await generateSite([`--playbook=${__dirname}/antora-playbook.yml`])
   })
   it('blockmacro: default jql', async () => {
     const $ = cheerio.load(fs.readFileSync(`${__dirname}/public/antora-jira/blockmacro.html`))
