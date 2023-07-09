@@ -49,7 +49,9 @@ function jiraIssuesBlockMacro (context) {
             value = '-'
           } else {
             value = _.get(issue.fields, customFieldsArray[j])
-            if ((typeof value === 'object') && value != null) {
+            if (value !== null && (value.constructor === Array)) {
+              value = value.toString()
+            } else if ((typeof value === 'object') && value != null) {
               value = value.name || value.displayName || doc.getAttribute(`jira-table-${customFieldsArray[j].replace(/\./g, '-')}-default`, '-')
             } else {
               value = value || doc.getAttribute(`jira-table-${customFieldsArray[j].replace(/\./g, '-')}-default`, '-')
