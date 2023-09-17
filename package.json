@@ -42,13 +42,13 @@
   "scripts": {
     "test": "npm run test:antora && npm run test:node",
     "test:antora": "mocha test/antora/**.spec.js",
-    "test:node": "jest test/**.spec.js",
+    "test:node": "mocha test/**.spec.js",
     "lint": "standard src/**.js",
     "lint-fix": "npm run lint -- --fix",
     "clean": "shx rm -rf dist/*",
     "release": "semantic-release"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   }
 }

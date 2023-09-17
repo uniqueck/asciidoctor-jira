@@ -9,7 +9,7 @@ const expect = chai.expect
 Opal.Asciidoctor.LoggerManager.getLogger().setLevel(1)
 
 describe('Registration', () => {
-  test('should register the extention', () => {
+  it('should register the extention', () => {
     const registry = asciidoctor.Extensions.create()
     /* eslint-disable no-unused-expressions */
     expect(registry['$block_macros?']()).to.be.false
@@ -24,7 +24,7 @@ describe('Conversion', () => {
 
   describe('When extension is registered', () => {
 
-    test('Issue-97: Add support for rendering fields returned as array by Jira', () => {
+    it('Issue-97: Add support for rendering fields returned as array by Jira', () => {
       const registry = asciidoctor.Extensions.create()
       asciidoctorJira.register(registry)
 
