@@ -1,3 +1,18 @@
+# [3.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v2.0.0...v3.0.0) (2023-09-18)
+
+
+### Breaking
+
+* Use lib directory instead of src directory ([3c85a0b](https://github.com/uniqueck/asciidoctor-jira/commit/3c85a0b2c545f522f4d1c00fad18234763c7a1d7))
+
+### Build
+
+* Bump chai from 4.3.7 to 4.3.8 ([97db42c](https://github.com/uniqueck/asciidoctor-jira/commit/97db42cab989914556f64990a8a945e2d758d796))
+* Bump conventional-changelog-eslint from 4.0.0 to 5.0.0 ([c56d799](https://github.com/uniqueck/asciidoctor-jira/commit/c56d799d30f0aa59fd6d99d83a4b03d548b1875c))
+* Bump semantic-release from 21.0.7 to 22.0.0 ([4712681](https://github.com/uniqueck/asciidoctor-jira/commit/471268191c51d3dce9f1c7f0dd324482775ac938))
+* Remove unused dependency jest ([36040f0](https://github.com/uniqueck/asciidoctor-jira/commit/36040f0ff2444f304dc426f84fd6ec566d8cb72a))
+* Switch to eslint instead of standard ([0415f01](https://github.com/uniqueck/asciidoctor-jira/commit/0415f01229204f294d6915ea927db2aafc3a209c))
+
 # [2.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v1.1.0...v2.0.0) (2023-09-18)
 
 
