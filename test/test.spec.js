@@ -1,10 +1,9 @@
-/* global Opal describe test before */
+/* global Opal describe it */
 const asciidoctorJira = require('../src/asciidoctor-jira.js')
 const asciidoctor = require('@asciidoctor/core')()
 
 const chai = require('chai')
 const expect = chai.expect
-
 
 Opal.Asciidoctor.LoggerManager.getLogger().setLevel(1)
 
@@ -21,14 +20,12 @@ describe('Registration', () => {
 })
 
 describe('Conversion', () => {
-
   describe('When extension is registered', () => {
-
     it('Issue-97: Add support for rendering fields returned as array by Jira', () => {
       const registry = asciidoctor.Extensions.create()
       asciidoctorJira.register(registry)
 
-      const html = asciidoctor.convert(`jira::DOC[jql="project=DOC and labels in (Label1,Label2)",customFieldIds="issuetype,summary,labels"]`, { extension_registry: registry, attributes: { imagesoutdir: 'test/.images'} })
+      const html = asciidoctor.convert('jira::DOC[jql="project=DOC and labels in (Label1,Label2)",customFieldIds="issuetype,summary,labels"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images' } })
       expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -59,9 +56,6 @@ describe('Conversion', () => {
 </tr>
 </tbody>
 </table>`)
-
-
     })
-
   })
 })
