@@ -1,5 +1,5 @@
 /* global Opal describe it */
-const asciidoctorJira = require('../src/asciidoctor-jira.js')
+const asciidoctorJira = require('../lib/asciidoctor-jira.js')
 const asciidoctor = require('@asciidoctor/core')()
 
 const chai = require('chai')
