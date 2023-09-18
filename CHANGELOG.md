@@ -1,3 +1,10 @@
+# [2.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v1.1.0...v2.0.0) (2023-09-18)
+
+
+### Breaking
+
+* Drop support for node 16 ([c39f1d0](https://github.com/uniqueck/asciidoctor-jira/commit/c39f1d009153121caca8d54251611ffac068a97d))
+
 # [1.1.0](https://github.com/uniqueck/asciidoctor-jira/compare/v1.0.0...v1.1.0) (2023-07-09)
 
 
