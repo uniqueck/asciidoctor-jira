@@ -18,4 +18,5 @@ It is perhaps more interesting to look at the HTML source to see the effects of 
 
 * xref::blockmacro/index.adoc[Choices for block macro]
 * xref::inlinemacro/index.adoc[Choices for inline macro]
+* xref::roadmap/index.adoc[Roadmap macro]
 

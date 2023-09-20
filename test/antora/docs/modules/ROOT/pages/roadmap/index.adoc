@@ -4,7 +4,7 @@
 
 For this example, you must install `asciidoctor-roadmap` so it is accessible to your Antora installation.
 
-:roadmap-jira-baseurl: https://access-jira.1and1.org
+:roadmap-jira-baseurl: https://uniqueck.atlassian.net
 :roadmap-plantuml-server-url: https://kroki.io/plantuml
 :roadmap-categories: feature,maintenance,security,infrastructure
 :roadmap-feature-label: Feature
