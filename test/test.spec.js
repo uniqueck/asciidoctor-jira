@@ -78,7 +78,7 @@ describe('Conversion', () => {
       const html = asciidoctor.convert('roadmap::ROADMAP[]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'roadmap-jira-baseurl': 'https://uniqueck.atlassian.net' } })
       expect(html).to.equal(`<div class="imageblock">
 <div class="content">
-<img src="roadmap-ROADMAP.svg" alt="roadmap ROADMAP">
+<img src="roadmap-ROADMAP-2023.svg" alt="roadmap ROADMAP 2023">
 </div>
 </div>`)
     }).timeout(50000)
