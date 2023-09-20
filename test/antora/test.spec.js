@@ -16,7 +16,7 @@ describe('Antora integration', () => {
     await generateSite([`--playbook=${path.join(__dirname, 'antora-playbook.yml')}`])
   })
   it('blockmacro: default jql', async () => {
-    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro.html')))
+    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro/index.html')))
     const tableElement = $('h3[id="_defaults"]').parent().find('table')
     /* eslint-disable no-unused-expressions */
     expect(tableElement).to.not.be.null
@@ -72,7 +72,7 @@ describe('Antora integration', () => {
     const imageElement = $(tdElement).find('div div p span img')
     /* eslint-disable no-unused-expressions */
     expect(imageElement).to.not.be.null
-    expect($(imageElement).attr('src')).to.equal('_images/jira-issuetype-epic.svg')
+    expect($(imageElement).attr('src')).to.equal('../_images/jira-issuetype-epic.svg')
     expect(existsFile(path.join(__dirname, '/public/antora-jira/_images/jira-issuetype-epic.svg')))
     expect($($(tdElement).find('div div p a')).attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-6')
 
@@ -81,7 +81,7 @@ describe('Antora integration', () => {
     expect($(tdElement).text()).to.equal('Summary containing a | pipe')
   })
   it('blockmacro: define a custom jql', async () => {
-    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro.html')))
+    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro/index.html')))
     const tableElement = $('h3[id="_custom_jql"]').parent().find('table')
     /* eslint-disable no-unused-expressions */
     expect(tableElement).to.not.be.null
@@ -135,7 +135,7 @@ describe('Antora integration', () => {
     const imageElement = $(tdElement).find('div div p span img')
     /* eslint-disable no-unused-expressions */
     expect(imageElement).to.not.be.null
-    expect($(imageElement).attr('src')).to.equal('_images/jira-issuetype-story.svg')
+    expect($(imageElement).attr('src')).to.equal('../_images/jira-issuetype-story.svg')
     expect(existsFile(path.join(__dirname, 'public/antora-jira/_images/jira-issuetype-story.svg')))
     expect($($(tdElement).find('div div p a')).attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-1')
 
@@ -156,7 +156,7 @@ describe('Antora integration', () => {
     expect($(tdElement).text()).to.equal('Test123')
   })
   it('blockmacro: define custom fields', async () => {
-    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro.html')))
+    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro/index.html')))
     const tableElement = $('h3[id="_custom_fields"]').parent().find('table')
     /* eslint-disable no-unused-expressions */
     expect(tableElement).to.not.be.null
@@ -191,7 +191,7 @@ describe('Antora integration', () => {
     expect($(tdElement).find('div > div > p > a').attr('href')).to.equal('https://uniqueck.atlassian.net/browse/DOC-1')
   })
   it('blockmacro: define nested custom fields', async () => {
-    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro.html')))
+    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/blockmacro/index.html')))
     const tableElement = $('h3[id="_nested_custom_fields"]').parent().find('table')
     /* eslint-disable no-unused-expressions */
     expect(tableElement).to.not.be.null
@@ -207,7 +207,7 @@ describe('Antora integration', () => {
     expect($(thElement).text()).to.equal('Reporter')
   })
   it('inlinemacro: standard', async () => {
-    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/inlinemacro.html')))
+    const $ = cheerio.load(fs.readFileSync(path.join(__dirname, 'public/antora-jira/inlinemacro/index.html')))
     const anchorElement = $('h3[id="_defaults"]').parent().find('p a')
     expect(anchorElement).to.not.be.null
     expect($(anchorElement).attr('href')).to.not.be.null

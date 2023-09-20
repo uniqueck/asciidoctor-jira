@@ -16,6 +16,6 @@ See the `package.json` for an alternate more self-contained installation method.
 The HTML pages in a browser will look rather repetitive.
 It is perhaps more interesting to look at the HTML source to see the effects of the different configurations.
 
-* xref::blockmacro.adoc[Choices for block macro]
-* xref::inlinemacro.adoc[Choices for inline macro]
+* xref::blockmacro/index.adoc[Choices for block macro]
+* xref::inlinemacro/index.adoc[Choices for inline macro]
 

@@ -1,0 +1,20 @@
+= {page-component-title} Roadmap Extension
+
+== Ways of using asciidoctor-roadmap extension
+
+For this example, you must install `asciidoctor-roadmap` so it is accessible to your Antora installation.
+
+:roadmap-jira-baseurl: https://access-jira.1and1.org
+:roadmap-plantuml-server-url: https://kroki.io/plantuml
+:roadmap-categories: feature,maintenance,security,infrastructure
+:roadmap-feature-label: Feature
+:roadmap-maintenance-label: Maintenance
+:roadmap-security-label: Security and Lifecycle
+:roadmap-infrastructure-label: Infrastructure
+:roadmap-milestone-open-color: #b5e853
+:roadmap-milestone-closed-color: #557F91
+:roadmap-milestone-resolved-color: #557F91
+:roadmap-milestone-in_progress-color: #b5e853
+:roadmap-milestone-after-last-roadmap-release-date-color: orange
+
+roadmap::ROAD[2023, "feature,lang"]

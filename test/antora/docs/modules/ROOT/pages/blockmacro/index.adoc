@@ -24,9 +24,10 @@ jira::DOC[]
 
 === Custom JQL
 
-:custom-jql: "status = 'In Progress' order by created DESC"
+:custom-jql: "project = DOC and status = 'In Progress' order by created DESC"
 [source, asciidoc, subs="+attributes"]
 ----
+:custom-jql: {custom-jql}
 jira::DOC[{custom-jql}]
 ----
 
