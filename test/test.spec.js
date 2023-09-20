@@ -1,5 +1,6 @@
 /* global Opal describe it */
-const asciidoctorJira = require('../lib/asciidoctor-jira.js')
+const jiraExt = require('../lib/asciidoctor-jira.js')
+const roadmapExt = require('../lib/asciidoctor-roadmap.js')
 const asciidoctor = require('@asciidoctor/core')()
 
 const chai = require('chai')
@@ -8,22 +9,32 @@ const expect = chai.expect
 Opal.Asciidoctor.LoggerManager.getLogger().setLevel(1)
 
 describe('Registration', () => {
-  it('should register the extention', () => {
+  it('should register the jira extension', () => {
     const registry = asciidoctor.Extensions.create()
     /* eslint-disable no-unused-expressions */
     expect(registry['$block_macros?']()).to.be.false
-    asciidoctorJira.register(registry)
+    jiraExt.register(registry)
     /* eslint-disable no-unused-expressions */
     expect(registry['$block_macros?']()).to.be.true
     expect(registry['$registered_for_block_macro?']('jira')).to.be.an('object')
   })
+
+  it('should register the roadmap extension', () => {
+    const registry = asciidoctor.Extensions.create()
+    /* eslint-disable no-unused-expressions */
+    expect(registry['$block_macros?']()).to.be.false
+    roadmapExt.register(registry)
+    /* eslint-disable no-unused-expressions */
+    expect(registry['$block_macros?']()).to.be.true
+    expect(registry['$registered_for_block_macro?']('roadmap')).to.be.an('object')
+  })
 })
 
 describe('Conversion', () => {
-  describe('When extension is registered', () => {
+  describe('When jira extension is registered', () => {
     it('Issue-97: Add support for rendering fields returned as array by Jira', () => {
       const registry = asciidoctor.Extensions.create()
-      asciidoctorJira.register(registry)
+      jiraExt.register(registry)
 
       const html = asciidoctor.convert('jira::DOC[jql="project=DOC and labels in (Label1,Label2)",customFieldIds="issuetype,summary,labels"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images' } })
       expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
@@ -57,5 +68,19 @@ describe('Conversion', () => {
 </tbody>
 </table>`)
     })
+  })
+
+  describe('When roadmap extension is registered', () => {
+    it('render default roadmap', () => {
+      const registry = asciidoctor.Extensions.create()
+      roadmapExt.register(registry)
+
+      const html = asciidoctor.convert('roadmap::ROADMAP[]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'roadmap-jira-baseurl': 'https://uniqueck.atlassian.net' } })
+      expect(html).to.equal(`<div class="imageblock">
+<div class="content">
+<img src="roadmap-ROADMAP.svg" alt="roadmap ROADMAP">
+</div>
+</div>`)
+    }).timeout(50000)
   })
 })
