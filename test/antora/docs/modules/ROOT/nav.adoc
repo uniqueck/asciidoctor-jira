@@ -1,3 +1,3 @@
-* xref:blockmacro.adoc[block macro]
+* xref:blockmacro/index.adoc[block macro]
 ** xref:blockmacro/issue_47.adoc[Issue #47]
-* xref:inlinemacro.adoc[inline macro]
+* xref:inlinemacro/index.adoc[inline macro]
