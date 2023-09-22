@@ -6,6 +6,7 @@
   "bugs": {
     "url": "https://github.com/doctoolchain/asciidoctor-jira/issues"
   },
+  "main": "./lib/asciidoctor-jira.js",
   "files": [
     "lib"
   ],
