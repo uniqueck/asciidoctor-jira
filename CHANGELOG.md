@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.1...v3.1.2) (2023-09-22)
+
+
+### Fix
+
+* add missing main script flag in package.json ([aec00bc](https://github.com/uniqueck/asciidoctor-jira/commit/aec00bc6d99f839ba65959f1ab44b52ed22f0cb0))
+
 ## [3.1.1](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.0...v3.1.1) (2023-09-22)
 
 
