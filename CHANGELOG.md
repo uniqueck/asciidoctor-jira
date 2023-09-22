@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.2...v3.1.3) (2023-09-22)
+
+
+### Fix
+
+* create unique name for generated images ([ebd3cbd](https://github.com/uniqueck/asciidoctor-jira/commit/ebd3cbd4f51f92e5ed91b9c7af5642bb52f96cc9))
+
 ## [3.1.2](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.1...v3.1.2) (2023-09-22)
 
 
