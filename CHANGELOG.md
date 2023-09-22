@@ -1,3 +1,19 @@
+# [3.1.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.0.0...v3.1.0) (2023-09-22)
+
+
+### Build
+
+* Bump semantic-release from 22.0.0 to 22.0.1 ([e740ca5](https://github.com/uniqueck/asciidoctor-jira/commit/e740ca5d7c599e74d3ad9a83851da837bccdbbf1))
+
+### Chore
+
+* restructure tests and fix lint issues ([4c04add](https://github.com/uniqueck/asciidoctor-jira/commit/4c04add0271280466f251da03dcf6a2e6175b9b8))
+
+### New
+
+* add new roadmap extension ([f349bf8](https://github.com/uniqueck/asciidoctor-jira/commit/f349bf878ab4afe20c5fccef22ff487b05540aa0))
+* use project key on block macro for default jql ([75e2fd9](https://github.com/uniqueck/asciidoctor-jira/commit/75e2fd96bc420e7b0fce36ec70ee667df2298cab))
+
 # [3.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v2.0.0...v3.0.0) (2023-09-18)
 
 
