@@ -1,6 +1,5 @@
 /* global Opal describe it */
 const jiraExt = require('../lib/asciidoctor-jira.js')
-const roadmapExt = require('../lib/asciidoctor-roadmap.js')
 const asciidoctor = require('@asciidoctor/core')()
 
 const chai = require('chai')
@@ -9,7 +8,7 @@ const expect = chai.expect
 Opal.Asciidoctor.LoggerManager.getLogger().setLevel(1)
 
 describe('Registration', () => {
-  it('should register the jira extension', () => {
+  it('should register the jira extensions', () => {
     const registry = asciidoctor.Extensions.create()
     /* eslint-disable no-unused-expressions */
     expect(registry['$block_macros?']()).to.be.false
@@ -17,14 +16,7 @@ describe('Registration', () => {
     /* eslint-disable no-unused-expressions */
     expect(registry['$block_macros?']()).to.be.true
     expect(registry['$registered_for_block_macro?']('jira')).to.be.an('object')
-  })
 
-  it('should register the roadmap extension', () => {
-    const registry = asciidoctor.Extensions.create()
-    /* eslint-disable no-unused-expressions */
-    expect(registry['$block_macros?']()).to.be.false
-    roadmapExt.register(registry)
-    /* eslint-disable no-unused-expressions */
     expect(registry['$block_macros?']()).to.be.true
     expect(registry['$registered_for_block_macro?']('roadmap')).to.be.an('object')
   })
@@ -73,7 +65,7 @@ describe('Conversion', () => {
   describe('When roadmap extension is registered', () => {
     it('render default roadmap', () => {
       const registry = asciidoctor.Extensions.create()
-      roadmapExt.register(registry)
+      jiraExt.register(registry)
 
       const html = asciidoctor.convert('roadmap::ROADMAP[]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'roadmap-jira-baseurl': 'https://uniqueck.atlassian.net' } })
       expect(html).to.equal(`<div class="imageblock">

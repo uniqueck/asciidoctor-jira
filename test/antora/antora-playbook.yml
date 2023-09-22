@@ -15,7 +15,6 @@ content:
 asciidoc:
   extensions:
     - ./../../lib/asciidoctor-jira.js
-    - ./../../lib/asciidoctor-roadmap.js
   attributes:
     jira-baseurl: https://uniqueck.atlassian.net
 
