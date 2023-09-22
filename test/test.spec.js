@@ -68,9 +68,37 @@ describe('Conversion', () => {
       jiraExt.register(registry)
 
       const html = asciidoctor.convert('roadmap::ROADMAP[]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'roadmap-jira-baseurl': 'https://uniqueck.atlassian.net' } })
+
+      const expectedPlantumlContent = ['@startgantt', 'printscale monthly zoom 3']
+      expectedPlantumlContent.push('language de', 'Project starts the 1st of january 2023')
+      expectedPlantumlContent.push('hide footbox', '!theme hacker')
+      expectedPlantumlContent.push(`<style>
+      ganttdiagram {
+        milestone {
+            FontSize 18
+        }
+        separator {
+            FontSize 18
+        }
+      }
+      </style>`)
+      expectedPlantumlContent.push('-- feature --')
+      expectedPlantumlContent.push('[Roadmap Entry for category Feature] as [ROAD-1] happens at 2023-09-21')
+      expectedPlantumlContent.push('[ROAD-1] links to [[https://uniqueck.atlassian.net/browse/ROAD-1]]')
+      expectedPlantumlContent.push('[ROAD-1] is colored in black')
+      expectedPlantumlContent.push('--')
+      expectedPlantumlContent.push('[Open] happens at 1st of january 2023 and is colored in black')
+      expectedPlantumlContent.push('[In Progress] happens at 1st of january 2023 and is colored in black')
+      expectedPlantumlContent.push('[Closed] happens at 1st of january 2023 and is colored in black')
+      expectedPlantumlContent.push('@endgantt')
+
+
+      const contentAsHex = require('rusha').createHash().update(expectedPlantumlContent).digest('hex')
+      const diagramName = `roadmap-ROADMAP-2023-${contentAsHex}.svg`
+
       expect(html).to.equal(`<div class="imageblock">
 <div class="content">
-<img src="roadmap-ROADMAP-2023.svg" alt="roadmap ROADMAP 2023">
+<img src="${diagramName}" alt="roadmap ROADMAP 2023 ${contentAsHex}">
 </div>
 </div>`)
     }).timeout(50000)
