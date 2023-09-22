@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.0...v3.1.1) (2023-09-22)
+
+
+### Fix
+
+* add main script in package.json ([8e2ea7a](https://github.com/uniqueck/asciidoctor-jira/commit/8e2ea7a53efc9289400aaf2f91fc4f8eea35c1af))
+
 # [3.1.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.0.0...v3.1.0) (2023-09-22)
 
 
