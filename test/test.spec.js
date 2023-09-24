@@ -92,7 +92,6 @@ describe('Conversion', () => {
       expectedPlantumlContent.push('[Closed] happens at 1st of january 2023 and is colored in black')
       expectedPlantumlContent.push('@endgantt')
 
-
       const contentAsHex = require('rusha').createHash().update(expectedPlantumlContent).digest('hex')
       const diagramName = `roadmap-ROADMAP-2023-${contentAsHex}.svg`
 

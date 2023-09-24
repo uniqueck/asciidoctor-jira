@@ -47,8 +47,8 @@
     "test": "npm run test:antora && npm run test:node",
     "test:antora": "mocha test/antora/**.spec.js",
     "test:node": "mocha test/**.spec.js",
-    "lint": "eslint lib/**/*.js test/**/*.js",
-    "lint:fix": "eslint lib/**/*.js test/**/*.js --fix",
+    "lint": "eslint \"./lib/**/*.js\" \"./test/**/*.js\"",
+    "lint:fix": "eslint \"./lib/**/*.js\" \"./test/**/*.js\" --fix",
     "clean": "shx rm -rf dist/*",
     "release": "semantic-release"
   },
