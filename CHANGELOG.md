@@ -102,3 +102,31 @@
 ### Build
 
 * switch to semantic release workflow ([24ae00b](https://github.com/uniqueck/asciidoctor-jira/commit/24ae00b690cdc97ee47dd530f9e146286c16477c))
+
+# 0.2.2 - (2022-08-01)
+
+### Fix
+
+* Handle value of custom field of type number correct
+
+# 0.2.1 - (2022-08-01)
+
+### Fix
+
+* Only show issue type icon, if `issuetye` as `customFieldId` defined
+
+# 0.2.0 - (2022-07-20)
+
+### Chore
+
+* Bump `shx` from 0.3.3 to 0.3.4
+* Bump `asciidoctor.js` from 2.2.5 to 2.2.6
+* Bump `dotenv` from 10.0.0 to 16.0.1
+* Bump `chai` from 4.3.4 to 4.3.6
+* Bump `standard` from 16.0.4 to 17.0.0
+* Bump `jest` from 27.2.5 to 28.1.2
+
+### New
+
+* Introduce a changelog
+* Allow to use nested custom field ids
