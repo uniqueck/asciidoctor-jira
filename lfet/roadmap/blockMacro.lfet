@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.25 at 15:37:23 CEST" saveUser="constantin">
+  <Conditions>
+    <Condition uId="11446800829457960">
+      <Title language="German" value="Step"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16955836022674214">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="read configuration"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( _step === $$symbol )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955836022694216">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="Step 2"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956455136503133">
+      <Title language="German" value="one more category to process"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( catIndex &lt; config.categories.length )"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="catIndex++"/>
+    </Condition>
+  </Conditions>
+  <Actions>
+    <Action uId="16956428378650771">
+      <Title language="German" value="read configuration"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config = require('./config').createConfig(name, parent, target, attrs, logger)&lt;br/&gt;const JIRA = require('../Jira')&lt;br/&gt;jiraClient = new JIRA(doc, config.jiraUsername, config.jiraPassword, config.jiraBaseUrl)"/>
+      <UrlsOut>
+        <Url title="config.lfet" url="file:///./config.lfet"/>
+      </UrlsOut>
+    </Action>
+    <Action uId="16956457949863674">
+      <Title language="German" value="search issues for category"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="issues = jiraClient.searchIssues(`project = ${config.projectKey} and labels in (Roadmap) and labels in ('${config.year}') and labels in (${config.categories[catIndex]})`, Object.keys(config.jiraFields).map(it =&gt; config.jiraFields[it]).join(','))"/>
+    </Action>
+    <Action uId="16955844514884391">
+      <Title language="German" value="next step"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955844587624451">
+          <Symbol language="German" value="+"/>
+          <Title language="German" value="next step"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step++&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955844680294455">
+          <Symbol language="German" value="E"/>
+          <Title language="German" value="Exit"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_exit = true"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956455862313376">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="Step 2"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step = $$symbol&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+  </Actions>
+  <Rules lastId="66">
+    <Rule id="61">
+      <ConditionOccurrenceLink link="16955836022674214"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionLink link="16956428378650771"/>
+    </Rule>
+    <Rule id="66">
+      <ConditionOccurrenceLink link="16955836022694216"/>
+      <ActionOccurrenceLink link="16956455862313376"/>
+      <ConditionLink link="16956455136503133" conditionState="true"/>
+      <ActionLink link="16956457949863674"/>
+    </Rule>
+    <Rule id="64">
+      <ConditionOccurrenceLink link="16955836022694216"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionLink link="16956455136503133" conditionState="false"/>
+    </Rule>
+  </Rules>
+  <Title language="German" value="roadmap block macro extension"/>
+  <UrlsOut>
+    <Url title="Ordner" url="file:///./"/>
+  </UrlsOut>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (name, context) {&lt;br/&gt;  return function () {&lt;br/&gt;    const self = this&lt;br/&gt;    self.named(name)&lt;br/&gt;    self.positionalAttributes(['year', 'categories', 'release-date'])&lt;br/&gt;    self.process((parent, target, attrs) =&gt; {&lt;br/&gt;      const vfs = context.vfs&lt;br/&gt;      const doc = parent.getDocument()&lt;br/&gt;      const logger = context.logger&lt;br/&gt;      let config&lt;br/&gt;      let jiraClient&lt;br/&gt;      let catIndex = -1&lt;br/&gt;      let issues = []&lt;br/&gt;      let _step = 1&lt;br/&gt;      let _exit = false&lt;br/&gt;      do {&lt;br/&gt;        _exit = true&lt;br/&gt;      // $$BasicIndentLevel=4"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="      } while (_exit === false)&lt;br/&gt;      return undefined&lt;br/&gt;    })&lt;br/&gt;  }&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  $$dtname: (name, context) =&gt; {&lt;br/&gt;    return $$dtname(name, context)&lt;br/&gt;  }&lt;br/&gt;}"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(config)}`)"/>
+</LFET>
