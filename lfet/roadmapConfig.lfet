@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.25 at 13:28:53 CEST" saveUser="constantin">
+  <Conditions>
+    <Condition uId="11446800829457960">
+      <Title language="German" value="Step"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16955836022674214">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="jira project key information"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( _step === $$symbol )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955836022694216">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="jira base url information"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(  _step === $$symbol )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956338590467850">
+          <Symbol language="German" value="3"/>
+          <Title language="German" value="jira username information"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(  _step === $$symbol )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956338666927853">
+          <Symbol language="German" value="4"/>
+          <Title language="German" value="jira password / apitoken information"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(  _step === $$symbol )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955836380264223">
+          <Symbol language="German" value="5"/>
+          <Title language="German" value="year information"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( _step === $$symbol )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955915974174627">
+          <Symbol language="German" value="6"/>
+          <Title language="German" value="category information"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16955838593514256">
+      <Title language="German" value="jira project key information is set"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(  target !== undefined )"/>
+    </Condition>
+    <Condition uId="16955857804744981">
+      <Title language="German" value="jira base url is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16955942435364392">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via macro attributes"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(  attrs.jiraBaseUrl  )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955942788454408">
+          <Symbol language="German" value="JIRA_PRJ"/>
+          <Title language="German" value="via doc attribute and jira project key suffix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${config.projectKey.toLowerCase()}-${name}-jira-baseurl`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955942596894402">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${name}-jira-baseurl`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955942627164404">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956338977088389">
+      <Title language="German" value="jira username is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16956338978918396">
+          <Symbol language="German" value="DOC_PRJ"/>
+          <Title language="German" value="via doc attribute and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${config.projectKey.toLowerCase()}-${name}-jira-username`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956338978958400">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${name}-jira-username`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956354849758762">
+          <Symbol language="German" value="ENV_PRJ"/>
+          <Title language="German" value="via env and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( process.env[`${config.projectKey.toUpperCase()}_${name.toUpperCase()}_JIRA_USERNAME`] )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956355277928765">
+          <Symbol language="German" value="ENV"/>
+          <Title language="German" value="via env"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( process.env[`${name.toUpperCase()}_JIRA_USERNAME`] )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956338978998404">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956339091048419">
+      <Title language="German" value="jira password / apitoken is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16956359156901981">
+          <Symbol language="German" value="DOC_PRJ"/>
+          <Title language="German" value="via doc attribute and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${config.projectKey.toLowerCase()}-${name}-jira-password`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956339093038430">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${name}-jira-password`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956359261131985">
+          <Symbol language="German" value="ENV_PRJ"/>
+          <Title language="German" value="via env and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( process.env[`${config.projectKey.toUpperCase()}_${name.toUpperCase()}_JIRA_PASSWORD`] )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956359302301989">
+          <Symbol language="German" value="ENV"/>
+          <Title language="German" value="via env"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( process.env[`${name.toUpperCase()}_JIRA_PASSWORD`] )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956339093078434">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16955843699724388">
+      <Title language="German" value="year information is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16955931546163193">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via macro attributes"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( attrs.year )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955931546183195">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${name}-year`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955932297253203">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16955916694890912">
+      <Title language="German" value="category information is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16955916845441044">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="category information via macro attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( attrs.categories )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955916845461046">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="category information via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="( doc.getAttribute(`${name}-categories`) )"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16955920043651308">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="other"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+  </Conditions>
+  <Actions>
+    <Action uId="16955858395994985">
+      <Title language="German" value="set jira base url"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955943750424680">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via macro attributes"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraBaseUrl = attrs.jiraBaseUrl"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955943800074693">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraBaseUrl = doc.getAttribute(`${name}-jira-baseurl`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955943772264686">
+          <Symbol language="German" value="JIRA_PRJ"/>
+          <Title language="German" value="via doc attribute and jira project key suffix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraBaseUrl = doc.getAttribute(`${config.projectKey.toLowerCase()}.${name}-jira-baseurl`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955943748204671">
+          <Symbol language="German" value="X"/>
+          <Title language="German" value="Aktion ausführen"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="// TODO code statement sequence for A01 here"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="11446800828767967">
+      <Title language="German" value="set jira project"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.projectKey = parent.applySubstitutions(target, ['attributes'])"/>
+    </Action>
+    <Action uId="16956356149069102">
+      <Title language="German" value="set jira username"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16956358994451966">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraUsername = doc.getAttribute(`${name}-jira-username`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956358972601961">
+          <Symbol language="German" value="DOC_PRJ"/>
+          <Title language="German" value="via doc attribute and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraUsername = doc.getAttribute(`${config.projectKey.toLowerCase()}-${name}-jira-username`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956359031681976">
+          <Symbol language="German" value="ENV"/>
+          <Title language="German" value="via env"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraUsername = process.env[`${name.toUpperCase()}_JIRA_USERNAME`]"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956359013231971">
+          <Symbol language="German" value="ENV_PRJ"/>
+          <Title language="German" value="via env and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraUsername = process.env[`${config.projectKey.toUpperCase()}_${name.toUpperCase()}_JIRA_USERNAME`]"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16956356208469104">
+      <Title language="German" value="set jira password / apitoken"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16956356405609120">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraPassword = doc.getAttribute(`${name}-jira-password`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956356380659113">
+          <Symbol language="German" value="DOC_PRJ"/>
+          <Title language="German" value="via doc attribute and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraPassword = doc.getAttribute(`${config.projectKey.toLowerCase()}-${name}-jira-password`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956356453099134">
+          <Symbol language="German" value="ENV"/>
+          <Title language="German" value="via env"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraPassword = process.env[`${name.toUpperCase()}_JIRA_PASSWORD`]"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956356430629127">
+          <Symbol language="German" value="ENV_PRJ"/>
+          <Title language="German" value="via env and jira project key praefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.jiraPassword = process.env[`${config.projectKey.toUpperCase()}_${name.toUpperCase()}_JIRA_PASSWORD`]"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="11446800829627977">
+      <Title language="German" value="set year"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955932758283598">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via macro attributes"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.year = attrs.year"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955849179584740">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.year = doc.getAttribute(`${name}-year`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955849302614745">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="current year"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.year = new Date().toLocaleDateString('en-US', { year: 'numeric' })"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16955926383702502">
+      <Title language="German" value="set categories"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955926588572669">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via macro attributes"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.categories = attrs.categories.split(',').map(it =&gt; it.trim())"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955926943952671">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.categories = doc.getAttribute(`${name}-categories`).split(',').map(it =&gt; it.trim())"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955926490932664">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="maintenance,feature,security,infrastructure,deprecated,migration"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config.categories = ['maintenance','feature','security','infrastructure','deprecated','migration']"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16955845254104514">
+      <Title language="German" value="log mandatory information is missing"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955845764054591">
+          <Symbol language="German" value="JIRA PROJECT"/>
+          <Title language="German" value="Jira project key is missing"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955858619345076">
+          <Symbol language="German" value="BASE_URL"/>
+          <Title language="German" value="Jira base url is missing"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956361996303932">
+          <Symbol language="German" value="JIRA_USR"/>
+          <Title language="German" value="Jira username is missing"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956362108433935">
+          <Symbol language="German" value="JIRA_PWD"/>
+          <Title language="German" value="Jira password / apitoken is missing"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16955844514884391">
+      <Title language="German" value="next step"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955844587624451">
+          <Symbol language="German" value="+"/>
+          <Title language="German" value="next step"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step++&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955844680294455">
+          <Symbol language="German" value="E"/>
+          <Title language="German" value="Exit"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_exit = true"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+  </Actions>
+  <Rules lastId="59">
+    <Rule id="7">
+      <ConditionOccurrenceLink link="16955836022674214"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ActionLink link="11446800828767967"/>
+    </Rule>
+    <Rule id="8">
+      <ConditionOccurrenceLink link="16955836022674214"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ActionOccurrenceLink link="16955845764054591"/>
+    </Rule>
+    <Rule id="28">
+      <ConditionOccurrenceLink link="16955836022694216"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16955942435364392"/>
+      <ActionOccurrenceLink link="16955943750424680"/>
+    </Rule>
+    <Rule id="29">
+      <ConditionOccurrenceLink link="16955836022694216"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16955942788454408"/>
+      <ActionOccurrenceLink link="16955943772264686"/>
+    </Rule>
+    <Rule id="30">
+      <ConditionOccurrenceLink link="16955836022694216"/>
+      <ConditionOccurrenceLink link="16955942596894402"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16955943800074693"/>
+    </Rule>
+    <Rule id="31">
+      <ConditionOccurrenceLink link="16955836022694216"/>
+      <ConditionOccurrenceLink link="16955942627164404"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="16955858619345076"/>
+    </Rule>
+    <Rule id="46">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionOccurrenceLink link="16956338978918396"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16956358972601961"/>
+    </Rule>
+    <Rule id="47">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionOccurrenceLink link="16956338978958400"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16956358994451966"/>
+    </Rule>
+    <Rule id="48">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionOccurrenceLink link="16956354849758762"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16956359013231971"/>
+    </Rule>
+    <Rule id="49">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionOccurrenceLink link="16956355277928765"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16956359031681976"/>
+    </Rule>
+    <Rule id="54">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionOccurrenceLink link="16956338978998404"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="16956361996303932"/>
+    </Rule>
+    <Rule id="56">
+      <ConditionOccurrenceLink link="16956338666927853"/>
+      <ConditionOccurrenceLink link="16956359156901981"/>
+      <ActionOccurrenceLink link="16956356380659113"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="55">
+      <ConditionOccurrenceLink link="16956338666927853"/>
+      <ConditionOccurrenceLink link="16956339093038430"/>
+      <ActionOccurrenceLink link="16956356405609120"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="57">
+      <ConditionOccurrenceLink link="16956338666927853"/>
+      <ConditionOccurrenceLink link="16956359261131985"/>
+      <ActionOccurrenceLink link="16956356430629127"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="58">
+      <ConditionOccurrenceLink link="16956338666927853"/>
+      <ConditionOccurrenceLink link="16956359302301989"/>
+      <ActionOccurrenceLink link="16956356453099134"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="59">
+      <ConditionOccurrenceLink link="16956338666927853"/>
+      <ConditionOccurrenceLink link="16956339093078434"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="16956362108433935"/>
+    </Rule>
+    <Rule id="24">
+      <ConditionOccurrenceLink link="16955836380264223"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16955932758283598"/>
+      <ConditionOccurrenceLink link="16955931546163193"/>
+    </Rule>
+    <Rule id="25">
+      <ConditionOccurrenceLink link="16955836380264223"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16955849179584740"/>
+      <ConditionOccurrenceLink link="16955931546183195"/>
+    </Rule>
+    <Rule id="27">
+      <ConditionOccurrenceLink link="16955836380264223"/>
+      <ConditionOccurrenceLink link="16955932297253203"/>
+      <ActionOccurrenceLink link="16955849302614745"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="21">
+      <ConditionOccurrenceLink link="16955915974174627"/>
+      <ConditionOccurrenceLink link="16955916845441044"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="16955926588572669"/>
+    </Rule>
+    <Rule id="22">
+      <ConditionOccurrenceLink link="16955915974174627"/>
+      <ConditionOccurrenceLink link="16955916845461046"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="16955926943952671"/>
+    </Rule>
+    <Rule id="23">
+      <ConditionOccurrenceLink link="16955915974174627"/>
+      <ConditionOccurrenceLink link="16955920043651308"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="16955926490932664"/>
+    </Rule>
+  </Rules>
+  <Title language="German" value="configuration for roadmap extension"/>
+  <UrlsOut>
+    <Url title="Ordner" url="file:///./"/>
+  </UrlsOut>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (name, parent, target, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  let config = {&lt;br/&gt;    toJSON: function() {&lt;br/&gt;      let result = {}&lt;br/&gt;        for (let x in this) {&lt;br/&gt;          if (x !== 'jiraUsername' &amp;&amp; x !== 'jiraPassword') {&lt;br/&gt;            result[x] = this[x]&lt;br/&gt;          } else {&lt;br/&gt;            if (x === 'jiraUsername' || x === 'jiraPassword') {&lt;br/&gt;              result[x] = this[x].replace(/./g, '*')&lt;br/&gt;            }&lt;br/&gt;          }&lt;br/&gt;        }&lt;br/&gt;        return result&lt;br/&gt;      }&lt;br/&gt;  }&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return config&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (name, parent, target, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(name, parent, target, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(config)}`)"/>
+</LFET>
