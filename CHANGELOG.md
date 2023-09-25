@@ -1,3 +1,26 @@
+# [3.2.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.3...v3.2.0) (2023-09-25)
+
+
+### Build
+
+* Provide credentials for roadmap extension ([ee2066e](https://github.com/uniqueck/asciidoctor-jira/commit/ee2066eaccfc7b682b209ab62c8e28801ddc9b52))
+
+### Chore
+
+* Extract configuration settings for roadmap extension ([528cab9](https://github.com/uniqueck/asciidoctor-jira/commit/528cab98187839e5b2d7a3257b5cfb11a2cdd4db))
+* Migrate old asciidoc based changelog to markdown based changelog ([5138f9b](https://github.com/uniqueck/asciidoctor-jira/commit/5138f9b755c56673534caa4f265a5c1f31e25ec5))
+
+### Fix
+
+* Authentication handling with JIRA ([9090787](https://github.com/uniqueck/asciidoctor-jira/commit/9090787647cd4b383329cf0095ecb7c5a6278557))
+* create unique name for generated images ([9b62a59](https://github.com/uniqueck/asciidoctor-jira/commit/9b62a59127beb8fe586e47c3498af1df40e44616))
+* Lint issues ([9361e29](https://github.com/uniqueck/asciidoctor-jira/commit/9361e295941e8150a20b933df481e2eb9d93ab0d))
+* Roadmap extension only request specific fields ([a0f4cdf](https://github.com/uniqueck/asciidoctor-jira/commit/a0f4cdf082c8cf0e1beff51d155f5ace312e80e3))
+
+### New
+
+* Add option to define custom jql part for each category ([1b4517d](https://github.com/uniqueck/asciidoctor-jira/commit/1b4517dc2ddf2723b24c16ead1924ef3ce89249a))
+
 ## [3.1.3](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.2...v3.1.3) (2023-09-22)
 
 
