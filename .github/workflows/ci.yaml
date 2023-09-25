@@ -50,6 +50,9 @@ jobs:
           JIRA_USERNAME=${{ secrets.AJE_USERNAME }}
           JIRA_APITOKEN=${{ secrets.AJE_APITOKEN }}
           JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}
+          ROADMAP_JIRA_USERNAME=${{ secrets.AJE_USERNAME }}
+          ROADMAP_JIRA_PASSWORD=${{ secrets.AJE_APITOKEN }}
+          ROADMAP_JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}
           EOF
 
       - name: create .env
@@ -61,6 +64,9 @@ jobs:
           "JIRA_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
           "JIRA_APITOKEN=${{ secrets.AJE_APITOKEN }}"  | ac .env
           "JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
+          "ROADMAP_JIRA_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
+          "ROADMAP_JIRA_PASSWORD=${{ secrets.AJE_APITOKEN }}"  | ac .env
+          "ROADMAP_JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
 
       - name: test
         run: npm test
