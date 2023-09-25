@@ -1,0 +1,12 @@
+lfet:
+  nestedProjectIni: false
+  ide:
+    default: javascript
+    javascript:
+      enabled: true
+
+      baseOfVersion: DT
+      emptyLines: false
+
+      src:
+        path: ${project.root}../lib/
