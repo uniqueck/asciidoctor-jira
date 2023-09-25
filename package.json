@@ -44,6 +44,7 @@
     "@asciidoctor/core": "^2.2.6"
   },
   "scripts": {
+    "lfet:GenSrc": "exec java -classpath \"/opt/lfet/lib/*\" lohrfink.lfet.Application -gs \"$INIT_CWD/lfet/\" -rec -fnp \"*.lfet\" -sku -src \"JavaScript\"",
     "test": "npm run test:antora && npm run test:node",
     "test:antora": "mocha test/antora/**.spec.js",
     "test:node": "mocha test/**.spec.js",
