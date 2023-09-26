@@ -1,5 +1,7 @@
 runtime:
   cache_dir: ./.cache/antora
+  log:
+    level: info
 
 site:
   title: Antora x JIRA
