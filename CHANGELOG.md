@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/uniqueck/asciidoctor-jira/compare/v3.3.0...v3.3.1) (2023-09-26)
+
+
+### Fix
+
+* Jira Base url with defined project key ([b86913d](https://github.com/uniqueck/asciidoctor-jira/commit/b86913dd87ce4706d38d60ca99626570cd1d6c45))
+
 # [3.3.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.2.0...v3.3.0) (2023-09-26)
 
 
