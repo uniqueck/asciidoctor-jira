@@ -3,4 +3,4 @@ lfet:
   ide:
     javascript:
       src:
-        path: ${project.root}../lib/roadmap
+        path: ${project.root}../lib/common
