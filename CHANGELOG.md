@@ -1,3 +1,16 @@
+# [3.3.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.2.0...v3.3.0) (2023-09-26)
+
+
+### Build
+
+* Bump eslint from 8.49.0 to 8.50.0 ([812c492](https://github.com/uniqueck/asciidoctor-jira/commit/812c4923269bb6da8429e58b09e647ef9f9d68f7))
+* Bump rimraf from 5.0.1 to 5.0.4 ([af80eb0](https://github.com/uniqueck/asciidoctor-jira/commit/af80eb074f3cacfb0972e070ac5ff6aac3d5f99c))
+* Bump semantic-release from 22.0.1 to 22.0.5 ([30f452c](https://github.com/uniqueck/asciidoctor-jira/commit/30f452c94a10047f40724f35a9402254fb5f9ba4))
+
+### New
+
+* Allow different jira instances based on project key ([096e81a](https://github.com/uniqueck/asciidoctor-jira/commit/096e81a9ac916cb5208cdc478812d120fae29f7b))
+
 # [3.2.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.1.3...v3.2.0) (2023-09-25)
 
 
