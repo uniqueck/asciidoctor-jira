@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.25 at 15:37:23 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.26 at 13:38:29 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="11446800829457960">
       <Title language="German" value="Step"/>
@@ -27,7 +27,7 @@
       <Title language="German" value="read configuration"/>
       <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="config = require('./config').createConfig(name, parent, target, attrs, logger)&lt;br/&gt;const JIRA = require('../Jira')&lt;br/&gt;jiraClient = new JIRA(doc, config.jiraUsername, config.jiraPassword, config.jiraBaseUrl)"/>
       <UrlsOut>
-        <Url title="config.lfet" url="file:///./config.lfet"/>
+        <Url title="config.lfet" url="file:///./roadmapConfig.lfet"/>
       </UrlsOut>
     </Action>
     <Action uId="16956457949863674">

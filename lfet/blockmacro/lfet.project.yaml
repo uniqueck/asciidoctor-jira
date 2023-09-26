@@ -1,0 +1,6 @@
+lfet:
+  nestedProjectIni: true
+  ide:
+    javascript:
+      src:
+        path: ${project.root}../lib/blockmacro
