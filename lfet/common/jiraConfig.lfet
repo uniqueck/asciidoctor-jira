@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.26 at 16:58:27 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.26 at 23:22:09 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="16956802542147703">
       <Title language="German" value="Step"/>
@@ -198,7 +198,7 @@
         <ActionOccurrence uId="16957065077978065">
           <Symbol language="German" value="PDOC"/>
           <Title language="German" value="via doc attr and project key praefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.baseUrl = doc.getAttribute(`${projectKey}${_prefixDoc}jira-baseurl`)"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.baseUrl = doc.getAttribute(`${projectKey.toLowerCase()}-${_prefixDoc}jira-baseurl`)"/>
         </ActionOccurrence>
         <ActionOccurrence uId="16956849685027309">
           <Symbol language="German" value="ENV"/>
