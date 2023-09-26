@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@antora/site-generator-default": "^3.1.4",
-    "@asciidoctor/core": "^2.2.6",
+    "@asciidoctor/core": "^3.0.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "chai": "^4.3.8",
@@ -41,7 +41,7 @@
     "eslint-config-ideal": "^1.0.0"
   },
   "peerDependencies": {
-    "@asciidoctor/core": "^2.2.6"
+    "@asciidoctor/core": "^3.0.2"
   },
   "scripts": {
     "lfet:GenSrc": "exec java -classpath \"/opt/lfet/lib/*\" lohrfink.lfet.Application -gs \"$INIT_CWD/lfet/\" -rec -fnp \"*.lfet\" -sku -src \"JavaScript\"",
