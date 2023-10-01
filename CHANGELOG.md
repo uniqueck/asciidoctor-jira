@@ -1,3 +1,19 @@
+# [3.4.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.3.1...v3.4.0) (2023-10-01)
+
+
+### Build
+
+* Bump chai from 4.3.8 to 4.3.10 ([f5d0105](https://github.com/uniqueck/asciidoctor-jira/commit/f5d0105cfff2f2d7f4ddeff8669d176d06d4ec71))
+* Bump rimraf from 5.0.4 to 5.0.5 ([9f570b7](https://github.com/uniqueck/asciidoctor-jira/commit/9f570b7fc15ff970213ddac087b8311272c2dd44))
+
+### Fix
+
+* Only request custom field ids and not all fields ([9404c21](https://github.com/uniqueck/asciidoctor-jira/commit/9404c217227e4e6ddb989c2253edb56361a3007b))
+
+### New
+
+* Add roadmap layout options ([c869f64](https://github.com/uniqueck/asciidoctor-jira/commit/c869f64887bd45fe4f3fb47b51738314351a8ea3))
+
 ## [3.3.1](https://github.com/uniqueck/asciidoctor-jira/compare/v3.3.0...v3.3.1) (2023-09-26)
 
 
