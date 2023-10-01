@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.10.02 at 00:34:12 CEST" saveUser="constantin">
+  <Conditions>
+    <Condition uId="11446800829457960">
+      <Title language="German" value="step"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16956445391314678">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="server base url"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956475532788330">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="theme"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956445784455452">
+      <Title language="German" value="server url is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16958287529644310">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via block macro attr"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(attrs[`${_prefix}ServerUrl`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16958287549684315">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${_prefixDoc}server-url`))"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16958287593984320">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956476678758789">
+      <Title language="German" value="theme option is set"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16956477351829288">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via block macro attr"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(attrs[`${_prefix}Theme`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956477351849290">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${_prefixDoc}theme`))"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956477521579297">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+  </Conditions>
+  <Actions>
+    <Action uId="16958483340899086">
+      <Title language="German" value="load config"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16958483592869238">
+          <Symbol language="German" value="gantt"/>
+          <Title language="German" value="load gantt configuration options"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtName.$$symbol = require('./plantumlGanttConfig').createConfig(_prefixDoc, parent, attrs, logger)"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+      <UrlsOut>
+        <Url title="plantumlGanttConfig.lfet" url="file:///./plantumlGanttConfig.lfet"/>
+      </UrlsOut>
+    </Action>
+    <Action uId="16956446660920073">
+      <Title language="German" value="set server base url"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16956446883320482">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="set value from doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.serverUrl = doc.getAttribute(`${_prefixDoc}server-url`)"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16958292708994907">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="set value from attributes"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.serverUrl = attrs[`${_prefix}ServerUrl`]"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956447007540487">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="https://kroki.io/plantuml"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.serverUrl = 'https://kroki.io/plantuml'"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16956477208788799">
+      <Title language="German" value="set theme option"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16956477743610284">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="hacker"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.theme = 'hacker'"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956478288617919">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="via block macro attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.theme = attrs[`${_prefix}Theme`]"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956478374887922">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="via doc attribute"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.theme = doc.getAttribute(`${_prefixDoc}theme`)"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16955844514884391">
+      <Title language="German" value="next step"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955844587624451">
+          <Symbol language="German" value="+"/>
+          <Title language="German" value="next step"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step++&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956508189684033">
+          <Symbol language="German" value="9"/>
+          <Title language="German" value="check for more categories to process"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step = $$symbol&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955844680294455">
+          <Symbol language="German" value="E"/>
+          <Title language="German" value="Exit"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_exit = true"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+  </Actions>
+  <Rules lastId="142">
+    <Rule id="140">
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956445391314678"/>
+      <ConditionOccurrenceLink link="16958287529644310"/>
+      <ActionOccurrenceLink link="16958292708994907"/>
+      <ActionOccurrenceLink link="16958483592869238"/>
+    </Rule>
+    <Rule id="141">
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956445391314678"/>
+      <ConditionOccurrenceLink link="16958287549684315"/>
+      <ActionOccurrenceLink link="16956446883320482"/>
+      <ActionOccurrenceLink link="16958483592869238"/>
+    </Rule>
+    <Rule id="142">
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956445391314678"/>
+      <ConditionOccurrenceLink link="16958287593984320"/>
+      <ActionOccurrenceLink link="16956447007540487"/>
+      <ActionOccurrenceLink link="16958483592869238"/>
+    </Rule>
+    <Rule id="137">
+      <ConditionOccurrenceLink link="16956475532788330"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956477351829288"/>
+      <ActionOccurrenceLink link="16956478288617919"/>
+    </Rule>
+    <Rule id="138">
+      <ConditionOccurrenceLink link="16956475532788330"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956477351849290"/>
+      <ActionOccurrenceLink link="16956478374887922"/>
+    </Rule>
+    <Rule id="139">
+      <ConditionOccurrenceLink link="16956475532788330"/>
+      <ConditionOccurrenceLink link="16956477521579297"/>
+      <ActionOccurrenceLink link="16956477743610284"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+    </Rule>
+  </Rules>
+  <Title language="German" value="general PlantUML configuration options"/>
+  <UrlsOut>
+    <Url title="Ordner" url="file:///./"/>
+  </UrlsOut>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  const _prefix = 'plantuml'&lt;br/&gt;  const _prefixDoc = `${macroName.toLowerCase()}-${_prefix}-`&lt;br/&gt;  const _$$dtname = { }&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, parent, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(macroName, parent, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(_$$dtName)}`)"/>
+</LFET>

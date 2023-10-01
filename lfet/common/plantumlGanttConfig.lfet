@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.10.02 at 00:33:07 CEST" saveUser="constantin">
+  <Conditions>
+    <Condition uId="11446800829457960">
+      <Title language="German" value="step"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16956445391314678">
+          <Symbol language="German" value="1"/>
+          <Title language="German" value="showCategory"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956475532788330">
+          <Symbol language="German" value="2"/>
+          <Title language="German" value="showLegend"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16961977326861285">
+          <Symbol language="German" value="3"/>
+          <Title language="German" value="legendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16961983603501786">
+          <Symbol language="German" value="3a"/>
+          <Title language="German" value="check values of alignment"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956445784455452">
+      <Title language="German" value="showCategory"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16958287529644310">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="showCategory"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(attrs[`${_prefix}$$title`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16958287549684315">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="show-category"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${_prefixDoc}$$title`))"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16958287593984320">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16956476678758789">
+      <Title language="German" value="showLegend"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16956477351829288">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="ShowLegend"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(attrs[`${_prefix}$$title`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956477351849290">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="show-legend"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${_prefixDoc}$$title`))"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16956477521579297">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16961975298901129">
+      <Title language="German" value="legendAlignment"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16961982444911591">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="LegendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(attrs[`${_prefix}$$title`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16961982483201599">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="legend-alignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${_prefixDoc}$$title`))"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16961982532251606">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="16961983785533372">
+      <Title language="German" value="legend alignment"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="16961986957155595">
+          <Symbol language="German" value="left"/>
+          <Title language="German" value="legendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_$$dtname.$$title === '$$symbol')"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16961987046015603">
+          <Symbol language="German" value="right"/>
+          <Title language="German" value="legendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_$$dtname.$$title === '$$symbol')"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="16961986957175597">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="other not supported"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+  </Conditions>
+  <Actions>
+    <Action uId="16956446660920073">
+      <Title language="German" value="showCategory"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16956446883320482">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="showCategory"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = attrs[`${_prefix}ShowCategory`] === true"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16958292708994907">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="showCategory"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = doc.getAttribute(`${_prefixDoc}show-category`) === 'true'"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16958479566717655">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="showCategory"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = true"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16956477208788799">
+      <Title language="German" value="showLegend"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16956477743610284">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="showLegend"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = true"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956478288617919">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="showLegend"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = attrs[`${_prefix}ShowLegend`] === true"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956478374887922">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="showLegend"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = doc.getAttribute(`${_prefixDoc}show-legend`) === 'true'"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16961983983763373">
+      <Title language="German" value="legendAlignment"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16961984124883381">
+          <Symbol language="German" value="ATTR"/>
+          <Title language="German" value="legendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = attrs[`${_prefix}LegendAlignment`].toLowerCase()"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16961984164463391">
+          <Symbol language="German" value="DEF"/>
+          <Title language="German" value="legendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = 'left'"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16961984134583386">
+          <Symbol language="German" value="DOC"/>
+          <Title language="German" value="legendAlignment"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.$$title = doc.getAttribute(`${_prefixDoc}legend-alignment`).toLowerCase()"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+    <Action uId="16955844514884391">
+      <Title language="German" value="next step"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="16955844587624451">
+          <Symbol language="German" value="+"/>
+          <Title language="German" value="next step"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step++&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16956508189684033">
+          <Symbol language="German" value="9"/>
+          <Title language="German" value="check for more categories to process"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step = $$symbol&lt;br/&gt;_exit = false"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="16955844680294455">
+          <Symbol language="German" value="E"/>
+          <Title language="German" value="Exit"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_exit = true"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
+  </Actions>
+  <Rules lastId="157">
+    <Rule id="133">
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956445391314678"/>
+      <ConditionOccurrenceLink link="16958287529644310"/>
+      <ActionOccurrenceLink link="16956446883320482"/>
+    </Rule>
+    <Rule id="141">
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956445391314678"/>
+      <ConditionOccurrenceLink link="16958287549684315"/>
+      <ActionOccurrenceLink link="16958292708994907"/>
+    </Rule>
+    <Rule id="142">
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956445391314678"/>
+      <ConditionOccurrenceLink link="16958287593984320"/>
+      <ActionOccurrenceLink link="16958479566717655"/>
+    </Rule>
+    <Rule id="146">
+      <ConditionOccurrenceLink link="16956475532788330"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956477351829288"/>
+      <ActionOccurrenceLink link="16956478288617919"/>
+    </Rule>
+    <Rule id="147">
+      <ConditionOccurrenceLink link="16956475532788330"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ConditionOccurrenceLink link="16956477351849290"/>
+      <ActionOccurrenceLink link="16956478374887922"/>
+    </Rule>
+    <Rule id="157">
+      <ConditionOccurrenceLink link="16956475532788330"/>
+      <ConditionOccurrenceLink link="16956477521579297"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+      <ActionOccurrenceLink link="16956477743610284"/>
+    </Rule>
+    <Rule id="149">
+      <ConditionOccurrenceLink link="16961977326861285"/>
+      <ConditionOccurrenceLink link="16961982444911591"/>
+      <ActionOccurrenceLink link="16961984124883381"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="150">
+      <ConditionOccurrenceLink link="16961977326861285"/>
+      <ConditionOccurrenceLink link="16961982483201599"/>
+      <ActionOccurrenceLink link="16961984134583386"/>
+      <ActionOccurrenceLink link="16955844587624451"/>
+    </Rule>
+    <Rule id="151">
+      <ConditionOccurrenceLink link="16961977326861285"/>
+      <ConditionOccurrenceLink link="16961982532251606"/>
+      <ActionOccurrenceLink link="16961984164463391"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+    </Rule>
+    <Rule id="154">
+      <ConditionOccurrenceLink link="16961983603501786"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16961986957155595"/>
+    </Rule>
+    <Rule id="155">
+      <ConditionOccurrenceLink link="16961983603501786"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16961987046015603"/>
+    </Rule>
+    <Rule id="156">
+      <ConditionOccurrenceLink link="16961983603501786"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16961986957175597"/>
+      <ActionOccurrenceLink link="16961984164463391"/>
+    </Rule>
+  </Rules>
+  <Title language="German" value="Gantt specific PlantUML configuration options"/>
+  <UrlsOut>
+    <Url title="Ordner" url="file:///./"/>
+  </UrlsOut>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  const _prefix = 'gantt'&lt;br/&gt;  const _prefixDoc = `${macroName.toLowerCase()}${_prefix}-`&lt;br/&gt;  const _$$dtname = { }&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, parent, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(macroName, parent, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(_$$dtName)}`)"/>
+</LFET>

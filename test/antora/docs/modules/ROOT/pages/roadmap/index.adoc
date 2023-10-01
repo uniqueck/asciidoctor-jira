@@ -18,3 +18,15 @@ For this example, you must install `asciidoctor-roadmap` so it is accessible to 
 :roadmap-milestone-after-last-roadmap-release-date-color: orange
 
 roadmap::ROAD[2023, "feature,lang"]
+
+
+
+:roadmap-plantuml-gantt-show-category: false
+:roadmap-plantuml-gantt-show-legend: false
+.without categories and legend
+roadmap::ROAD[2023, "feature,lang"]
+
+:roadmap-plantuml-gantt-show-legend: true
+:roadmap-plantuml-gantt-legend-alignment: right
+.legend right aligned
+roadmap::ROAD[2023, "feature,lang"]
