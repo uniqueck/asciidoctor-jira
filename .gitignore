@@ -3,3 +3,6 @@
 .env
 /test/.images
 TODO.adoc
+
+*.lfet.*.$bak
+*.lfet_$temp

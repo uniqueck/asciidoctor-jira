@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.26 at 16:33:52 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.27 at 22:03:21 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="11446800829457960">
       <Title language="German" value="Step"/>
@@ -20,43 +20,33 @@
           <Title language="German" value="category information"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
         </ConditionOccurrence>
-        <ConditionOccurrence uId="16956445391314678">
-          <Symbol language="German" value="4"/>
-          <Title language="German" value="plantuml-server base url information"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
-        </ConditionOccurrence>
         <ConditionOccurrence uId="16956462319184267">
-          <Symbol language="German" value="5"/>
+          <Symbol language="German" value="4"/>
           <Title language="German" value="which status should act for closed issues"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
         </ConditionOccurrence>
-        <ConditionOccurrence uId="16956475532788330">
-          <Symbol language="German" value="6"/>
-          <Title language="German" value="plantuml theme option"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
-        </ConditionOccurrence>
         <ConditionOccurrence uId="16956485970964132">
-          <Symbol language="German" value="7"/>
+          <Symbol language="German" value="5"/>
           <Title language="German" value="lastRoadmapReleaseDate"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956491027150937">
-          <Symbol language="German" value="8"/>
+          <Symbol language="German" value="6"/>
           <Title language="German" value="legend for status"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956497925441147">
-          <Symbol language="German" value="9"/>
+          <Symbol language="German" value="7"/>
           <Title language="German" value="check for more categories to process"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956500099286167">
-          <Symbol language="German" value="9a"/>
+          <Symbol language="German" value="8a"/>
           <Title language="German" value="label for category"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$occNr)"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956500408906170">
-          <Symbol language="German" value="9b"/>
+          <Symbol language="German" value="8b"/>
           <Title language="German" value="jql for category"/>
         </ConditionOccurrence>
       </ConditionOccurrences>
@@ -103,10 +93,6 @@
         </ConditionOccurrence>
       </ConditionOccurrences>
     </Condition>
-    <Condition uId="16956445784455452">
-      <Title language="German" value="plantuml server url is set"/>
-      <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${name.toLowerCase()}-plantuml-server-url`))"/>
-    </Condition>
     <Condition uId="16956462775584678">
       <Title language="German" value="which status should act for closed issues"/>
       <ConditionOccurrences>
@@ -121,25 +107,6 @@
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${name.toLowerCase()}-closed-status`))"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956463044775109">
-          <Symbol language="German" value="*"/>
-          <Title language="German" value="not set"/>
-        </ConditionOccurrence>
-      </ConditionOccurrences>
-    </Condition>
-    <Condition uId="16956476678758789">
-      <Title language="German" value="plantuml theme option is set"/>
-      <ConditionOccurrences>
-        <ConditionOccurrence uId="16956477351829288">
-          <Symbol language="German" value="ATTR"/>
-          <Title language="German" value="via block macro attr"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(attrs.theme)"/>
-        </ConditionOccurrence>
-        <ConditionOccurrence uId="16956477351849290">
-          <Symbol language="German" value="DOC"/>
-          <Title language="German" value="via doc attribute"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(doc.getAttribute(`${name.toLowerCase()}-theme`))"/>
-        </ConditionOccurrence>
-        <ConditionOccurrence uId="16956477521579297">
           <Symbol language="German" value="*"/>
           <Title language="German" value="not set"/>
         </ConditionOccurrence>
@@ -239,6 +206,13 @@
         <Url title="jiraConfig.lfet" url="file:///../common/jiraConfig.lfet"/>
       </UrlsOut>
     </Action>
+    <Action uId="16958447845016625">
+      <Title language="German" value="load plantuml config"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.plantuml = require('../common/plantumlConfig').createConfig(name, parent, attrs, logger)"/>
+      <UrlsOut>
+        <Url title="plantumlConfig.lfet" url="file:///../common/plantumlConfig.lfet"/>
+      </UrlsOut>
+    </Action>
     <Action uId="11446800829627977">
       <Title language="German" value="set year"/>
       <ActionOccurrences>
@@ -279,21 +253,6 @@
         </ActionOccurrence>
       </ActionOccurrences>
     </Action>
-    <Action uId="16956446660920073">
-      <Title language="German" value="set plantuml-server base url"/>
-      <ActionOccurrences>
-        <ActionOccurrence uId="16956446883320482">
-          <Symbol language="German" value="SET"/>
-          <Title language="German" value="set value from doc attribute"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.plantumlServerUrl = doc.getAttribute(`${name.toLowerCase()}-plantuml-server-url`)"/>
-        </ActionOccurrence>
-        <ActionOccurrence uId="16956447007540487">
-          <Symbol language="German" value="DEF"/>
-          <Title language="German" value="https://kroki.io/plantuml"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.plantumlServerUrl = 'https://kroki.io/plantuml'"/>
-        </ActionOccurrence>
-      </ActionOccurrences>
-    </Action>
     <Action uId="16956463663455548">
       <Title language="German" value="set closed status"/>
       <ActionOccurrences>
@@ -311,26 +270,6 @@
           <Symbol language="German" value="DEF"/>
           <Title language="German" value="Closed,Resolved"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.closedStatus = 'Closed,Resolved'.split(',')"/>
-        </ActionOccurrence>
-      </ActionOccurrences>
-    </Action>
-    <Action uId="16956477208788799">
-      <Title language="German" value="set plantuml theme option"/>
-      <ActionOccurrences>
-        <ActionOccurrence uId="16956477743610284">
-          <Symbol language="German" value="DEF"/>
-          <Title language="German" value="hacker"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.plantumlTheme = 'hacker'"/>
-        </ActionOccurrence>
-        <ActionOccurrence uId="16956478288617919">
-          <Symbol language="German" value="ATTR"/>
-          <Title language="German" value="via block macro attribute"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.plantumlTheme = attrs.theme"/>
-        </ActionOccurrence>
-        <ActionOccurrence uId="16956478374887922">
-          <Symbol language="German" value="DOC"/>
-          <Title language="German" value="via doc attribute"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.plantumlTheme = doc.getAttribute(`${name.toLowerCase()}-theme`)"/>
         </ActionOccurrence>
       </ActionOccurrences>
     </Action>
@@ -433,7 +372,7 @@
           <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step++&lt;br/&gt;_exit = false"/>
         </ActionOccurrence>
         <ActionOccurrence uId="16956508189684033">
-          <Symbol language="German" value="9"/>
+          <Symbol language="German" value="7"/>
           <Title language="German" value="check for more categories to process"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_step = $$symbol&lt;br/&gt;_exit = false"/>
         </ActionOccurrence>
@@ -445,13 +384,14 @@
       </ActionOccurrences>
     </Action>
   </Actions>
-  <Rules lastId="125">
-    <Rule id="125">
+  <Rules lastId="126">
+    <Rule id="126">
       <ConditionOccurrenceLink link="16955836022674214"/>
       <ActionOccurrenceLink link="16955844587624451"/>
       <ConditionLink link="16955838593514256" conditionState="true"/>
       <ActionLink link="11446800828767967"/>
       <ActionLink link="16955858395994985"/>
+      <ActionLink link="16958447845016625"/>
     </Rule>
     <Rule id="8">
       <ConditionOccurrenceLink link="16955836022674214"/>
@@ -495,18 +435,6 @@
       <ActionOccurrenceLink link="16955844587624451"/>
       <ActionOccurrenceLink link="16955926490932664"/>
     </Rule>
-    <Rule id="69">
-      <ConditionOccurrenceLink link="16956445391314678"/>
-      <ConditionLink link="16956445784455452" conditionState="true"/>
-      <ActionOccurrenceLink link="16956446883320482"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-    </Rule>
-    <Rule id="70">
-      <ConditionOccurrenceLink link="16956445391314678"/>
-      <ConditionLink link="16956445784455452" conditionState="false"/>
-      <ActionOccurrenceLink link="16956447007540487"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-    </Rule>
     <Rule id="80">
       <ConditionOccurrenceLink link="16956462319184267"/>
       <ConditionOccurrenceLink link="16956463044755107"/>
@@ -524,24 +452,6 @@
       <ConditionOccurrenceLink link="16956463044775109"/>
       <ActionOccurrenceLink link="16955844587624451"/>
       <ActionOccurrenceLink link="16956463954736007"/>
-    </Rule>
-    <Rule id="86">
-      <ConditionOccurrenceLink link="16956475532788330"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ConditionOccurrenceLink link="16956477351829288"/>
-      <ActionOccurrenceLink link="16956478288617919"/>
-    </Rule>
-    <Rule id="87">
-      <ConditionOccurrenceLink link="16956475532788330"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ConditionOccurrenceLink link="16956477351849290"/>
-      <ActionOccurrenceLink link="16956478374887922"/>
-    </Rule>
-    <Rule id="88">
-      <ConditionOccurrenceLink link="16956475532788330"/>
-      <ConditionOccurrenceLink link="16956477521579297"/>
-      <ActionOccurrenceLink link="16956477743610284"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
     </Rule>
     <Rule id="98">
       <ConditionOccurrenceLink link="16956485970964132"/>
