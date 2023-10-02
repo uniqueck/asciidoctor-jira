@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.09.26 at 23:22:09 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.10.02 at 18:41:07 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="16956802542147703">
       <Title language="German" value="Step"/>
@@ -527,7 +527,7 @@
   <UrlsOut>
     <Url title="Ordner" url="file:///./"/>
   </UrlsOut>
-  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, doc, projectKey, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  let _prefixDoc = ''&lt;br/&gt;  let _prefixEnv = ''&lt;br/&gt;  const _$$dtname = {&lt;br/&gt;    toJSON: function () {&lt;br/&gt;      const result = {}&lt;br/&gt;      for (const x in this) {&lt;br/&gt;        if (x !== 'username' &amp;&amp; x !== 'password') {&lt;br/&gt;          result[x] = this[x]&lt;br/&gt;        } else {&lt;br/&gt;          if (x === 'username' || x === 'password') {&lt;br/&gt;            result[x] = this[x].replace(/./g, '*')&lt;br/&gt;          }&lt;br/&gt;        }&lt;br/&gt;      }&lt;br/&gt;      return result&lt;br/&gt;    }&lt;br/&gt;  }&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
-  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, doc, projectKey, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(macroName, doc, projectKey, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, projectKey, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  let _prefixDoc = ''&lt;br/&gt;  let _prefixEnv = ''&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  const _$$dtname = {&lt;br/&gt;    toJSON: function () {&lt;br/&gt;      const result = {}&lt;br/&gt;      for (const x in this) {&lt;br/&gt;        if (x !== 'username' &amp;&amp; x !== 'password') {&lt;br/&gt;          result[x] = this[x]&lt;br/&gt;        } else {&lt;br/&gt;          if (x === 'username' || x === 'password') {&lt;br/&gt;            result[x] = this[x].replace(/./g, '*')&lt;br/&gt;          }&lt;br/&gt;        }&lt;br/&gt;      }&lt;br/&gt;      return result&lt;br/&gt;    }&lt;br/&gt;  }&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, parent, projectKey, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(macroName, parent, projectKey, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
   <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(_$$dtName)}`)"/>
 </LFET>
