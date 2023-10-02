@@ -1,3 +1,14 @@
+## [3.4.1](https://github.com/uniqueck/asciidoctor-jira/compare/v3.4.0...v3.4.1) (2023-10-02)
+
+
+### Chore
+
+* Cleanup unused code ([4593f7e](https://github.com/uniqueck/asciidoctor-jira/commit/4593f7ecfe1645fd551c5e5ca76c5ff4adf58d88))
+
+### Fix
+
+* parent is passed to method not the document object ([e5a5609](https://github.com/uniqueck/asciidoctor-jira/commit/e5a560951ff6a0799c681ea5c76e2a20fc9782b7))
+
 # [3.4.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.3.1...v3.4.0) (2023-10-01)
 
 
