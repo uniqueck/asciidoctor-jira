@@ -60,6 +60,26 @@ describe('Conversion', () => {
 </tbody>
 </table>`)
     })
+    it('#147 - wrong jql', () => {
+      const registry = asciidoctor.Extensions.create()
+      jiraExt.register(registry)
+
+      const html = asciidoctor.convert('jira::DOC[jql="project=DOC and",customFieldIds="issuetype,summary,labels"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images' } })
+      expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">summary</th>
+<th class="tableblock halign-left valign-top">labels</th>
+</tr>
+</thead>
+</table>`)
+    })
   })
 
   describe('When roadmap extension is registered', () => {
