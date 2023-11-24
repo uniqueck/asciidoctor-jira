@@ -1,3 +1,18 @@
+## [3.4.2](https://github.com/uniqueck/asciidoctor-jira/compare/v3.4.1...v3.4.2) (2023-11-24)
+
+
+### Build
+
+* Bump @antora/site-generator-default from 3.1.4 to 3.1.5 ([e147882](https://github.com/uniqueck/asciidoctor-jira/commit/e1478828cfe449209f42cec1be5f469deeb82fad))
+* Bump eslint from 8.50.0 to 8.53.0 ([d77de1a](https://github.com/uniqueck/asciidoctor-jira/commit/d77de1a38da51bbc7e350f72de2ead0cd8b9558d))
+* Bump eslint from 8.53.0 to 8.54.0 ([1d5b7ec](https://github.com/uniqueck/asciidoctor-jira/commit/1d5b7ecab5d933106bdfb5dcaaf16b1878e50e0b))
+* Bump semantic-release from 22.0.5 to 22.0.7 ([9053d73](https://github.com/uniqueck/asciidoctor-jira/commit/9053d73583b3b51d20fc29c5b6b9852257b5371f))
+* Bump semantic-release from 22.0.7 to 22.0.8 ([70a14bf](https://github.com/uniqueck/asciidoctor-jira/commit/70a14bf6e04540faa0eb068445d4b7df1fce7ff9))
+
+### Fix
+
+* Handling wrong jql responses (fixes #147) ([1b88d00](https://github.com/uniqueck/asciidoctor-jira/commit/1b88d00bfd5da9606f4d8406479c1ce9a8c66273)), closes [#147](https://github.com/uniqueck/asciidoctor-jira/issues/147)
+
 ## [3.4.1](https://github.com/uniqueck/asciidoctor-jira/compare/v3.4.0...v3.4.1) (2023-10-02)
 
 
