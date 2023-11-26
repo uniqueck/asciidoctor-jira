@@ -31,9 +31,9 @@ describe('Conversion', () => {
       const html = asciidoctor.convert('jira::DOC[jql="project=DOC and labels in (Label1,Label2)",customFieldIds="issuetype,summary,labels"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images' } })
       expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
 </colgroup>
 <thead>
 <tr>
@@ -67,9 +67,29 @@ describe('Conversion', () => {
       const html = asciidoctor.convert('jira::DOC[jql="project=DOC and",customFieldIds="issuetype,summary,labels"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images' } })
       expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">summary</th>
+<th class="tableblock halign-left valign-top">labels</th>
+</tr>
+</thead>
+</table>`)
+    })
+    it('#152 - customizable column size', () => {
+      const registry = asciidoctor.Extensions.create()
+      jiraExt.register(registry)
+
+      const html = asciidoctor.convert('jira::DOC[jql="project=DOC and",customFieldIds="issuetype,summary,labels"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'jira-table-header-summary-size': 1 } })
+      expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
