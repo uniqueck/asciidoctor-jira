@@ -1,3 +1,10 @@
+# [4.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.4.2...v4.0.0) (2023-11-26)
+
+
+### Breaking
+
+* Change default column size for `id` and all other columns and also enable to define custom sizes for each column (fixes #152) ([58796f4](https://github.com/uniqueck/asciidoctor-jira/commit/58796f4ac78ce382425d25f405a02ab498dc30a6)), closes [#152](https://github.com/uniqueck/asciidoctor-jira/issues/152)
+
 ## [3.4.2](https://github.com/uniqueck/asciidoctor-jira/compare/v3.4.1...v3.4.2) (2023-11-24)
 
 
