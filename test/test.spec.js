@@ -107,7 +107,7 @@ describe('Conversion', () => {
       const registry = asciidoctor.Extensions.create()
       jiraExt.register(registry)
 
-      const html = asciidoctor.convert('roadmap::ROADMAP[]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'roadmap-jira-baseurl': 'https://uniqueck.atlassian.net' } })
+      const html = asciidoctor.convert('roadmap::ROADMAP[year=2023]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'roadmap-jira-baseurl': 'https://uniqueck.atlassian.net' } })
 
       const expectedPlantumlContent = ['@startgantt', 'printscale monthly zoom 3']
       expectedPlantumlContent.push('language de', 'Project starts the 1st of january 2023')
