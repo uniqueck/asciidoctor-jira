@@ -1,3 +1,15 @@
+## [4.0.1](https://github.com/uniqueck/asciidoctor-jira/compare/v4.0.0...v4.0.1) (2024-01-03)
+
+
+### Build
+
+* Bump @antora/site-generator-default from 3.1.5 to 3.1.6 ([d6c0cbe](https://github.com/uniqueck/asciidoctor-jira/commit/d6c0cbed326b83d254229649a1ac1b6e31486a8e))
+* Bump eslint from 8.54.0 to 8.56.0 ([5b494ae](https://github.com/uniqueck/asciidoctor-jira/commit/5b494aeff87e871ae6048c41c408227ad90be733))
+
+### Fix
+
+* Test adapted so that they run independently of the current year ([3014f7c](https://github.com/uniqueck/asciidoctor-jira/commit/3014f7c872feae3020a46074e90a72489490cc5d))
+
 # [4.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v3.4.2...v4.0.0) (2023-11-26)
 
 
