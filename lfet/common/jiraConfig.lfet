@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.10.02 at 18:41:07 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.3.0 (231102a)" language="German" saveDate="2024.01.28 at 10:43:07 CET" saveUser="constantin">
   <Conditions>
     <Condition uId="16956802542147703">
       <Title language="German" value="Step"/>
@@ -17,12 +17,8 @@
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956338590467850">
           <Symbol language="German" value="3"/>
-          <Title language="German" value="jira username information"/>
+          <Title language="German" value="jira username &amp; password or apitoken information"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(_step === $$symbol)"/>
-        </ConditionOccurrence>
-        <ConditionOccurrence uId="16956338666927853">
-          <Symbol language="German" value="4"/>
-          <Title language="German" value="jira password / apitoken information"/>
         </ConditionOccurrence>
       </ConditionOccurrences>
     </Condition>
@@ -35,7 +31,7 @@
       <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(projectKey)"/>
     </Condition>
     <Condition uId="16956784125776011">
-      <Title language="German" value="base url with project key praefix is defined"/>
+      <Title language="German" value="base url with project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956826820148684">
           <Symbol language="German" value="ATTRS"/>
@@ -59,7 +55,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956827611208911">
-      <Title language="German" value="base url without project key praefix is defined"/>
+      <Title language="German" value="base url without project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956827613218915">
           <Symbol language="German" value="ATTRS"/>
@@ -83,7 +79,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956829136529631">
-      <Title language="German" value="username with project key praefix is defined"/>
+      <Title language="German" value="username with project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956838601844308">
           <Symbol language="German" value="DOC"/>
@@ -102,7 +98,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956829229829645">
-      <Title language="German" value="username without project key praefix is defined"/>
+      <Title language="German" value="username without project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956839288445307">
           <Symbol language="German" value="DOC"/>
@@ -121,7 +117,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956829970280031">
-      <Title language="German" value="password with project key praefix is defined"/>
+      <Title language="German" value="password with project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956829972510039">
           <Symbol language="German" value="ENV"/>
@@ -135,7 +131,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956830117870045">
-      <Title language="German" value="password without project key praefix is defined"/>
+      <Title language="German" value="password without project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956830120140053">
           <Symbol language="German" value="ENV"/>
@@ -149,7 +145,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956830853760083">
-      <Title language="German" value="apitoken with project key praefix is defined"/>
+      <Title language="German" value="apitoken with project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956830855890091">
           <Symbol language="German" value="ENV"/>
@@ -163,7 +159,7 @@
       </ConditionOccurrences>
     </Condition>
     <Condition uId="16956831023740097">
-      <Title language="German" value="apitoken without project key praefix is defined"/>
+      <Title language="German" value="apitoken without project key prefix is defined"/>
       <ConditionOccurrences>
         <ConditionOccurrence uId="16956831025830105">
           <Symbol language="German" value="ENV"/>
@@ -171,6 +167,34 @@
           <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(process.env[`${_prefixEnv}JIRA_APITOKEN`])"/>
         </ConditionOccurrence>
         <ConditionOccurrence uId="16956831025860108">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17064322053507749">
+      <Title language="German" value="personal access token with project key prefix is defined"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17064323825088231">
+          <Symbol language="German" value="ENV"/>
+          <Title language="German" value="via env"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_PAT`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17064323883548248">
+          <Symbol language="German" value="*"/>
+          <Title language="German" value="not set"/>
+        </ConditionOccurrence>
+      </ConditionOccurrences>
+    </Condition>
+    <Condition uId="17064322767147751">
+      <Title language="German" value="personal access token without project key prefix is defined"/>
+      <ConditionOccurrences>
+        <ConditionOccurrence uId="17064323838118243">
+          <Symbol language="German" value="ENV"/>
+          <Title language="German" value="via env"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(process.env[`${_prefixEnv}JIRA_PAT`])"/>
+        </ConditionOccurrence>
+        <ConditionOccurrence uId="17064323903368253">
           <Symbol language="German" value="*"/>
           <Title language="German" value="not set"/>
         </ConditionOccurrence>
@@ -213,57 +237,57 @@
       </ActionOccurrences>
     </Action>
     <Action uId="16956356149069102">
-      <Title language="German" value="set username"/>
+      <Title language="German" value="set auth"/>
       <ActionOccurrences>
-        <ActionOccurrence uId="16957066300448809">
-          <Symbol language="German" value="DOC"/>
-          <Title language="German" value="via doc attr"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.baseUrl = doc.getAttribute(`${_prefixDoc}jira-baseurl`)"/>
+        <ActionOccurrence uId="17063950198982958">
+          <Symbol language="German" value="PDOC_USR_PWD"/>
+          <Title language="German" value="username via doc attr and password via env with project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${projectKey.toLowerCase()}-${_prefixDoc}jira-username`) + ':' + process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_PASSWORD`]).toString('base64')"/>
         </ActionOccurrence>
-        <ActionOccurrence uId="16957066333528814">
-          <Symbol language="German" value="ENV"/>
-          <Title language="German" value="via env"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.username = process.env[`${_prefixEnv}JIRA_USERNAME`]"/>
+        <ActionOccurrence uId="17064330707832816">
+          <Symbol language="German" value="PDOC_USR_API"/>
+          <Title language="German" value="username via doc attr and api token via env with project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${projectKey.toLowerCase()}-${_prefixDoc}jira-username`) + ':' + process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_APITOKEN`]).toString('base64')"/>
         </ActionOccurrence>
-        <ActionOccurrence uId="16957066153098800">
-          <Symbol language="German" value="PDOC"/>
-          <Title language="German" value="via doc attr and project key praefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.username = doc.getAttribute(`${_prefixDoc}jira-username`)"/>
+        <ActionOccurrence uId="17063950756672961">
+          <Symbol language="German" value="DOC_USR_PWD"/>
+          <Title language="German" value="username via doc attr and password via env without project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${_prefixDoc}jira-username`) + ':' + process.env[`_${_prefixEnv}JIRA_PASSWORD`]).toString('base64')"/>
         </ActionOccurrence>
-        <ActionOccurrence uId="16957066205318805">
-          <Symbol language="German" value="PENV"/>
-          <Title language="German" value="via env and project key praefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.username = process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_USERNAME`]"/>
+        <ActionOccurrence uId="17064330930142820">
+          <Symbol language="German" value="DOC_USR_API"/>
+          <Title language="German" value="username via doc attr and api token via env without project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${_prefixDoc}jira-username`) + ':' + process.env[`_${_prefixEnv}JIRA_APITOKEN`]).toString('base64')"/>
         </ActionOccurrence>
-      </ActionOccurrences>
-    </Action>
-    <Action uId="16956356208469104">
-      <Title language="German" value="set password"/>
-      <ActionOccurrences>
-        <ActionOccurrence uId="16957066622798831">
-          <Symbol language="German" value="ENV"/>
-          <Title language="German" value="via env"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.password = process.env[`${_prefixEnv}JIRA_PASSWORD`]"/>
+        <ActionOccurrence uId="17063951157372964">
+          <Symbol language="German" value="PENV_USR_PWD"/>
+          <Title language="German" value="username and password via env with project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_USERNAME`] + ':' + process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_PASSWORD`]).toString('base64')"/>
         </ActionOccurrence>
-        <ActionOccurrence uId="16957066435858827">
-          <Symbol language="German" value="PENV"/>
-          <Title language="German" value="via env and project key praefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.password = process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_PASSWORD`]"/>
+        <ActionOccurrence uId="17064331134472824">
+          <Symbol language="German" value="PENV_USR_API"/>
+          <Title language="German" value="username and api token via env with project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_USERNAME`] + ':' + process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_APITOKEN`]).toString('base64')"/>
         </ActionOccurrence>
-      </ActionOccurrences>
-    </Action>
-    <Action uId="16957066654978835">
-      <Title language="German" value="set apitoken"/>
-      <ActionOccurrences>
-        <ActionOccurrence uId="16957067200448846">
-          <Symbol language="German" value="ENV"/>
-          <Title language="German" value="via env"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.password = process.env[`${_prefixEnv}JIRA_APITOKEN`]"/>
+        <ActionOccurrence uId="17063953454692967">
+          <Symbol language="German" value="ENV_USR_PWD"/>
+          <Title language="German" value="username and password via env without project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(process.env[`${_prefixEnv}JIRA_USERNAME`] + ':' + process.env[`${_prefixEnv}JIRA_PASSWORD`]).toString('base64')"/>
         </ActionOccurrence>
-        <ActionOccurrence uId="16957066907528841">
-          <Symbol language="German" value="PENV"/>
-          <Title language="German" value="via env and project key praefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.password = process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JRA_APITOKEN`]"/>
+        <ActionOccurrence uId="17064331375382828">
+          <Symbol language="German" value="ENV_USR_API"/>
+          <Title language="German" value="username and api token via env without project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(process.env[`${_prefixEnv}JIRA_USERNAME`] + ':' + process.env[`${_prefixEnv}JIRA_APITOKEN`]).toString('base64')"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17063956223023935">
+          <Symbol language="German" value="PENV_PAT"/>
+          <Title language="German" value="personal access token via env with project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Bearer ' + process.env[`${projectKey.toUpperCase()}_${_prefixEnv}JIRA_PAT`]"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17063956531243938">
+          <Symbol language="German" value="ENV_PAT"/>
+          <Title language="German" value="personal access token via env without project key prefix"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Bearer ' + process.env[`${_prefixEnv}JIRA_PAT`]"/>
         </ActionOccurrence>
       </ActionOccurrences>
     </Action>
@@ -276,13 +300,13 @@
           <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
         </ActionOccurrence>
         <ActionOccurrence uId="16956361996303932">
-          <Symbol language="German" value="USR"/>
-          <Title language="German" value="Jira username is missing"/>
+          <Symbol language="German" value="USR/PAT"/>
+          <Title language="German" value="Jira username or personal access token is missing"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
         </ActionOccurrence>
         <ActionOccurrence uId="16956362108433935">
-          <Symbol language="German" value="PWD"/>
-          <Title language="German" value="Jira password / apitoken is missing"/>
+          <Symbol language="German" value="PWD/API"/>
+          <Title language="German" value="Jira password or api token is missing"/>
           <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="logger.error('$$title')"/>
         </ActionOccurrence>
       </ActionOccurrences>
@@ -303,7 +327,7 @@
       </ActionOccurrences>
     </Action>
   </Actions>
-  <Rules lastId="264">
+  <Rules lastId="331">
     <Rule id="178">
       <ConditionLink link="16956777734514332" conditionState="true"/>
       <ConditionOccurrenceLink link="16955836022674214"/>
@@ -396,138 +420,219 @@
       <ActionOccurrenceLink link="16955844680294455"/>
       <ActionOccurrenceLink link="16955858619345076"/>
     </Rule>
-    <Rule id="242">
+    <Rule id="300">
       <ConditionOccurrenceLink link="16956338590467850"/>
       <ConditionLink link="16955838593514256" conditionState="true"/>
       <ConditionOccurrenceLink link="16956838601844308"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ActionOccurrenceLink link="16957066153098800"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="17063950198982958"/>
+      <ConditionOccurrenceLink link="16956829972510039"/>
     </Rule>
-    <Rule id="243">
+    <Rule id="324">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956838601844308"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829972540042"/>
+      <ConditionOccurrenceLink link="16956830855890091"/>
+      <ActionOccurrenceLink link="17064330707832816"/>
+    </Rule>
+    <Rule id="317">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956838601844308"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829972540042"/>
+      <ActionOccurrenceLink link="16956362108433935"/>
+      <ConditionOccurrenceLink link="16956830855920094"/>
+    </Rule>
+    <Rule id="307">
       <ConditionOccurrenceLink link="16956338590467850"/>
       <ConditionLink link="16955838593514256" conditionState="true"/>
       <ConditionOccurrenceLink link="16956829138729639"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ActionOccurrenceLink link="16957066205318805"/>
-    </Rule>
-    <Rule id="257">
-      <ConditionOccurrenceLink link="16956338590467850"/>
-      <ConditionLink link="16955838593514256" conditionState="true"/>
-      <ConditionOccurrenceLink link="16956829138759642"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ConditionOccurrenceLink link="16956839288445307"/>
-      <ActionOccurrenceLink link="16957066300448809"/>
-    </Rule>
-    <Rule id="258">
-      <ConditionOccurrenceLink link="16956338590467850"/>
-      <ConditionLink link="16955838593514256" conditionState="true"/>
-      <ConditionOccurrenceLink link="16956829138759642"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ConditionOccurrenceLink link="16956829231859653"/>
-      <ActionOccurrenceLink link="16957066333528814"/>
-    </Rule>
-    <Rule id="259">
-      <ConditionOccurrenceLink link="16956338590467850"/>
-      <ConditionLink link="16955838593514256" conditionState="true"/>
-      <ConditionOccurrenceLink link="16956829138759642"/>
-      <ActionOccurrenceLink link="16956361996303932"/>
       <ActionOccurrenceLink link="16955844680294455"/>
-      <ConditionOccurrenceLink link="16956829231889656"/>
-    </Rule>
-    <Rule id="260">
-      <ConditionOccurrenceLink link="16956338590467850"/>
-      <ConditionLink link="16955838593514256" conditionState="false"/>
-      <ConditionOccurrenceLink link="16956839288445307"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ActionOccurrenceLink link="16957066300448809"/>
-    </Rule>
-    <Rule id="245">
-      <ConditionOccurrenceLink link="16956338590467850"/>
-      <ConditionLink link="16955838593514256" conditionState="false"/>
-      <ConditionOccurrenceLink link="16956829231859653"/>
-      <ActionOccurrenceLink link="16955844587624451"/>
-      <ActionOccurrenceLink link="16957066333528814"/>
-    </Rule>
-    <Rule id="191">
-      <ConditionOccurrenceLink link="16956338590467850"/>
-      <ConditionLink link="16955838593514256" conditionState="false"/>
-      <ConditionOccurrenceLink link="16956829231889656"/>
-      <ActionOccurrenceLink link="16956361996303932"/>
-      <ActionOccurrenceLink link="16955844680294455"/>
-    </Rule>
-    <Rule id="246">
-      <ConditionOccurrenceLink link="16956338666927853"/>
-      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ActionOccurrenceLink link="17063951157372964"/>
       <ConditionOccurrenceLink link="16956829972510039"/>
-      <ActionOccurrenceLink link="16955844680294455"/>
-      <ActionOccurrenceLink link="16957066435858827"/>
     </Rule>
-    <Rule id="261">
-      <ConditionOccurrenceLink link="16956338666927853"/>
+    <Rule id="325">
+      <ConditionOccurrenceLink link="16956338590467850"/>
       <ConditionLink link="16955838593514256" conditionState="true"/>
-      <ConditionOccurrenceLink link="16956829972540042"/>
+      <ConditionOccurrenceLink link="16956829138729639"/>
       <ActionOccurrenceLink link="16955844680294455"/>
-      <ConditionOccurrenceLink link="16956830120140053"/>
-      <ActionOccurrenceLink link="16957066622798831"/>
-    </Rule>
-    <Rule id="262">
-      <ConditionOccurrenceLink link="16956338666927853"/>
-      <ConditionLink link="16955838593514256" conditionState="true"/>
       <ConditionOccurrenceLink link="16956829972540042"/>
-      <ActionOccurrenceLink link="16955844680294455"/>
-      <ConditionOccurrenceLink link="16956830120170056"/>
       <ConditionOccurrenceLink link="16956830855890091"/>
-      <ActionOccurrenceLink link="16957066907528841"/>
+      <ActionOccurrenceLink link="17064331134472824"/>
     </Rule>
-    <Rule id="263">
-      <ConditionOccurrenceLink link="16956338666927853"/>
+    <Rule id="319">
+      <ConditionOccurrenceLink link="16956338590467850"/>
       <ConditionLink link="16955838593514256" conditionState="true"/>
-      <ConditionOccurrenceLink link="16956829972540042"/>
+      <ConditionOccurrenceLink link="16956829138729639"/>
       <ActionOccurrenceLink link="16955844680294455"/>
-      <ConditionOccurrenceLink link="16956830120170056"/>
-      <ConditionOccurrenceLink link="16956830855920094"/>
-      <ConditionOccurrenceLink link="16956831025830105"/>
-      <ActionOccurrenceLink link="16957067200448846"/>
-    </Rule>
-    <Rule id="264">
-      <ConditionOccurrenceLink link="16956338666927853"/>
-      <ConditionLink link="16955838593514256" conditionState="true"/>
       <ConditionOccurrenceLink link="16956829972540042"/>
       <ActionOccurrenceLink link="16956362108433935"/>
-      <ActionOccurrenceLink link="16955844680294455"/>
-      <ConditionOccurrenceLink link="16956830120170056"/>
       <ConditionOccurrenceLink link="16956830855920094"/>
-      <ConditionOccurrenceLink link="16956831025860108"/>
     </Rule>
-    <Rule id="248">
-      <ConditionOccurrenceLink link="16956338666927853"/>
-      <ConditionLink link="16955838593514256" conditionState="false"/>
+    <Rule id="301">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956839288445307"/>
+      <ActionOccurrenceLink link="17063950756672961"/>
       <ConditionOccurrenceLink link="16956830120140053"/>
-      <ActionOccurrenceLink link="16955844680294455"/>
-      <ActionOccurrenceLink link="16957066622798831"/>
     </Rule>
-    <Rule id="249">
-      <ConditionOccurrenceLink link="16956338666927853"/>
-      <ConditionLink link="16955838593514256" conditionState="false"/>
+    <Rule id="326">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956839288445307"/>
       <ConditionOccurrenceLink link="16956830120170056"/>
       <ConditionOccurrenceLink link="16956831025830105"/>
-      <ActionOccurrenceLink link="16955844680294455"/>
-      <ActionOccurrenceLink link="16957067200448846"/>
+      <ActionOccurrenceLink link="17064330930142820"/>
     </Rule>
-    <Rule id="215">
-      <ConditionOccurrenceLink link="16956338666927853"/>
-      <ConditionLink link="16955838593514256" conditionState="false"/>
-      <ConditionOccurrenceLink link="16956830120170056"/>
-      <ConditionOccurrenceLink link="16956831025860108"/>
-      <ActionOccurrenceLink link="16956362108433935"/>
+    <Rule id="321">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
       <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956839288445307"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ActionOccurrenceLink link="16956362108433935"/>
+      <ConditionOccurrenceLink link="16956831025860108"/>
+    </Rule>
+    <Rule id="302">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829231859653"/>
+      <ActionOccurrenceLink link="17063953454692967"/>
+      <ConditionOccurrenceLink link="16956830120140053"/>
+    </Rule>
+    <Rule id="327">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829231859653"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ConditionOccurrenceLink link="16956831025830105"/>
+      <ActionOccurrenceLink link="17064331375382828"/>
+    </Rule>
+    <Rule id="323">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829231859653"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ActionOccurrenceLink link="16956362108433935"/>
+      <ConditionOccurrenceLink link="16956831025860108"/>
+    </Rule>
+    <Rule id="311">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829231889656"/>
+      <ActionOccurrenceLink link="17063956223023935"/>
+      <ConditionOccurrenceLink link="17064323825088231"/>
+    </Rule>
+    <Rule id="312">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829231889656"/>
+      <ActionOccurrenceLink link="17063956531243938"/>
+      <ConditionOccurrenceLink link="17064323838118243"/>
+      <ConditionOccurrenceLink link="17064323883548248"/>
+    </Rule>
+    <Rule id="331">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="true"/>
+      <ConditionOccurrenceLink link="16956829138759642"/>
+      <ActionOccurrenceLink link="16956361996303932"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956829231889656"/>
+      <ConditionOccurrenceLink link="17064323903368253"/>
+      <ConditionOccurrenceLink link="17064323883548248"/>
+    </Rule>
+    <Rule id="304">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956839288445307"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="17063950756672961"/>
+      <ConditionOccurrenceLink link="16956830120140053"/>
+    </Rule>
+    <Rule id="328">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956839288445307"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ConditionOccurrenceLink link="16956831025830105"/>
+      <ActionOccurrenceLink link="17064330930142820"/>
+    </Rule>
+    <Rule id="310">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956839288445307"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ActionOccurrenceLink link="16956362108433935"/>
+      <ConditionOccurrenceLink link="16956831025860108"/>
+    </Rule>
+    <Rule id="305">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956829231859653"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="17063953454692967"/>
+      <ConditionOccurrenceLink link="16956830120140053"/>
+    </Rule>
+    <Rule id="329">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956829231859653"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ConditionOccurrenceLink link="16956831025830105"/>
+      <ActionOccurrenceLink link="17064331375382828"/>
+    </Rule>
+    <Rule id="330">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956829231859653"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="16956830120170056"/>
+      <ActionOccurrenceLink link="16956362108433935"/>
+      <ConditionOccurrenceLink link="16956831025860108"/>
+    </Rule>
+    <Rule id="314">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956829231889656"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ActionOccurrenceLink link="17063956531243938"/>
+      <ConditionOccurrenceLink link="17064323838118243"/>
+    </Rule>
+    <Rule id="315">
+      <ConditionOccurrenceLink link="16956338590467850"/>
+      <ConditionLink link="16955838593514256" conditionState="false"/>
+      <ConditionOccurrenceLink link="16956829231889656"/>
+      <ActionOccurrenceLink link="16956361996303932"/>
+      <ActionOccurrenceLink link="16955844680294455"/>
+      <ConditionOccurrenceLink link="17064323903368253"/>
     </Rule>
   </Rules>
-  <Title language="German" value="configuration for jira communication"/>
+  <Title language="German" value="common configuration to access jira"/>
   <UrlsOut>
     <Url title="Ordner" url="file:///./"/>
   </UrlsOut>
-  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, projectKey, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  let _prefixDoc = ''&lt;br/&gt;  let _prefixEnv = ''&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  const _$$dtname = {&lt;br/&gt;    toJSON: function () {&lt;br/&gt;      const result = {}&lt;br/&gt;      for (const x in this) {&lt;br/&gt;        if (x !== 'username' &amp;&amp; x !== 'password') {&lt;br/&gt;          result[x] = this[x]&lt;br/&gt;        } else {&lt;br/&gt;          if (x === 'username' || x === 'password') {&lt;br/&gt;            result[x] = this[x].replace(/./g, '*')&lt;br/&gt;          }&lt;br/&gt;        }&lt;br/&gt;      }&lt;br/&gt;      return result&lt;br/&gt;    }&lt;br/&gt;  }&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, projectKey, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  let _prefixDoc = ''&lt;br/&gt;  let _prefixEnv = ''&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  const _$$dtname = {&lt;br/&gt;    toJSON: function () {&lt;br/&gt;      const result = {}&lt;br/&gt;      for (const x in this) {&lt;br/&gt;        if (x !== 'auth') {&lt;br/&gt;          result[x] = this[x]&lt;br/&gt;        } else {&lt;br/&gt;          if (x === 'auth') {&lt;br/&gt;            result[x] = this[x].replace(/./g, '*')&lt;br/&gt;          }&lt;br/&gt;        }&lt;br/&gt;      }&lt;br/&gt;      return result&lt;br/&gt;    }&lt;br/&gt;  }&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
   <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, parent, projectKey, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(macroName, parent, projectKey, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
   <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(_$$dtName)}`)"/>
 </LFET>
