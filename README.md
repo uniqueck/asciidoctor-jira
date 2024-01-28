@@ -58,11 +58,13 @@ asciidoc:
 
 For this extension in general you have to provide the following minimal attributes and/or environment variables.
 
-| Attribute / Env variable      | Description                                                                                 |
-|-------------------------------|---------------------------------------------------------------------------------------------|
-| jira-baseurl / JIRA_BASEURL   | Schema and domain of jira instance to use                                                   |
-| jira-username / JIRA_USERNAME | Usernane to authenticate against given jira instance  (currently only used for block macro) |
-| jira-apitoken / JIRA_APITOKEN | API token to authenticate against given jira instance (currently only used for block macro) |
+| Attribute / Env variable      | Description                                                                     |
+|-------------------------------|---------------------------------------------------------------------------------|
+| jira-baseurl / JIRA_BASEURL   | Schema and domain of jira instance to use                                       |
+| jira-username / JIRA_USERNAME | Username to authenticate against given jira instance  (Basic auth)              |
+| JIRA_APITOKEN                 | API token to authenticate against given jira instance (Basic auth)              |
+| JIRA_PASSWORD                 | Password to authenticate against given jira instance (Basic auth)               |
+| JIRA_PAT                      | Personal access token to authenticate against given jira instance (Bearer auth) |
 
 ### block macro
 
@@ -79,6 +81,12 @@ For more examples and configuration settings see [documentation](https://uniquec
 
 ```adoc
 jira:DOC-123[]
+```
+
+### roadmap macro
+
+```adoc
+roadmap::DOC[]
 ```
 
 ## Configuration
