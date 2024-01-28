@@ -1,3 +1,22 @@
+# [4.1.0](https://github.com/uniqueck/asciidoctor-jira/compare/v4.0.1...v4.1.0) (2024-01-28)
+
+
+### Build
+
+* Bump @antora/site-generator-default from 3.1.6 to 3.1.7 ([d9ce33d](https://github.com/uniqueck/asciidoctor-jira/commit/d9ce33d97cca9df7bea5c5f5f29bd891d42b8199))
+* Bump chai from 4.3.10 to 4.4.1 ([bf8e265](https://github.com/uniqueck/asciidoctor-jira/commit/bf8e265e24a85259eebe617281cc51f98f4e2a7f))
+* Bump semantic-release from 22.0.12 to 23.0.0 ([1288347](https://github.com/uniqueck/asciidoctor-jira/commit/1288347fda4c520b1e9bac319346aee5b0eef6b1))
+* Bump semantic-release from 22.0.8 to 22.0.12 ([a32668a](https://github.com/uniqueck/asciidoctor-jira/commit/a32668a4aa2e1bf42fc088c798e654e0881f70ed))
+* use node 20.x for semantic release ([705755e](https://github.com/uniqueck/asciidoctor-jira/commit/705755ee923a49badae26f8ff3824dabd336a9ba))
+
+### New
+
+* introduce JIRA_PAT / ROADMAP_JIRA_PAT for bearer authentication for jira (fixes #170) ([aa6ae2a](https://github.com/uniqueck/asciidoctor-jira/commit/aa6ae2a048610ed9f172f8271d51aad179bcadb2)), closes [#170](https://github.com/uniqueck/asciidoctor-jira/issues/170)
+
+### Upgrade
+
+* Bump dotenv from 16.3.1 to 16.4.1 ([40d123e](https://github.com/uniqueck/asciidoctor-jira/commit/40d123e0b0d561a84d90c4c0ee842b6b81042c0e))
+
 ## [4.0.1](https://github.com/uniqueck/asciidoctor-jira/compare/v4.0.0...v4.0.1) (2024-01-03)
 
 
