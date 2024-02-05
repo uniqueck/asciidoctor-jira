@@ -220,12 +220,22 @@ describe('Antora integration', () => {
     it('roadmap with default values', async () => {
       const $ = cheerio.load(fs.readFileSync(path.join(__dirname, '/public/antora-jira/roadmap/index.html')))
 
-      const objectElement = $('h2[id="_ways_of_using_asciidoctor_roadmap_extension"]').parent().find('object')
+      const objectElement = $('h2[id="_choices_for_the_block_macro_roadmap"]').parent().find('object')
       expect(objectElement).to.not.be.null
       expect(objectElement.attr('type')).to.be.equal('image/svg+xml')
       expect(objectElement.attr('data')).to.be.contains('../_images/roadmap-ROAD-2023').contains('.svg')
       const imagePath = objectElement.attr('data')
-      console.log(imagePath)
+
+      expect(fs.existsSync(path.join(__dirname, 'public/antora-jira/roadmap', imagePath))).to.be.true
+    })
+    it('issue-172', async () => {
+      const $ = cheerio.load(fs.readFileSync(path.join(__dirname, '/public/antora-jira/roadmap/issue_172.html')))
+
+      const objectElement = $('h2[id="_issue_172"]').parent().find('object')
+      expect(objectElement).to.not.be.null
+      expect(objectElement.attr('type')).to.be.equal('image/svg+xml')
+      expect(objectElement.attr('data')).to.be.contains('../_images/roadmap-ROADMAP-2024').contains('.svg')
+      const imagePath = objectElement.attr('data')
 
       expect(fs.existsSync(path.join(__dirname, 'public/antora-jira/roadmap', imagePath))).to.be.true
     })

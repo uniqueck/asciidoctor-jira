@@ -2,3 +2,4 @@
 ** xref:blockmacro/issue_47.adoc[Issue #47]
 * xref:inlinemacro/index.adoc[inline macro]
 * xref:roadmap/index.adoc[roadmap macro]
+** xref:roadmap/issue_172.adoc[Issue #172]
