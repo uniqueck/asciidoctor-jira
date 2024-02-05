@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/uniqueck/asciidoctor-jira/compare/v4.1.0...v4.1.1) (2024-02-05)
+
+
+### Fix
+
+* Missing due date should skip issue ([08680de](https://github.com/uniqueck/asciidoctor-jira/commit/08680de8d3363831c37375366ba09f85bb964583))
+
 # [4.1.0](https://github.com/uniqueck/asciidoctor-jira/compare/v4.0.1...v4.1.0) (2024-01-28)
 
 
