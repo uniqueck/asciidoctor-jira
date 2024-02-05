@@ -1,8 +1,6 @@
-= {page-component-title} Roadmap Extension
+= {page-component-title}
 
-== Ways of using asciidoctor-roadmap extension
-
-For this example, you must install `asciidoctor-roadmap` so it is accessible to your Antora installation.
+== Choices for the block macro `roadmap`
 
 :roadmap-jira-baseurl: https://uniqueck.atlassian.net
 :roadmap-plantuml-server-url: https://kroki.io/plantuml
