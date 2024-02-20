@@ -16,7 +16,7 @@
     "antora"
   ],
   "dependencies": {
-    "dotenv": "^16.4.1",
+    "dotenv": "^16.4.5",
     "lodash": "^4.17.21",
     "mkdirp": "^3.0.1",
     "sync-request": "^6.1.0",
