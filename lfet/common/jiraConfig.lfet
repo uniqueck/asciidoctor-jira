@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.3.0 (231102a)" language="German" saveDate="2024.01.28 at 10:43:07 CET" saveUser="constantin">
+<LFET version="LF-ET 2.3.0 (240304A)" language="German" saveDate="2024.03.05 at 11:34:09 CET" saveUser="constantin">
   <Conditions>
     <Condition uId="16956802542147703">
       <Title language="German" value="Step"/>
@@ -252,12 +252,12 @@
         <ActionOccurrence uId="17063950756672961">
           <Symbol language="German" value="DOC_USR_PWD"/>
           <Title language="German" value="username via doc attr and password via env without project key prefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${_prefixDoc}jira-username`) + ':' + process.env[`_${_prefixEnv}JIRA_PASSWORD`]).toString('base64')"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${_prefixDoc}jira-username`) + ':' + process.env[`${_prefixEnv}JIRA_PASSWORD`]).toString('base64')"/>
         </ActionOccurrence>
         <ActionOccurrence uId="17064330930142820">
           <Symbol language="German" value="DOC_USR_API"/>
           <Title language="German" value="username via doc attr and api token via env without project key prefix"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${_prefixDoc}jira-username`) + ':' + process.env[`_${_prefixEnv}JIRA_APITOKEN`]).toString('base64')"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.auth = 'Basic ' + Buffer.from(doc.getAttribute(`${_prefixDoc}jira-username`) + ':' + process.env[`${_prefixEnv}JIRA_APITOKEN`]).toString('base64')"/>
         </ActionOccurrence>
         <ActionOccurrence uId="17063951157372964">
           <Symbol language="German" value="PENV_USR_PWD"/>
