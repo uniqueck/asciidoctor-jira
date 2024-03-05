@@ -1,3 +1,19 @@
+## [4.1.2](https://github.com/uniqueck/asciidoctor-jira/compare/v4.1.1...v4.1.2) (2024-03-05)
+
+
+### Build
+
+* Bump eslint from 8.56.0 to 8.57.0 ([74e6d36](https://github.com/uniqueck/asciidoctor-jira/commit/74e6d3657dec0ed612ff8f6167f74a78445ebe34))
+* Bump mocha from 10.2.0 to 10.3.0 ([a59de25](https://github.com/uniqueck/asciidoctor-jira/commit/a59de25439c07ad17c0f144782a25cca3c5fb9f5))
+
+### Fix
+
+* Wrong underscore for JIRA_PASSWORD environment variable ([072c09f](https://github.com/uniqueck/asciidoctor-jira/commit/072c09fb3474dde4cd8fa84dafef528b4f36d860))
+
+### Upgrade
+
+* Bump dotenv from 16.4.1 to 16.4.5 ([a1f1fa6](https://github.com/uniqueck/asciidoctor-jira/commit/a1f1fa61e9fd796e637ecf90996c6abeea741da9))
+
 ## [4.1.1](https://github.com/uniqueck/asciidoctor-jira/compare/v4.1.0...v4.1.1) (2024-02-05)
 
 
