@@ -36,7 +36,7 @@
     "rimraf": "^5.0.5",
     "semantic-release": "^23.0.0",
     "shx": "^0.3.4",
-    "eslint": "^8.57.0",
+    "eslint": "^9.20.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-ideal": "^1.0.0"
   },
