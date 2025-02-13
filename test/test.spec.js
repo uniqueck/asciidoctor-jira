@@ -100,6 +100,32 @@ describe('Conversion', () => {
 </thead>
 </table>`)
     })
+    it('#206 - date adaption', () => {
+      const registry = asciidoctor.Extensions.create()
+      jiraExt.register(registry)
+
+      const html = asciidoctor.convert('jira::DOC[jql="issue=DOC-2",customFieldIds="created"]', { extension_registry: registry, attributes: { imagesoutdir: 'test/.images', 'jira-created-input-format': 'YYYY-MM-DDTHH:mm:ss.SSSZ', 'jira-created-output-format': 'DD.MM.YYYY' } })
+      expect(html).to.equal(`<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">created</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09.10.2021</p></td>
+</tr>
+</tbody>
+</table>`)
+    })
   })
 
   describe('When roadmap extension is registered', () => {

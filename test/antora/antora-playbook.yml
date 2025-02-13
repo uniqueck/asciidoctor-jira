@@ -19,6 +19,8 @@ asciidoc:
     - ./../../lib/asciidoctor-jira.js
   attributes:
     jira-baseurl: https://uniqueck.atlassian.net
+    jira-created-input-format: yyyy-MM-ddTHH:mm:ss.SSSZ
+    jira-created-output-format: dd.MM.yyyy
 
 ui:
   bundle:
