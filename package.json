@@ -35,7 +35,7 @@
     "mocha": "^10.4.0",
     "rimraf": "^5.0.5",
     "semantic-release": "^23.0.0",
-    "shx": "^0.3.4",
+    "shx": "^0.4.0",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-ideal": "^1.0.0"
