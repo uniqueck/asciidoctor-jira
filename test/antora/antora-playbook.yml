@@ -17,8 +17,6 @@ content:
 asciidoc:
   extensions:
     - ./../../lib/asciidoctor-jira.js
-  attributes:
-    jira-baseurl: https://uniqueck.atlassian.net
 
 ui:
   bundle:

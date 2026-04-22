@@ -16,35 +16,38 @@
     "antora"
   ],
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "lodash": "^4.17.21",
-    "mkdirp": "^3.0.1",
-    "sync-request": "^6.1.0",
-    "plantuml-encoder": "^1.4.0",
+    "dotenv": "17.4.2",
+    "lodash": "4.17.21",
+    "mkdirp": "3.0.1",
+    "sync-request": "6.1.0",
+    "plantuml-encoder": "1.4.0",
     "unxhr": "1.2.0",
-    "rusha": "^0.8"
+    "rusha": "0.8"
   },
   "devDependencies": {
-    "@antora/site-generator-default": "^3.1.10",
-    "@asciidoctor/core": "^3.0.4",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "chai": "^4.4.1",
+    "@antora/cli": "3.1",
+    "@antora/site-generator-default": "3.1",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "chai": "4.4.1",
     "cheerio": "0.22.0",
-    "conventional-changelog-eslint": "^5.0.0",
-    "mocha": "^10.4.0",
-    "rimraf": "^5.0.5",
-    "semantic-release": "^23.0.0",
-    "shx": "^0.3.4",
-    "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-config-ideal": "^1.0.0"
+    "conventional-changelog-eslint": "5.0.0",
+    "mocha": "10.4.0",
+    "rimraf": "5.0.5",
+    "semantic-release": "23.0.0",
+    "shx": "0.3.4",
+    "eslint": "8.57.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-config-ideal": "1.0.0"
   },
   "peerDependencies": {
-    "@asciidoctor/core": "^3.0.4"
+    "@asciidoctor/core": "^3"
   },
   "scripts": {
-    "lfet:GenSrc": "exec java -classpath \"/opt/lfet/lib/*\" lohrfink.lfet.Application -gs \"$INIT_CWD/lfet/\" -rec -fnp \"*.lfet\" -sku -src \"JavaScript\"",
+    "lfet:GenSrc": "exec java -classpath \"$INIT_CWD/.lfet/tool/*\" lohrfink.lfet.Application -gs \"$INIT_CWD/lfet/\" -rec -fnp \"*.lfet\" -sku -src \"JavaScript\"",
+    "lfet:UI": "exec java -classpath \"$INIT_CWD/.lfet/tool/*\" lohrfink.lfet.Application",
+    "prelfet:install": "cd \"$INIT_CWD/.lfet\" && rm -rf tool",
+    "lfet:install": "mkdir -p \"$INIT_CWD/.lfet/tool\" && curl -fsSLO https://www.lohrfink.de/lfet.latest.inst && unzip -q lfet.latest.inst -d \"$INIT_CWD/.lfet/tool\" && rm lfet.latest.inst",
     "test": "npm run test:antora && npm run test:node",
     "test:antora": "mocha test/antora/**.spec.js",
     "test:node": "mocha test/**.spec.js",
@@ -54,6 +57,6 @@
     "release": "semantic-release"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

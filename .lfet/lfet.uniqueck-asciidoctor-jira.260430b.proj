@@ -1,0 +1,42 @@
+# This file is used to define the limits within which the
+# decision table tool LF-ET can be freely used in this project.
+#
+# This file must not be changed, its checksum value must match
+# with the checksum value stored in the corresponding license file.
+#
+# More about LF-ET can be found here:
+# - https://lohrfink.de/de/produkte/lf-et/
+# - https://lohrfink.de/en/solutions/lf-et/
+#
+# More about the rulebased.group can be found here:
+# - https://rulebased.group/
+#
+# Any questions or CER's regarding LF-ET or this project are welcome here:
+# - mailto:support@rulebased.group
+
+LFET:
+
+    Project:
+
+        Url:
+        # List of global unique project ID's
+        - git@github.com:uniqueck/asciidoctor-jira.git
+        - https://github.com/uniqueck/asciidoctor-jira.git
+        - https://github.com/uniqueck/asciidoctor-jira/
+
+        FileNamePattern:
+        # List of regular expressions for allowed file names
+        # incl. common 'save as' and export formats
+        - ^.*(Blockmacro|Config)[.](lfet|js)$
+        - ^.*(Blockmacro|Config).*[.](svg|png|xls[x]?)$
+
+        DirectoryNamePattern:
+        # List of regular expressions for allowed directory names
+        # relative to the project content root
+        # use always '/' as file separator
+        - ^[/]?asciidoctor-jira/lfet/common[/]?$
+        - ^[/]?asciidoctor-jira/lfet/blockmacro[/]?$
+        - ^[/]?asciidoctor-jira/lib/common[/]?$
+        - ^[/]?asciidoctor-jira/lib/blockmacro[/]?$
+        - ^[/]?asciidoctor-jira/test/features/common[/]?$
+        - ^[/]?asciidoctor-jira/test/features/blockmacro[/]?$
