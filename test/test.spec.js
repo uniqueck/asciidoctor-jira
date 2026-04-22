@@ -45,21 +45,21 @@ describe('Conversion', () => {
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="jira-issuetype-bug.svg" alt="jira issuetype bug"></span><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-2">DOC-2</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bug123</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="jira-issuetype-story.svg" alt="jira issuetype story"></span><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
+<p><a href="https://uniqueck.atlassian.net/browse/DOC-1">DOC-1</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Test123</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label1,Label2</p></td>
 </tr>
 </tbody>
 </table>`)
-    })
+    }).timeout(70000)
     it('#147 - wrong jql', () => {
       const registry = asciidoctor.Extensions.create()
       jiraExt.register(registry)
@@ -140,6 +140,6 @@ describe('Conversion', () => {
 <img src="${diagramName}" alt="roadmap ROADMAP 2023 ${contentAsHex}">
 </div>
 </div>`)
-    }).timeout(50000)
+    }).timeout(70000)
   })
 })

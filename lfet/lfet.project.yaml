@@ -1,10 +1,14 @@
 lfet:
   nestedProjectIni: false
+  experimental:
+    git:
+      dialog: true
   ide:
     default: javascript
     javascript:
       enabled: true
-
+      
+      LfetMinVersion: 2.4.2 260430a
       baseOfVersion: DT
       emptyLines: false
 

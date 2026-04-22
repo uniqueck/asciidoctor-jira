@@ -2,8 +2,7 @@
 
 == Choices for the block macro `roadmap`
 
-:roadmap-jira-baseurl: https://uniqueck.atlassian.net
-:roadmap-plantuml-server-url: https://kroki.io/plantuml
+:roadmap-plantuml-server-url: https://www.plantuml.com/plantuml
 :roadmap-categories: feature,maintenance,security,infrastructure
 :roadmap-feature-label: Feature
 :roadmap-maintenance-label: Maintenance

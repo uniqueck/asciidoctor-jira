@@ -6,3 +6,5 @@ TODO.adoc
 
 *.lfet.*.$bak
 *.lfet_$temp
+
+.lfet/tool/

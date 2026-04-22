@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.2.1 (230906a)" language="German" saveDate="2023.10.02 at 00:34:12 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.4.2 (260430a)" language="German" saveDate="2026.05.11 at 23:01:57 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="11446800829457960">
       <Title language="German" value="step"/>
@@ -63,7 +63,7 @@
         <ActionOccurrence uId="16958483592869238">
           <Symbol language="German" value="gantt"/>
           <Title language="German" value="load gantt configuration options"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtName.$$symbol = require('./plantumlGanttConfig').createConfig(_prefixDoc, parent, attrs, logger)"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtName.$$symbol = require('./plantumlGanttConfig').createConfig(_prefixDoc, parent, attrs)"/>
         </ActionOccurrence>
       </ActionOccurrences>
       <UrlsOut>
@@ -85,8 +85,8 @@
         </ActionOccurrence>
         <ActionOccurrence uId="16956447007540487">
           <Symbol language="German" value="DEF"/>
-          <Title language="German" value="https://kroki.io/plantuml"/>
-          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.serverUrl = 'https://kroki.io/plantuml'"/>
+          <Title language="German" value="https://www.plantuml.com/plantuml"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.serverUrl = '$$title'"/>
         </ActionOccurrence>
       </ActionOccurrences>
     </Action>
@@ -176,7 +176,7 @@
   <UrlsOut>
     <Url title="Ordner" url="file:///./"/>
   </UrlsOut>
-  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, attrs, logger) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  const _prefix = 'plantuml'&lt;br/&gt;  const _prefixDoc = `${macroName.toLowerCase()}-${_prefix}-`&lt;br/&gt;  const _$$dtname = { }&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
-  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, parent, attrs, logger) =&gt; {&lt;br/&gt;    return $$dtname(macroName, parent, attrs, logger)&lt;br/&gt;  }&lt;br/&gt;}"/>
-  <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="logger.info(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(_$$dtName)}`)"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Prolog" value="function $$dtname (macroName, parent, attrs) {&lt;br/&gt;  let _step = 1&lt;br/&gt;  let _exit = false&lt;br/&gt;  const _prefix = 'plantuml'&lt;br/&gt;  const _prefixDoc = `${macroName.toLowerCase()}-${_prefix}-`&lt;br/&gt;  const _$$dtname = { }&lt;br/&gt;  const doc = parent.getDocument()&lt;br/&gt;  do {&lt;br/&gt;    _exit = true&lt;br/&gt;    // $$BasicIndentLevel=2"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Epilog" value="  } while (_exit === false)&lt;br/&gt;  return _$$dtname&lt;br/&gt;}&lt;br/&gt;&lt;br/&gt;module.exports = {&lt;br/&gt;  createConfig: (macroName, parent, attrs) =&gt; {&lt;br/&gt;    return $$dtname(macroName, parent, attrs)&lt;br/&gt;  }&lt;br/&gt;}"/>
+  <SourceCode codeLanguage="JavaScript" sourceCodeType="Trace" value="doc.getLogger().debug(`$$dtName - $$version - $$rule / $$rules - ${JSON.stringify(_$$dtName)}`)"/>
 </LFET>

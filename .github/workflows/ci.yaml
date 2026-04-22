@@ -16,23 +16,15 @@ jobs:
           - ubuntu-latest
           - windows-latest
         node-version:
-          - 18.x
-          - 20.x
+          - 22.x
+          - 24.x
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: Set up NodeJs ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm ci
@@ -44,29 +36,17 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           cat << EOF > .env
-          AJE_USERNAME=${{ secrets.AJE_USERNAME }}
-          AJE_APITOKEN=${{ secrets.AJE_APITOKEN }}
-          AJE_BASEURL=${{ secrets.AJE_JIRABASEURL }}
-          JIRA_USERNAME=${{ secrets.AJE_USERNAME }}
-          JIRA_APITOKEN=${{ secrets.AJE_APITOKEN }}
-          JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}
-          ROADMAP_JIRA_USERNAME=${{ secrets.AJE_USERNAME }}
-          ROADMAP_JIRA_PASSWORD=${{ secrets.AJE_APITOKEN }}
-          ROADMAP_JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}
+          JIRA_CLOUD_NAME=${{ secrets.JIRA_CLOUD_NAME }}
+          JIRA_CLIENT_ID=${{ secrets.JIRA_CLIENT_ID }}
+          JIRA_CLIENT_SECRET=${{ secrets.JIRA_CLIENT_SECRET }}
           EOF
 
       - name: create .env
         if: runner.os == 'Windows'
         run: |
-          "AJE_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
-          "AJE_APITOKEN=${{ secrets.AJE_APITOKEN }}"  | ac .env
-          "AJE_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
-          "JIRA_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
-          "JIRA_APITOKEN=${{ secrets.AJE_APITOKEN }}"  | ac .env
-          "JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
-          "ROADMAP_JIRA_USERNAME=${{ secrets.AJE_USERNAME }}" | ac .env
-          "ROADMAP_JIRA_PASSWORD=${{ secrets.AJE_APITOKEN }}"  | ac .env
-          "ROADMAP_JIRA_BASEURL=${{ secrets.AJE_JIRABASEURL }}"  | ac .env
+          "JIRA_CLOUD_NAME=${{ secrets.JIRA_CLOUD_NAME }}" | ac .env
+          "JIRA_CLIENT_ID=${{ secrets.JIRA_CLIENT_ID }}"  | ac .env
+          "JIRA_CLIENT_SECRET=${{ secrets.JIRA_CLIENT_SECRET }}"  | ac .env
 
       - name: test
         run: npm test

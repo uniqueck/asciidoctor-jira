@@ -3,7 +3,9 @@
 [![Build status](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/uniqueck/asciidoctor-jira/actions/workflows/ci.yaml)
 [![npm version](http://img.shields.io/npm/v/asciidoctor-jira.svg)](https://www.npmjs.com/package/asciidoctor-jira)
 
-A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to integrate Jira!
+A set of macros for [Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js) to integrate Jira Cloud!
+
+> **Note:** The current release supports **Jira Cloud** with **REST API Version 3** only.
 
 ## Install
 
@@ -60,11 +62,10 @@ For this extension in general you have to provide the following minimal attribut
 
 | Attribute / Env variable      | Description                                                                     |
 |-------------------------------|---------------------------------------------------------------------------------|
-| jira-baseurl / JIRA_BASEURL   | Schema and domain of jira instance to use                                       |
-| jira-username / JIRA_USERNAME | Username to authenticate against given jira instance  (Basic auth)              |
-| JIRA_APITOKEN                 | API token to authenticate against given jira instance (Basic auth)              |
-| JIRA_PASSWORD                 | Password to authenticate against given jira instance (Basic auth)               |
-| JIRA_PAT                      | Personal access token to authenticate against given jira instance (Bearer auth) |
+| JIRA_API_TOKEN                | API token used as Bearer token for Jira REST API authentication                 |
+| JIRA_CLIENT_ID                | OAuth 2.0 client ID used to request an access token                             |
+| JIRA_CLIENT_SECRET            | OAuth 2.0 client secret used together with the client ID to request a token     |
+| JIRA_CLOUD_NAME               | Jira Cloud site name (for example `mycompany`) used to resolve the Cloud ID     |
 
 ### block macro
 

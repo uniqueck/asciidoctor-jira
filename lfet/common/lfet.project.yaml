@@ -4,3 +4,4 @@ lfet:
     javascript:
       src:
         path: ${project.root}../lib/common
+      iniFilesPath: ${project.root}../
