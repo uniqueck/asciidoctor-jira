@@ -1,3 +1,16 @@
+# [5.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v4.1.2...v5.0.0) (2026-05-12)
+
+
+### Breaking
+
+* Change auth mechanism to support Jira cloud (fixes [#226](https://github.com/uniqueck/asciidoctor-jira/issues/226)) ([5bcfda5](https://github.com/uniqueck/asciidoctor-jira/commit/5bcfda536a8a9a95e9cfc8fb80c8d2adf03565dd)), closes [#226](https://github.com/uniqueck/asciidoctor-jira/issues/226)
+
+### Build
+
+* Bump @antora/site-generator-default from 3.1.7 to 3.1.10 ([6fa3099](https://github.com/uniqueck/asciidoctor-jira/commit/6fa3099bb9056b67e98b3e9170367f51ab5253aa))
+* Bump @asciidoctor/core from 2.2.6 to 2.2.7 ([280ebeb](https://github.com/uniqueck/asciidoctor-jira/commit/280ebeb0fb2cbc9a7c8b612220ef4824a0870179))
+* Bump mocha from 10.3.0 to 10.4.0 ([b7207a2](https://github.com/uniqueck/asciidoctor-jira/commit/b7207a2f674730974091d49cad48f378f2a499f5))
+
 ## [4.1.2](https://github.com/uniqueck/asciidoctor-jira/compare/v4.1.1...v4.1.2) (2024-03-05)
 
 
