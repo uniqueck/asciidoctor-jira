@@ -17,12 +17,14 @@
   ],
   "dependencies": {
     "dotenv": "17.4.2",
+    "http-proxy-agent": "7.0.2",
+    "https-proxy-agent": "7.0.6",
     "lodash": "4.17.21",
     "mkdirp": "3.0.1",
-    "sync-request": "6.1.0",
     "plantuml-encoder": "1.4.0",
-    "unxhr": "1.2.0",
-    "rusha": "0.8"
+    "rusha": "0.8",
+    "then-request": "6.0.2",
+    "unxhr": "1.2.0"
   },
   "devDependencies": {
     "@antora/cli": "3.1",
@@ -41,11 +43,11 @@
     "eslint-config-ideal": "1.0.0"
   },
   "peerDependencies": {
-    "@asciidoctor/core": "^3"
+    "@asciidoctor/core": "^2.2"
   },
   "scripts": {
-    "lfet:GenSrc": "exec java -classpath \"$INIT_CWD/.lfet/tool/*\" lohrfink.lfet.Application -gs \"$INIT_CWD/lfet/\" -rec -fnp \"*.lfet\" -sku -src \"JavaScript\"",
-    "lfet:UI": "exec java -classpath \"$INIT_CWD/.lfet/tool/*\" lohrfink.lfet.Application",
+    "lfet:GenSrc": "exec java -classpath \"$INIT_CWD/.lfet/tool/lib/*\" lohrfink.lfet.Application -gs \"$INIT_CWD/lfet/\" -rec -fnp \"*.lfet\" -sku -src \"JavaScript\"",
+    "lfet:UI": "exec java -classpath \"$INIT_CWD/.lfet/tool/lib/*\" lohrfink.lfet.Application",
     "prelfet:install": "cd \"$INIT_CWD/.lfet\" && rm -rf tool",
     "lfet:install": "mkdir -p \"$INIT_CWD/.lfet/tool\" && curl -fsSLO https://www.lohrfink.de/lfet.latest.inst && unzip -q lfet.latest.inst -d \"$INIT_CWD/.lfet/tool\" && rm lfet.latest.inst",
     "test": "npm run test:antora && npm run test:node",
