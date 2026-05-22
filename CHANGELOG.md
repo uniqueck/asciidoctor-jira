@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/uniqueck/asciidoctor-jira/compare/v5.0.0...v5.1.0) (2026-05-22)
+
+
+### New
+
+* Add jira proxy support ([33901c3](https://github.com/uniqueck/asciidoctor-jira/commit/33901c32f76c4240f9153dec54b8d241c18812c9))
+
 # [5.0.0](https://github.com/uniqueck/asciidoctor-jira/compare/v4.1.2...v5.0.0) (2026-05-12)
 
 
