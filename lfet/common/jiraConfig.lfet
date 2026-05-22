@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LFET version="LF-ET 2.4.2 (260430a)" language="English" saveDate="2026.05.12 at 16:30:13 CEST" saveUser="constantin">
+<LFET version="LF-ET 2.4.2 (260519a)" language="English" saveDate="2026.05.22 at 08:33:18 CEST" saveUser="constantin">
   <Conditions>
     <Condition uId="16956829136529631">
       <Title language="English" value="client id defined"/>
@@ -17,6 +17,10 @@
     <Condition uId="17784820331340881">
       <Title language="English" value="cloud name defined"/>
       <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(process.env.JIRA_CLOUD_NAME)"/>
+    </Condition>
+    <Condition uId="17794312678637812">
+      <Title language="English" value="http proxy defined"/>
+      <SourceCode codeLanguage="JavaScript" sourceCodeType="LogArg" value="(process.env.JIRA_HTTP_PROXY || process.env.JIRA_HTTPS_PROXY)"/>
     </Condition>
   </Conditions>
   <Actions>
@@ -64,6 +68,21 @@
       <Title language="English" value="set cloud name"/>
       <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.cloudIdName = process.env.JIRA_CLOUD_NAME"/>
     </Action>
+    <Action uId="17794308835597807">
+      <Title language="English" value="http proxy settings"/>
+      <ActionOccurrences>
+        <ActionOccurrence uId="17794313504207991">
+          <Symbol language="English" value="SET"/>
+          <Title language="English" value="set"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.proxy = {&lt;br/&gt; http: process.env.JIRA_HTTP_PROXY,&lt;br/&gt; https: process.env.JIRA_HTTPS_PROXY,&lt;br/&gt; no_proxy: process.env.JIRA_NO_PROXY&lt;br/&gt;}"/>
+        </ActionOccurrence>
+        <ActionOccurrence uId="17794313590448000">
+          <Symbol language="English" value="CLR"/>
+          <Title language="English" value="clear"/>
+          <SourceCode codeLanguage="JavaScript" sourceCodeType="StmtSeq" value="_$$dtname.proxy = null"/>
+        </ActionOccurrence>
+      </ActionOccurrences>
+    </Action>
     <Action uId="16955845254104514">
       <Title language="English" value="log mandatory information is missing"/>
       <ActionOccurrences>
@@ -80,8 +99,8 @@
       </ActionOccurrences>
     </Action>
   </Actions>
-  <Rules lastId="502">
-    <Rule id="501">
+  <Rules lastId="506">
+    <Rule id="503">
       <ConditionLink link="16956829136529631" conditionState="true"/>
       <ConditionLink link="16956829229829645" conditionState="true"/>
       <ActionOccurrenceLink link="17063950198982958"/>
@@ -89,6 +108,19 @@
       <ActionOccurrenceLink link="17785111097894635"/>
       <ActionOccurrenceLink link="17785121911613922"/>
       <ActionLink link="17785860322390290"/>
+      <ConditionLink link="17794312678637812" conditionState="true"/>
+      <ActionOccurrenceLink link="17794313504207991"/>
+    </Rule>
+    <Rule id="504">
+      <ConditionLink link="16956829136529631" conditionState="true"/>
+      <ConditionLink link="16956829229829645" conditionState="true"/>
+      <ActionOccurrenceLink link="17063950198982958"/>
+      <ConditionLink link="17784820331340881" conditionState="true"/>
+      <ActionOccurrenceLink link="17785111097894635"/>
+      <ActionOccurrenceLink link="17785121911613922"/>
+      <ActionLink link="17785860322390290"/>
+      <ConditionLink link="17794312678637812" conditionState="false"/>
+      <ActionOccurrenceLink link="17794313590448000"/>
     </Rule>
     <Rule id="490">
       <ConditionLink link="16956829136529631" conditionState="true"/>
@@ -101,7 +133,7 @@
       <ConditionLink link="16956829229829645" conditionState="false"/>
       <ActionOccurrenceLink link="16956361996303932"/>
     </Rule>
-    <Rule id="502">
+    <Rule id="505">
       <ConditionLink link="16956829136529631" conditionState="false"/>
       <ActionOccurrenceLink link="17063950756672961"/>
       <ConditionLink link="16956830853760083" conditionState="true"/>
@@ -109,6 +141,19 @@
       <ActionOccurrenceLink link="17785122112033928"/>
       <ConditionLink link="17784820331340881" conditionState="true"/>
       <ActionLink link="17785860322390290"/>
+      <ConditionLink link="17794312678637812" conditionState="true"/>
+      <ActionOccurrenceLink link="17794313504207991"/>
+    </Rule>
+    <Rule id="506">
+      <ConditionLink link="16956829136529631" conditionState="false"/>
+      <ActionOccurrenceLink link="17063950756672961"/>
+      <ConditionLink link="16956830853760083" conditionState="true"/>
+      <ActionOccurrenceLink link="17785111097894635"/>
+      <ActionOccurrenceLink link="17785122112033928"/>
+      <ConditionLink link="17784820331340881" conditionState="true"/>
+      <ActionLink link="17785860322390290"/>
+      <ConditionLink link="17794312678637812" conditionState="false"/>
+      <ActionOccurrenceLink link="17794313590448000"/>
     </Rule>
     <Rule id="500">
       <ConditionLink link="16956829136529631" conditionState="false"/>

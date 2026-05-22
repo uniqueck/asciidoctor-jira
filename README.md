@@ -66,6 +66,11 @@ For this extension in general you have to provide the following minimal attribut
 | JIRA_CLIENT_ID                | OAuth 2.0 client ID used to request an access token                             |
 | JIRA_CLIENT_SECRET            | OAuth 2.0 client secret used together with the client ID to request a token     |
 | JIRA_CLOUD_NAME               | Jira Cloud site name (for example `mycompany`) used to resolve the Cloud ID     |
+| JIRA_HTTP_PROXY               | Optional proxy URL used for HTTP Jira requests and as HTTPS fallback            |
+| JIRA_HTTPS_PROXY              | Optional proxy URL used for HTTPS Jira requests                                 |
+| JIRA_NO_PROXY                 | Optional comma-separated host list that bypasses the configured proxy           |
+
+Proxy lookup is Jira-specific: HTTPS requests use `JIRA_HTTPS_PROXY`, then fall back to `JIRA_HTTP_PROXY`; HTTP requests use `JIRA_HTTP_PROXY`. `JIRA_NO_PROXY` bypasses both when the host matches.
 
 ### block macro
 
